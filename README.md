@@ -1,25 +1,26 @@
-![Header](https://capsule-render.vercel.app/api?type=waving&height=230&section=header&text=Abbas%20Hussain&fontSize=70&fontColor=ffffff&animation=twinkling&desc=Full-Stack%20%26%20Web3%20Developer%20%E2%80%A2%20Built%20on%20Mobile&descAlignY=72&color=gradient&customColorList=10)
+![Header](https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=Abbas%20Hussain&fontSize=64&fontColor=ffffff&animation=twinkling&desc=Full-Stack%20%E2%80%A2%20Web3%20Developer&descAlignY=72&color=gradient&customColorList=10)
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=600&size=24&pause=1000&color=F7931A&center=true&vCenter=true&width=700&lines=Full-Stack+Developer;Web3+Developer;Mobile-First+Builder" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=600&size=24&pause=1000&color=F7931A&center=true&vCenter=true&width=700&lines=Full-Stack+Developer;Web3+Developer;freeCodeCamp+Certified" alt="Typing SVG"/>
 
-**My personal portfolio showcasing 3 deployed projects and 7 professional certifications.**
+**16-year-old self-taught developer from Pakistan - building production-ready apps on a mobile phone 📱**
 
-[![LIVE PORTFOLIO](https://img.shields.io/badge/🚀_LIVE_PORTFOLIO-abbas--portfolio.vercel.app-orange?style=for-the-badge&logo=vercel&logoColor=white)](https://abbas-portfolio.vercel.app)
+[![LIVE](https://img.shields.io/badge/🚀_LIVE-abbas--portfolio.vercel.app-orange?style=for-the-badge&logo=vercel&logoColor=white)](https://abbas-portfolio.vercel.app)
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#)
+[![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](#)
+[![ethers](https://img.shields.io/badge/ethers.js-Web3-8B5CF6?style=for-the-badge)](#)
 
 </div>
 
 ---
 
-## 👨💻 About Me
+## 👨 About Me
 
-I am a 16-year-old self-taught full-stack and Web3 developer from Pakistan. I build production-ready applications entirely on a mobile phone using GitHub Codespaces and Termux. My passion lies in clean UI, real-time data, and blockchain security.
+I am a self-taught full-stack & Web3 developer who builds production-ready applications entirely on a mobile phone using GitHub Codespaces and Termux. My work spans real-time crypto dashboards, full-stack apps with authentication & databases, and a complete multi-chain Web3 wallet.
 
 ---
 
@@ -27,24 +28,30 @@ I am a 16-year-old self-taught full-stack and Web3 developer from Pakistan. I bu
 
 <div align="center">
 
-| Project | Tech Stack | Live Demo |
-| :--- | :--- | :--- |
-| 🔐 **VaultX** (Web3 Wallet) | Next.js, ethers.js, Infura | [vaultx-mu.vercel.app](https://vaultx-mu.vercel.app) |
-| ⭐ **CryptoWatch** (Watchlist) | Next.js, Supabase, PostgreSQL | [cryptowatch-rust.vercel.app](https://cryptowatch-rust.vercel.app) |
-| 📈 **Crypto Tracker** (Dashboard) | Next.js, WebSockets, Recharts | [realtime-crypto-tracker.vercel.app](https://realtime-crypto-tracker.vercel.app) |
+[![VaultX](https://img.shields.io/badge/🔐_VaultX-Multi--Chain_Web3_Wallet-8B5CF6?style=for-the-badge)](https://vaultx-mu.vercel.app)
+[![Code](https://img.shields.io/badge/Code-vaultx-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbbasFullstack/vaultx)
+
+[![CryptoWatch](https://img.shields.io/badge/⭐_CryptoWatch-Personal_Watchlist-F7931A?style=for-the-badge)](https://cryptowatch-rust.vercel.app)
+[![Code](https://img.shields.io/badge/Code-cryptowatch-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbbasFullstack/cryptowatch)
+
+[![Tracker](https://img.shields.io/badge/📈_Tracker-Real--Time_Dashboard-10B981?style=for-the-badge)](https://realtime-crypto-tracker.vercel.app)
+[![Code](https://img.shields.io/badge/Code-tracker-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbbasFullstack/realtime-crypto-tracker)
 
 </div>
 
 ---
 
-## 🏅 Certifications
+## 🏅 Certifications (7)
 
 <div align="center">
 
-![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-5_Certifications-green?style=for-the-badge&logo=freecodecamp&logoColor=white)
-![Microsoft](https://img.shields.io/badge/Microsoft-C%23_Foundational-00A4EF?style=for-the-badge&logo=microsoft&logoColor=white)
-![HubSpot](https://img.shields.io/badge/HubSpot-SEO_Certified-FF7A59?style=for-the-badge&logo=hubspot&logoColor=white)
-![Binance](https://img.shields.io/badge/Binance_Academy-AI_Unlocked-F0B90B?style=for-the-badge&logo=binance&logoColor=black)
+[![C#](https://img.shields.io/badge/C%23_Foundational-Microsoft-9146FF?style=for-the-badge)](https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft)
+[![RWD](https://img.shields.io/badge/Responsive_Web_Design-freeCodeCamp-0A0A23?style=for-the-badge)](https://freecodecamp.org/certification/abbasweb/responsive-web-design)
+[![FEDL](https://img.shields.io/badge/Front--End_Libraries-freeCodeCamp-0A0A23?style=for-the-badge)](https://freecodecamp.org/certification/abbasweb/front-end-development-libraries)
+[![DataViz](https://img.shields.io/badge/Data_Visualization-freeCodeCamp-0A0A23?style=for-the-badge)](https://freecodecamp.org/certification/abbasweb/data-visualization)
+[![FE](https://img.shields.io/badge/Legacy_Front--End-freeCodeCamp-0A0A23?style=for-the-badge)](https://freecodecamp.org/certification/abbasweb/legacy-front-end)
+[![SEO](https://img.shields.io/badge/SEO_Certified-HubSpot-FF7A59?style=for-the-badge)](https://app-na2.hubspot.com/academy/achievements/5xkd22gx/en/1/abbas-hussain/seo-certified)
+[![AI](https://img.shields.io/badge/AI_Unlocked-Binance_Academy-F0B90B?style=for-the-badge)](https://www.binance.com/en/academy/track/ai-unlocked-agents-and-skills)
 
 </div>
 
@@ -54,17 +61,14 @@ I am a 16-year-old self-taught full-stack and Web3 developer from Pakistan. I bu
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/abbaswebdevelopers@gmail.com-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abbaswebdevelopers@gmail.com)
+[![Email](https://img.shields.io/badge/Email-abbaswebdevelopers@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abbaswebdevelopers@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-AbbasFullstack-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbbasFullstack)
 
-</div>
-
-<div align="center">
-
 ### 📊 GitHub Activity
-![Contribution Graph](https://ghchart.rshah.org/F7931A/AbbasFullstack)
 
-**Made with ❤️ by Abbas Hussain (from a mobile phone 📱)**
+![Graph](https://ghchart.rshah.org/F7931A/AbbasFullstack)
+
+**Made with ❤️ by Abbas Hussain (built on a mobile phone 📱)**
 
 </div>
 
