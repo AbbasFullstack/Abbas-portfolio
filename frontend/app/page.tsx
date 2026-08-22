@@ -242,7 +242,7 @@ export default function Home() {
 
         <div className="relative mb-8 inline-block">
           <div className="absolute -inset-4 rounded-full bg-orange-500/30 blur-2xl" />
-          <img src="https://github.com/AbbasFullstack.png" alt="Abbas Hussain" className="relative h-28 w-28 rounded-full border-2 border-orange-500/60 object-cover" />
+          <img src="/Abbasdev.png" alt="Abbas Hussain" className="relative h-28 w-28 rounded-full border-2 border-orange-500/60 object-cover" />
         </div>
 
         <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-orange-300">Full-stack developer · Pakistan</p>
