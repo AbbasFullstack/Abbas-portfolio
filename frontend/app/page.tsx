@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   ArrowRight,
   Award,
@@ -234,15 +235,22 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-20 text-center sm:pt-24">
+      <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 text-center sm:pt-16">
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold text-emerald-400">
           <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" /></span>
           Open to internships & junior roles
         </div>
 
-        <div className="relative mb-8 inline-block">
-          <div className="absolute -inset-4 rounded-full bg-orange-500/30 blur-2xl" />
-          <img src="/Abbasdev.png" alt="Abbas Hussain" className="relative h-28 w-28 rounded-full border-2 border-orange-500/60 object-cover" />
+        <div className="relative mb-8 flex justify-center">
+          <div className="absolute -inset-6 rounded-full bg-orange-500/20 blur-3xl" />
+          <Image 
+            src="/abbas-dev-card.png" 
+            alt="Google Developer Card - Abbas Hussain" 
+            width={800} 
+            height={500} 
+            priority 
+            className="relative w-full max-w-xl rounded-3xl border border-white/10 shadow-2xl shadow-orange-500/10" 
+          />
         </div>
 
         <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-orange-300">Full-stack developer · Pakistan</p>
@@ -380,4 +388,4 @@ function Github(props: React.SVGProps<SVGSVGElement>) {
       <path d="M9 18c-4.51 2-5-2-7-2" />
     </svg>
   );
-}
+   }
