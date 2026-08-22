@@ -151,6 +151,9 @@ const CERTS = [
   { title: 'Legacy Front-End', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/legacy-front-end' },
   { title: 'SEO Certified', issuer: 'HubSpot Academy', year: '2025', url: 'https://app-na2.hubspot.com/academy/achievements/5xkd22gx/en/1/abbas-hussain/seo-certified' },
   { title: 'AI Unlocked: Agents and Skills', issuer: 'Binance Academy', year: '2025', url: 'https://www.binance.com/en/academy/track/ai-unlocked-agents-and-skills' },
+  { title: 'BNB Chain Developer Specialization', issuer: 'Binance Academy + BNB Chain', year: '2026', url: 'https://www.binance.com/en/academy/track/bnb-chain-developer-specialization' },
+  { title: 'AWS Node Runners for BNB Chain', issuer: 'Binance Academy + AWS', year: '2026', url: 'https://www.binance.com/en/academy/track/aws-node-runners' },
+  { title: 'Offchain Computing using TEE Coprocessors', issuer: 'Binance Academy + Marlin', year: '2026', url: 'https://www.binance.com/en/academy/track/offchain-computing-using-tee-coprocessors' },
 ];
 
 const SKILLS = [
@@ -267,7 +270,7 @@ export default function Home() {
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             { num: '8', label: 'Verified Projects' },
-            { num: '7', label: 'Certifications' },
+            { num: '10', label: 'Certifications' },
             { num: '4', label: 'Core Domains' },
             { num: '100%', label: 'Self-Taught' },
           ].map((stat) => (
