@@ -1,35 +1,144 @@
-import { Mail, ExternalLink, MapPin, Sparkles, Award, Code2, ArrowRight, Smartphone, Rocket } from 'lucide-react';
+import {
+  ArrowRight,
+  Award,
+  BrainCircuit,
+  Braces,
+  Code2,
+  Database,
+  ExternalLink,
+  GitBranch,
+  Layers3,
+  Mail,
+  MapPin,
+  Radio,
+  Rocket,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  WalletCards,
+} from 'lucide-react';
 
-const PROJECTS = [
+type Project = {
+  name: string;
+  tag: string;
+  category: string;
+  icon: string;
+  color: string;
+  accent: string;
+  desc: string;
+  outcome: string;
+  tech: string[];
+  live: string;
+  repo: string;
+};
+
+const FEATURED_PROJECTS: Project[] = [
+  {
+    name: 'OpenAPI Forge',
+    tag: 'Developer Tool',
+    category: 'API Platform',
+    icon: '◈',
+    color: 'from-cyan-500 to-blue-600',
+    accent: 'text-cyan-300',
+    desc: 'Contract-first API workspace for OpenAPI validation, documentation preview, schema-derived mocks, versioned specifications and TypeScript SDK generation.',
+    outcome: 'Turns a raw API specification into a developer-ready workflow.',
+    tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
+    live: 'https://openapifrg-ewzpndbh.manus.space',
+    repo: 'https://github.com/AbbasFullstack/openapi-forge',
+  },
   {
     name: 'VaultX',
     tag: 'Web3 Wallet',
-    icon: '🔐',
-    color: 'from-purple-500 to-blue-600',
-    desc: 'Multi-chain crypto wallet - mnemonic creation, encrypted keystore, wallet import, live balances, transaction history aur 3 blockchains (Polygon, Ethereum, Base).',
-    tech: ['Next.js', 'ethers.js', 'Infura', 'TypeScript'],
+    category: 'Web3',
+    icon: '⌘',
+    color: 'from-violet-500 to-indigo-600',
+    accent: 'text-violet-300',
+    desc: 'Multi-chain testnet wallet with encrypted keystore flow, account import, live balances, activity history and documented provider proxy routes.',
+    outcome: 'Brings wallet UX, RPC security and API contracts into one testnet project.',
+    tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
     repo: 'https://github.com/AbbasFullstack/vaultx',
   },
   {
+    name: 'Abbas AI',
+    tag: 'AI SaaS',
+    category: 'Full Stack',
+    icon: '◌',
+    color: 'from-fuchsia-500 to-rose-600',
+    accent: 'text-fuchsia-300',
+    desc: 'Authenticated AI chat product with streaming responses, multi-conversation history, code rendering, account flows and a production database layer.',
+    outcome: 'A full SaaS-style build instead of a single chat-page demo.',
+    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth', 'OpenRouter'],
+    live: 'https://abbas-ai-eta.vercel.app',
+    repo: 'https://github.com/AbbasFullstack/abbas-ai',
+  },
+  {
+    name: 'OmniX',
+    tag: 'AI Workspace',
+    category: 'AI Engineering',
+    icon: '✦',
+    color: 'from-orange-500 to-red-600',
+    accent: 'text-orange-300',
+    desc: 'A multi-modal AI workspace with server routes for chat, audio, image, model and slides experiences, backed by Supabase user data.',
+    outcome: 'Shows orchestration across multiple AI capabilities in one product surface.',
+    tech: ['Next.js', 'Supabase', 'OpenRouter', 'Hugging Face', 'Tailwind'],
+    live: 'https://omnix-pi.vercel.app',
+    repo: 'https://github.com/AbbasFullstack/omnix',
+  },
+  {
     name: 'CryptoWatch',
-    tag: 'Full-Stack App',
-    icon: '⭐',
-    color: 'from-orange-500 to-amber-600',
-    desc: 'Personal crypto watchlist - Supabase auth, PostgreSQL with Row Level Security, live Binance WebSocket prices, interactive charts aur glassmorphism UI.',
-    tech: ['Next.js', 'Supabase', 'PostgreSQL', 'Recharts'],
+    tag: 'Realtime Finance',
+    category: 'Data Product',
+    icon: '↗',
+    color: 'from-emerald-500 to-teal-600',
+    accent: 'text-emerald-300',
+    desc: 'Personal crypto watchlist with Supabase authentication, PostgreSQL row-level security, Binance WebSocket prices and interactive coin charts.',
+    outcome: 'Combines per-user data, real-time streams and visual market exploration.',
+    tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
     repo: 'https://github.com/AbbasFullstack/cryptowatch',
   },
   {
+    name: 'FaucetX',
+    tag: 'Testnet Faucet',
+    category: 'Web3 Backend',
+    icon: '◒',
+    color: 'from-sky-500 to-cyan-600',
+    accent: 'text-sky-300',
+    desc: 'Testnet faucet workflow with claim and withdrawal API routes, account data, server-side transaction handling and testnet-only payout logic.',
+    outcome: 'Demonstrates backend flow design around Web3 interactions without using real funds.',
+    tech: ['Next.js', 'Supabase', 'ethers.js', 'Infura', 'API Routes'],
+    live: 'https://faucetx-theta.vercel.app',
+    repo: 'https://github.com/AbbasFullstack/faucetx',
+  },
+];
+
+const MORE_PROJECTS: Project[] = [
+  {
     name: 'Real-Time Crypto Tracker',
-    tag: 'Live Dashboard',
-    icon: '📈',
-    color: 'from-emerald-500 to-teal-600',
-    desc: 'Real-time crypto dashboard - Binance WebSocket streams, interactive Recharts graphs, coin detail pages aur premium glassmorphism design.',
-    tech: ['Next.js', 'WebSocket', 'Recharts', 'Tailwind'],
+    tag: 'Market Dashboard',
+    category: 'Realtime Data',
+    icon: '⌁',
+    color: 'from-amber-500 to-orange-600',
+    accent: 'text-amber-300',
+    desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, interactive charts, search and coin detail pages.',
+    outcome: 'A focused realtime data interface built around live market movement.',
+    tech: ['Next.js', 'WebSocket', 'Binance API', 'Recharts', 'TypeScript'],
     live: 'https://realtime-crypto-tracker.vercel.app',
     repo: 'https://github.com/AbbasFullstack/realtime-crypto-tracker',
+  },
+  {
+    name: 'CryptoAI',
+    tag: 'AI Assistant',
+    category: 'AI + Data',
+    icon: '◉',
+    color: 'from-blue-500 to-violet-600',
+    accent: 'text-blue-300',
+    desc: 'AI crypto assistant that enriches answers with live market context from Binance streams and market-data APIs through a server-side chat route.',
+    outcome: 'Connects an LLM-style interface to current crypto market data.',
+    tech: ['Next.js', 'Groq', 'Binance API', 'WebSocket', 'Tailwind'],
+    live: 'https://cryptoai-two.vercel.app',
+    repo: 'https://github.com/AbbasFullstack/cryptoai',
   },
 ];
 
@@ -44,253 +153,230 @@ const CERTS = [
 ];
 
 const SKILLS = [
-  { cat: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Recharts'] },
-  { cat: 'Backend', items: ['Node.js', 'Supabase', 'PostgreSQL', 'REST APIs', 'API Routes'] },
-  { cat: 'Web3', items: ['ethers.js', 'Wallet Security', 'Multi-Chain RPC', 'Mnemonics', 'Testnets'] },
-  { cat: 'Tools', items: ['Git & GitHub', 'Vercel', 'Codespaces', 'Termux', 'Binance API'] },
+  { icon: Code2, cat: 'Frontend', note: 'Interfaces that feel intentional', items: ['React 19', 'Next.js 16', 'Vite', 'TypeScript', 'Tailwind CSS 4', 'Responsive UI'] },
+  { icon: Braces, cat: 'Backend & APIs', note: 'Contracts, routes and typed clients', items: ['API Routes', 'Express', 'tRPC', 'REST + JSON-RPC', 'OpenAPI', 'TypeScript SDKs'] },
+  { icon: Database, cat: 'Data & Auth', note: 'User data with clear boundaries', items: ['PostgreSQL', 'MySQL / TiDB', 'Supabase RLS', 'Prisma', 'Drizzle ORM', 'OAuth + NextAuth'] },
+  { icon: BrainCircuit, cat: 'AI, Realtime & Web3', note: 'Modern product integrations', items: ['Streaming AI', 'WebSockets', 'ethers.js', 'Infura', 'Etherscan', 'Vitest'] },
 ];
+
+function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
+  return (
+    <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.035] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
+      <div className={`pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-gradient-to-br ${project.color} opacity-10 blur-3xl transition duration-500 group-hover:opacity-25`} />
+      <div className="relative flex h-full flex-col">
+        <div className="mb-5 flex items-start justify-between gap-4">
+          <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${project.color} text-xl font-bold text-white shadow-lg`}>
+            {project.icon}
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">{project.category}</p>
+            <span className={`mt-1 inline-flex rounded-full border border-white/10 bg-black/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${project.accent}`}>
+              {project.tag}
+            </span>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold tracking-tight text-white">{project.name}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-white/55">{project.desc}</p>
+        {!compact && (
+          <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/45">
+            <span className={`${project.accent} font-bold`}>Why it matters: </span>{project.outcome}
+          </div>
+        )}
+
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {project.tech.map((tech) => (
+            <span key={tech} className="rounded-md border border-white/[0.08] bg-black/20 px-2 py-1 text-[10px] font-semibold text-white/55">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-6 flex items-center gap-2 border-t border-white/[0.07] pt-4">
+          <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-bold text-black transition hover:bg-white/85">
+            <ExternalLink className="h-3.5 w-3.5" /> Live demo
+          </a>
+          <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
+            <Github className="h-3.5 w-3.5" /> Code
+          </a>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white relative">
-      {/* Ambient Background */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-orange-500/[0.07] blur-[140px] rounded-full" />
-        <div className="absolute top-1/3 -left-40 w-[400px] h-[400px] bg-purple-500/[0.05] blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 -right-40 w-[500px] h-[400px] bg-blue-500/[0.05] blur-[120px] rounded-full" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px]" />
+    <main className="min-h-screen bg-[#050505] text-white selection:bg-orange-400/30">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-40 left-1/2 h-[36rem] w-[52rem] -translate-x-1/2 rounded-full bg-orange-500/[0.10] blur-[160px]" />
+        <div className="absolute top-[32%] -left-52 h-96 w-96 rounded-full bg-violet-500/[0.08] blur-[145px]" />
+        <div className="absolute bottom-0 -right-52 h-[32rem] w-[32rem] rounded-full bg-cyan-500/[0.07] blur-[145px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.022)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.022)_1px,transparent_1px)] bg-[size:56px_56px]" />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-black/30 backdrop-blur-2xl">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center font-bold">
-              A
-            </div>
+      <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/45 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+          <a href="#top" className="flex items-center gap-2.5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 text-sm font-black shadow-lg shadow-orange-500/20">A</div>
             <span className="font-semibold tracking-tight">Abbas Hussain</span>
           </a>
-          <nav className="hidden sm:flex items-center gap-6 text-xs font-semibold text-white/60">
-            <a href="#about" className="hover:text-white transition">About</a>
-            <a href="#skills" className="hover:text-white transition">Skills</a>
-            <a href="#projects" className="hover:text-white transition">Projects</a>
-            <a href="#certs" className="hover:text-white transition">Certifications</a>
-            <a href="#contact" className="hover:text-white transition">Contact</a>
+          <nav className="hidden items-center gap-6 text-xs font-semibold text-white/60 md:flex" aria-label="Primary navigation">
+            <a href="#about" className="transition hover:text-white">About</a>
+            <a href="#skills" className="transition hover:text-white">Skills</a>
+            <a href="#work" className="transition hover:text-white">Work</a>
+            <a href="#certs" className="transition hover:text-white">Certifications</a>
+            <a href="#contact" className="transition hover:text-white">Contact</a>
           </nav>
-          <a href="https://github.com/AbbasFullstack" target="_blank" className="p-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
-            <Github className="w-4 h-4" />
+          <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="Open Abbas Hussain GitHub profile" className="rounded-xl border border-white/10 bg-white/[0.05] p-2.5 transition hover:bg-white/10">
+            <Github className="h-4 w-4" />
           </a>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative max-w-5xl mx-auto px-4 pt-20 pb-16 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-[11px] font-bold text-emerald-400 mb-8">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-          </span>
-          Open to Internships & Junior Roles
+      <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-20 text-center sm:pt-24">
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold text-emerald-400">
+          <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" /></span>
+          Open to internships & junior roles
         </div>
 
-        <div className="relative inline-block mb-8">
-          <div className="absolute -inset-3 rounded-full bg-orange-500/30 blur-2xl" />
-          <img
-            src="https://github.com/AbbasFullstack.png"
-            alt="Abbas Hussain"
-            className="relative w-28 h-28 rounded-full border-2 border-orange-500/50 object-cover"
-          />
+        <div className="relative mb-8 inline-block">
+          <div className="absolute -inset-4 rounded-full bg-orange-500/30 blur-2xl" />
+          <img src="https://github.com/AbbasFullstack.png" alt="Abbas Hussain" className="relative h-28 w-28 rounded-full border-2 border-orange-500/60 object-cover" />
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight bg-gradient-to-b from-white via-white to-white/30 bg-clip-text text-transparent mb-4">
-          Abbas Hussain
-        </h1>
-
-        <img
-          src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=600&size=22&pause=1000&color=F7931A&center=true&vCenter=true&width=700&lines=Full-Stack+Developer;Web3+Developer;freeCodeCamp+Certified"
-          alt="Typing"
-          className="mx-auto mb-6"
-        />
-
-        <p className="text-white/50 max-w-xl mx-auto mb-8 leading-relaxed">
-          16-year-old self-taught developer building <span className="text-white/80 font-semibold">production-ready apps from a mobile phone</span>.
-          3 deployed projects, 7 professional certifications, and a passion for blockchain! ⛓️
+        <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-orange-300">Full-stack developer · Pakistan</p>
+        <h1 className="mb-5 bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
+        <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+          I build practical products across <span className="font-semibold text-white/85">AI, API platforms, realtime data and Web3</span>—from a mobile-first development workflow using GitHub, Codespaces and Termux.
         </p>
 
-        <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
-          <a href="#projects" className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 font-bold shadow-xl shadow-orange-500/25 hover:scale-[1.02] transition-all">
-            <Rocket className="w-4 h-4" /> View Projects
-          </a>
-          <a href="#contact" className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-bold text-white/80 hover:bg-white/10 transition-all">
-            <Mail className="w-4 h-4" /> Contact
-          </a>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition hover:scale-[1.02]"><Rocket className="h-4 w-4" /> Explore work</a>
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/80 transition hover:bg-white/[0.10]"><Mail className="h-4 w-4" /> Contact</a>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { num: '3+', label: 'Deployed Projects' },
+            { num: '8', label: 'Verified Projects' },
             { num: '7', label: 'Certifications' },
-            { num: '3', label: 'Blockchains' },
+            { num: '4', label: 'Core Domains' },
             { num: '100%', label: 'Self-Taught' },
-          ].map(s => (
-            <div key={s.label} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 backdrop-blur-xl">
-              <p className="text-2xl font-bold text-orange-400">{s.num}</p>
-              <p className="text-[11px] text-white/40 mt-1">{s.label}</p>
+          ].map((stat) => (
+            <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-4 backdrop-blur-xl">
+              <p className="text-2xl font-bold text-orange-400">{stat.num}</p>
+              <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-white/35">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="relative max-w-5xl mx-auto px-4 py-12">
-        <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-orange-400" /> About Me
-        </h2>
-        <div className="bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 backdrop-blur-xl">
-          <p className="text-white/70 leading-relaxed mb-6">
-            I am a <span className="text-orange-400 font-semibold">self-taught full-stack and Web3 developer</span> from Pakistan.
-            I began my coding journey using only a mobile phone, leveraging GitHub Codespaces and Termux to build
-            <span className="text-white/90 font-semibold"> production-ready applications</span>. My work spans real-time crypto
-            dashboards, full-stack apps with authentication and databases, and a complete multi-chain Web3 wallet.
-            I am passionate about clean user interfaces, real-time data, and blockchain security — and I back my skills
-            with 7 professional certifications from freeCodeCamp, Microsoft, HubSpot and Binance Academy.
-          </p>
-          <div className="flex items-center gap-3 bg-orange-500/[0.08] border border-orange-500/20 rounded-2xl p-4">
-            <Smartphone className="w-5 h-5 text-orange-400 flex-shrink-0" />
-            <p className="text-xs text-orange-200/80 leading-relaxed">
-              <strong className="text-orange-300">Fun fact:</strong> Every project I have shipped was built entirely on a mobile phone - no laptop needed!
+      <section id="about" className="relative mx-auto max-w-6xl px-4 py-12">
+        <SectionLabel icon={Sparkles} text="About me" />
+        <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
+          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-7 backdrop-blur-xl sm:p-8">
+            <p className="leading-relaxed text-white/68">
+              I am a self-taught full-stack developer focused on building complete, usable products—not just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations and Web3 testnet workflows.
+            </p>
+            <p className="mt-4 leading-relaxed text-white/48">
+              I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section id="skills" className="relative max-w-5xl mx-auto px-4 py-12">
-        <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
-          <Code2 className="w-3.5 h-3.5 text-orange-400" /> Skills
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {SKILLS.map(group => (
-            <div key={group.cat} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 backdrop-blur-xl">
-              <h3 className="font-bold text-sm mb-4 text-orange-400">{group.cat}</h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map(item => (
-                  <span key={item} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-white/70">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="relative max-w-5xl mx-auto px-4 py-12">
-        <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
-          <Rocket className="w-3.5 h-3.5 text-orange-400" /> Featured Projects
-        </h2>
-        <div className="space-y-5">
-          {PROJECTS.map(p => (
-            <div key={p.name} className="group bg-white/[0.03] border border-white/[0.06] rounded-3xl p-6 backdrop-blur-xl hover:bg-white/[0.06] hover:border-white/[0.12] transition-all">
-              <div className="flex items-start gap-4 flex-wrap">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center text-2xl flex-shrink-0`}>
-                  {p.icon}
-                </div>
-                <div className="flex-1 min-w-[200px]">
-                  <div className="flex items-center gap-3 flex-wrap mb-2">
-                    <h3 className="text-lg font-bold">{p.name}</h3>
-                    <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-white/50 uppercase tracking-wider">
-                      {p.tag}
-                    </span>
-                  </div>
-                  <p className="text-sm text-white/50 leading-relaxed mb-4">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {p.tech.map(t => (
-                      <span key={t} className="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-semibold text-white/60">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    <a href={p.live} target="_blank" className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-600 text-xs font-bold hover:scale-[1.02] transition-all">
-                      <ExternalLink className="w-3.5 h-3.5" /> Live Demo
-                    </a>
-                    <a href={p.repo} target="_blank" className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-bold text-white/70 hover:bg-white/10 transition-all">
-                      <Github className="w-3.5 h-3.5" /> Source Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section id="certs" className="relative max-w-5xl mx-auto px-4 py-12">
-        <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
-          <Award className="w-3.5 h-3.5 text-orange-400" /> Certifications
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {CERTS.map(c => (
-            <a
-              key={c.title}
-              href={c.url}
-              target="_blank"
-              className="group bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 backdrop-blur-xl hover:bg-white/[0.06] hover:border-orange-500/30 transition-all"
-            >
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
-                  <Award className="w-5 h-5 text-orange-400" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-sm mb-1 group-hover:text-orange-300 transition">{c.title}</h3>
-                  <p className="text-[11px] text-white/40">{c.issuer} · {c.year}</p>
-                </div>
-                <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-orange-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="relative max-w-5xl mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-orange-500/10 to-amber-600/10 border border-orange-500/20 rounded-3xl p-10 text-center backdrop-blur-xl">
-          <h2 className="text-3xl font-bold mb-3">Let&apos;s Build Together! 🚀</h2>
-          <p className="text-white/50 max-w-md mx-auto mb-8">
-            Internship, collaboration ya sirf hello - mera inbox hamesha khula hai!
-          </p>
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            <a href="mailto:abbaswebdevelopers@gmail.com" className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 font-bold shadow-xl shadow-orange-500/25 hover:scale-[1.02] transition-all">
-              <Mail className="w-4 h-4" /> Email Me
-            </a>
-            <a href="https://github.com/AbbasFullstack" target="_blank" className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-bold text-white/80 hover:bg-white/10 transition-all">
-              <Github className="w-4 h-4" /> GitHub
-            </a>
+          <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7 backdrop-blur-xl">
+            <Smartphone className="mb-5 h-6 w-6 text-orange-300" />
+            <p className="text-sm font-bold text-orange-200">Mobile-first builder</p>
+            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was developed through a mobile-first workflow with GitHub, Codespaces and Termux.</p>
           </div>
-          <p className="text-[11px] text-white/30 mt-6 flex items-center justify-center gap-1.5">
-            <MapPin className="w-3 h-3" /> Pakistan · Remote-friendly
-          </p>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative border-t border-white/5 py-8">
-        <p className="text-center text-[11px] text-white/30">
-          © 2026 Abbas Hussain · Built with Next.js on a mobile phone 📱 · Made with ❤️
-        </p>
-      </footer>
+      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
+        <SectionLabel icon={Layers3} text="Capabilities" />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {SKILLS.map((group) => {
+            const Icon = group.icon;
+            return (
+              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
+                <div className="mb-5 flex items-start gap-3">
+                  <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
+                  <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => <span key={item} className="rounded-lg border border-white/[0.08] bg-black/20 px-3 py-1.5 text-xs font-semibold text-white/65">{item}</span>)}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
+        <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Eight projects. Four engineering lanes.</h2></div>
+          <p className="max-w-sm text-sm leading-relaxed text-white/45">Every card includes a verified live build and source repository.</p>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-2">
+          {FEATURED_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} />)}
+        </div>
+
+        <div className="mt-12 border-t border-white/[0.08] pt-10">
+          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Additional builds</p><p className="mt-1 text-sm text-white/45">Focused experiments in market data and AI context.</p></div></div>
+          <div className="grid gap-4 md:grid-cols-2">{MORE_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
+        </div>
+      </section>
+
+      <section className="relative mx-auto max-w-6xl px-4 py-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          <ProofCard icon={ShieldCheck} title="Security-aware" text="Environment variables, server-side provider routes and testnet-only Web3 demonstrations." />
+          <ProofCard icon={Radio} title="Realtime systems" text="WebSocket market streams, live activity data and responsive chart experiences." />
+          <ProofCard icon={WalletCards} title="Product thinking" text="Auth, databases, API contracts and frontend flows designed as connected systems." />
+        </div>
+      </section>
+
+      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
+        <SectionLabel icon={Award} text="Certifications" />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {CERTS.map((cert) => (
+            <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
+              <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Award className="h-5 w-5" /></div>
+              <div className="min-w-0 flex-1"><h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3><p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p></div>
+              <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-1 group-hover:text-orange-300" />
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="relative mx-auto max-w-6xl px-4 py-16">
+        <div className="overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/[0.13] via-amber-600/[0.08] to-transparent p-8 text-center backdrop-blur-xl sm:p-12">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-200/70">Let&apos;s build something useful</p>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:abbaswebdevelopers@gmail.com" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85"><Mail className="h-4 w-4" /> Email me</a>
+            <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]"><Github className="h-4 w-4" /> GitHub</a>
+          </div>
+          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
+        </div>
+      </section>
+
+      <footer className="relative border-t border-white/[0.06] py-8"><p className="text-center text-[11px] text-white/30">© 2026 Abbas Hussain · Built with Next.js through a mobile-first workflow.</p></footer>
     </main>
   );
 }
 
-function Github(props: any) {
+function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: string }) {
+  return <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/40"><Icon className="h-3.5 w-3.5 text-orange-300" /> {text}</p>;
+}
+
+function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
+  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
+}
+
+function Github(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 0 6 5.5 6-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
       <path d="M9 18c-4.51 2-5-2-7-2" />
     </svg>
   );
