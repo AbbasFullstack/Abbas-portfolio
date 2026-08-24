@@ -29,8 +29,9 @@ type Project = {
   desc: string;
   outcome: string;
   tech: string[];
-  live: string;
-  repo: string;
+  live?: string;
+  repo?: string;
+  status?: string;
 };
 
 const FEATURED_PROJECTS: Project[] = [
@@ -46,6 +47,19 @@ const FEATURED_PROJECTS: Project[] = [
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
     live: 'https://openapifrg-ewzpndbh.manus.space',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
+  },
+  {
+    name: 'PulseBoard AI',
+    tag: 'SaaS Analytics Foundation',
+    category: 'Full-Stack SaaS',
+    icon: '◍',
+    color: 'from-cyan-500 to-violet-600',
+    accent: 'text-cyan-300',
+    desc: 'Customer and SaaS workspace foundation with authenticated workspaces, customer and pipeline views, security-conscious empty states and a responsive command-center UI.',
+    outcome: 'Demonstrates multi-tenant product thinking before unconfigured AI, reporting and integration modules are presented as complete.',
+    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
+    repo: 'https://github.com/AbbasFullstack/PulseBoard-AI',
+    status: 'Foundation build · no live deployment listed',
   },
   {
     name: 'VaultX',
@@ -115,6 +129,18 @@ const FEATURED_PROJECTS: Project[] = [
 ];
 
 const MORE_PROJECTS: Project[] = [
+  {
+    name: 'DevCV AI — Preview',
+    tag: 'Resume Intelligence Preview',
+    category: 'AI Product Design',
+    icon: '◇',
+    color: 'from-fuchsia-500 to-violet-600',
+    accent: 'text-fuchsia-300',
+    desc: 'Privacy-first resume intelligence workspace with target-role selection, editable resume review, prioritized improvement suggestions and a server-side analysis contract.',
+    outcome: 'Shows a thoughtful AI product foundation that distinguishes local preview feedback from real provider-backed analysis.',
+    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'RLS-ready schema', 'AI contract'],
+    status: 'Preview · secure Supabase/Auth/AI configuration in progress',
+  },
   {
     name: 'Real-Time Crypto Tracker',
     tag: 'Market Dashboard',
@@ -196,14 +222,21 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-2 border-t border-white/[0.07] pt-4">
-          <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-bold text-black transition hover:bg-white/85">
-            <ExternalLink className="h-3.5 w-3.5" /> Live demo
-          </a>
-          <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
-            <Github className="h-3.5 w-3.5" /> Code
-          </a>
-        </div>
+        {(project.live || project.repo || project.status) && (
+          <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-white/[0.07] pt-4">
+            {project.live && (
+              <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-bold text-black transition hover:bg-white/85">
+                <ExternalLink className="h-3.5 w-3.5" /> Live demo
+              </a>
+            )}
+            {project.repo && (
+              <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
+                <Github className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
+              </a>
+            )}
+            {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-200/85">{project.status}</span>}
+          </div>
+        )}
       </div>
     </article>
   );
@@ -269,7 +302,7 @@ export default function Home() {
 
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { num: '8', label: 'Verified Projects' },
+            { num: '10', label: 'Selected Projects' },
             { num: '10', label: 'Certifications' },
             { num: '4', label: 'Core Domains' },
             { num: '100%', label: 'Self-Taught' },
@@ -323,8 +356,8 @@ export default function Home() {
 
       <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Eight projects. Four engineering lanes.</h2></div>
-          <p className="max-w-sm text-sm leading-relaxed text-white/45">Every card includes a verified live build and source repository.</p>
+          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ten projects. Five engineering lanes.</h2></div>
+          <p className="max-w-sm text-sm leading-relaxed text-white/45">Each card includes a verified live build, public source or an explicit preview status.</p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">

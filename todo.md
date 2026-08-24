@@ -8,3 +8,4 @@
 - [x] Replace the hero profile image with the user-provided Abbasdev.png asset, verify it, and publish after confirmation.
 - [x] Add verified Binance Academy course cards for BNB Chain Developer Specialization, AWS Blockchain Node Runners for BNB Chain, and Offchain Computing Using TEE Coprocessors.
 - [x] Verify and publish the updated portfolio certifications section after user confirmation.
+- [x] Add approved, evidence-bounded PulseBoard AI and DevCV AI — Preview project cards; update project-count copy; verify; and push the approved portfolio expansion.
