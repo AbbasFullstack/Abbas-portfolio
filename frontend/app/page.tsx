@@ -49,6 +49,19 @@ const FEATURED_PROJECTS: Project[] = [
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
   },
   {
+    name: 'DevDesk AI',
+    tag: 'Private Code Intelligence',
+    category: 'AI Developer Tool',
+    icon: '⌬',
+    color: 'from-cyan-500 to-violet-600',
+    accent: 'text-cyan-300',
+    desc: 'Authenticated developer workspace for importing GitHub repositories or ZIP projects, creating safe source manifests, and asking source-backed code questions with cited file paths.',
+    outcome: 'Combines repository context, secure server-side AI routing and developer workflow design in one full-stack product.',
+    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
+    live: 'https://dev-desk-ai-phi.vercel.app',
+    repo: 'https://github.com/Muneeza2071/DevDesk-AI-',
+  },
+  {
     name: 'PulseBoard AI',
     tag: 'SaaS Analytics Foundation',
     category: 'Full-Stack SaaS',
@@ -302,7 +315,7 @@ export default function Home() {
 
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { num: '10', label: 'Selected Projects' },
+            { num: '11', label: 'Selected Projects' },
             { num: '10', label: 'Certifications' },
             { num: '4', label: 'Core Domains' },
             { num: '100%', label: 'Self-Taught' },
@@ -356,7 +369,7 @@ export default function Home() {
 
       <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ten projects. Five engineering lanes.</h2></div>
+          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Eleven projects. Five engineering lanes.</h2></div>
           <p className="max-w-sm text-sm leading-relaxed text-white/45">Each card includes a verified live build, public source or an explicit preview status.</p>
         </div>
 
