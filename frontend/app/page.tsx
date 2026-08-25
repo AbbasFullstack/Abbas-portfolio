@@ -9,7 +9,6 @@ import {
   ExternalLink,
   GitBranch,
   Layers3,
-  Mail,
   MapPin,
   Radio,
   Rocket,
@@ -34,7 +33,7 @@ type Project = {
   status?: string;
 };
 
-const FEATURED_PROJECTS: Project[] = [
+const PUBLIC_PROJECTS: Project[] = [
   {
     name: 'OpenAPI Forge',
     tag: 'Developer Tool',
@@ -59,20 +58,20 @@ const FEATURED_PROJECTS: Project[] = [
     outcome: 'Combines repository context, secure server-side AI routing and developer workflow design in one full-stack product.',
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
     live: 'https://dev-desk-ai-phi.vercel.app',
-    repo: 'https://github.com/Muneeza2071/DevDesk-AI-',
+    repo: 'https://github.com/AbbasFullstack/DevDesk-AI-',
   },
   {
     name: 'PulseBoard AI',
-    tag: 'SaaS Analytics Foundation',
-    category: 'Full-Stack SaaS',
+    tag: 'Workspace CRM',
+    category: 'Full-Stack Product',
     icon: '◍',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
-    desc: 'Customer and SaaS workspace foundation with authenticated workspaces, customer and pipeline views, security-conscious empty states and a responsive command-center UI.',
-    outcome: 'Demonstrates multi-tenant product thinking before unconfigured AI, reporting and integration modules are presented as complete.',
+    desc: 'Workspace-scoped customer CRM and pipeline app with Supabase Auth, RLS-protected data, server-side AI boundaries, and manual integration foundations.',
+    outcome: 'Demonstrates caller-bound workspace onboarding, real customer and deal flows, and calculated workspace roll-ups.',
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
+    live: 'https://pulseboard-ai.vercel.app',
     repo: 'https://github.com/AbbasFullstack/PulseBoard-AI',
-    status: 'Foundation build · no live deployment listed',
   },
   {
     name: 'VaultX',
@@ -189,10 +188,13 @@ const CERTS = [
   { title: 'Data Visualization', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/data-visualization' },
   { title: 'Legacy Front-End', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/legacy-front-end' },
   { title: 'SEO Certified', issuer: 'HubSpot Academy', year: '2025', url: 'https://app-na2.hubspot.com/academy/achievements/5xkd22gx/en/1/abbas-hussain/seo-certified' },
-  { title: 'AI Unlocked: Agents and Skills', issuer: 'Binance Academy', year: '2025', url: 'https://www.binance.com/en/academy/track/ai-unlocked-agents-and-skills' },
-  { title: 'BNB Chain Developer Specialization', issuer: 'Binance Academy + BNB Chain', year: '2026', url: 'https://www.binance.com/en/academy/track/bnb-chain-developer-specialization' },
-  { title: 'AWS Node Runners for BNB Chain', issuer: 'Binance Academy + AWS', year: '2026', url: 'https://www.binance.com/en/academy/track/aws-node-runners' },
-  { title: 'Offchain Computing using TEE Coprocessors', issuer: 'Binance Academy + Marlin', year: '2026', url: 'https://www.binance.com/en/academy/track/offchain-computing-using-tee-coprocessors' },
+];
+
+const FEATURED_ORDER = ['DevDesk AI', 'VaultX', 'CryptoWatch', 'PulseBoard AI'];
+const FEATURED_PROJECTS = FEATURED_ORDER.flatMap((name) => PUBLIC_PROJECTS.filter((project) => project.name === name));
+const ADDITIONAL_PROJECTS = [
+  ...PUBLIC_PROJECTS.filter((project) => !FEATURED_ORDER.includes(project.name)),
+  ...MORE_PROJECTS,
 ];
 
 const SKILLS = [
@@ -278,9 +280,15 @@ export default function Home() {
             <a href="#certs" className="transition hover:text-white">Certifications</a>
             <a href="#contact" className="transition hover:text-white">Contact</a>
           </nav>
-          <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="Open Abbas Hussain GitHub profile" className="rounded-xl border border-white/10 bg-white/[0.05] p-2.5 transition hover:bg-white/10">
-            <Github className="h-4 w-4" />
-          </a>
+          <div className="flex items-center gap-2">
+            <nav className="flex items-center gap-3 text-[11px] font-semibold text-white/70 md:hidden" aria-label="Compact navigation">
+              <a href="#work" className="transition hover:text-white">Work</a>
+              <a href="#contact" className="transition hover:text-white">Contact</a>
+            </nav>
+            <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="Open Abbas Hussain GitHub profile" className="rounded-xl border border-white/10 bg-white/[0.05] p-2.5 transition hover:bg-white/10">
+              <Github className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </header>
 
@@ -292,37 +300,35 @@ export default function Home() {
 
         <div className="relative mb-8 flex justify-center">
           <div className="absolute -inset-6 rounded-full bg-orange-500/20 blur-3xl" />
-          <Image 
-            src="/abbas-dev-card.png" 
-            alt="Google Developer Card - Abbas Hussain" 
-            width={800} 
-            height={500} 
-            priority 
-            className="relative w-full max-w-xl rounded-3xl border border-white/10 shadow-2xl shadow-orange-500/10" 
+          <Image
+            src="/Abbasdev.png"
+            alt="Portrait of Abbas Hussain"
+            width={460}
+            height={460}
+            priority
+            className="relative aspect-square w-full max-w-[18rem] rounded-3xl border border-white/10 object-cover shadow-2xl shadow-orange-500/10"
           />
         </div>
 
         <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-orange-300">Full-stack developer · Pakistan</p>
         <h1 className="mb-5 bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
         <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          I build practical products across <span className="font-semibold text-white/85">AI, API platforms, realtime data and Web3</span>—from a mobile-first development workflow using GitHub, Codespaces and Termux.
+          I build secure, data-driven web applications with <span className="font-semibold text-white/85">Next.js, React, TypeScript, Supabase, PostgreSQL, and APIs</span>.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition hover:scale-[1.02]"><Rocket className="h-4 w-4" /> Explore work</a>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/80 transition hover:bg-white/[0.10]"><Mail className="h-4 w-4" /> Contact</a>
+          <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition hover:scale-[1.02]"><Rocket className="h-4 w-4" /> View featured work</a>
+          <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/80 transition hover:bg-white/[0.10]"><ExternalLink className="h-4 w-4" /> Connect on LinkedIn</a>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-3">
           {[
-            { num: '11', label: 'Selected Projects' },
-            { num: '10', label: 'Certifications' },
-            { num: '4', label: 'Core Domains' },
-            { num: '100%', label: 'Self-Taught' },
+            { label: '4 verified featured projects' },
+            { label: 'Live demos and public source' },
+            { label: 'Auth, data and API boundaries' },
           ].map((stat) => (
             <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-4 backdrop-blur-xl">
-              <p className="text-2xl font-bold text-orange-400">{stat.num}</p>
-              <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-white/35">{stat.label}</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-orange-200/90">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -369,8 +375,8 @@ export default function Home() {
 
       <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div><SectionLabel icon={Rocket} text="Selected work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Eleven projects. Five engineering lanes.</h2></div>
-          <p className="max-w-sm text-sm leading-relaxed text-white/45">Each card includes a verified live build, public source or an explicit preview status.</p>
+          <div><SectionLabel icon={Rocket} text="Featured work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Four projects. Clear full-stack proof.</h2></div>
+          <p className="max-w-sm text-sm leading-relaxed text-white/45">These projects match the public GitHub showcase and link to a live build or source repository.</p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
@@ -378,8 +384,8 @@ export default function Home() {
         </div>
 
         <div className="mt-12 border-t border-white/[0.08] pt-10">
-          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Additional builds</p><p className="mt-1 text-sm text-white/45">Focused experiments in market data and AI context.</p></div></div>
-          <div className="grid gap-4 md:grid-cols-2">{MORE_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
+          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Additional public builds</p><p className="mt-1 text-sm text-white/45">Focused experiments, API tools, market data and AI context.</p></div></div>
+          <div className="grid gap-4 md:grid-cols-2">{ADDITIONAL_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
         </div>
       </section>
 
@@ -392,7 +398,7 @@ export default function Home() {
       </section>
 
       <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
-        <SectionLabel icon={Award} text="Certifications" />
+        <SectionLabel icon={Award} text="Verified credentials" />
         <div className="grid gap-4 sm:grid-cols-2">
           {CERTS.map((cert) => (
             <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
@@ -410,7 +416,7 @@ export default function Home() {
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="mailto:abbaswebdevelopers@gmail.com" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85"><Mail className="h-4 w-4" /> Email me</a>
+            <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85"><ExternalLink className="h-4 w-4" /> Connect on LinkedIn</a>
             <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]"><Github className="h-4 w-4" /> GitHub</a>
           </div>
           <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
