@@ -6,6 +6,9 @@ const layout = readFileSync(new URL('./layout.tsx', import.meta.url), 'utf8');
 const required = [
   'https://github.com/AbbasFullstack/DevDesk-AI-',
   'https://pulseboard-ai.vercel.app',
+  'DevCV AI — Private Beta',
+  'https://devcv-ai-blue.vercel.app',
+  'live AI verification-gated',
   'Four projects. Clear full-stack proof.',
   'Verified credentials',
   'Connect on LinkedIn',

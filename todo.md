@@ -10,3 +10,4 @@
 - [x] Verify and publish the updated portfolio certifications section after user confirmation.
 - [x] Add approved, evidence-bounded PulseBoard AI and DevCV AI — Preview project cards; update project-count copy; verify; and push the approved portfolio expansion.
 - [x] Add approved DevDesk AI featured project card with verified live/source links; update project counts; verify; and push the portfolio update.
+- [x] Add the approved truthful DevCV AI Private Beta card with the live demo URL, verified tech stack, and explicit account-verification-gated AI disclosure; then verify and publish the public portfolio update.

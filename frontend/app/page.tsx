@@ -142,16 +142,17 @@ const PUBLIC_PROJECTS: Project[] = [
 
 const MORE_PROJECTS: Project[] = [
   {
-    name: 'DevCV AI — Preview',
-    tag: 'Resume Intelligence Preview',
-    category: 'AI Product Design',
+    name: 'DevCV AI — Private Beta',
+    tag: 'Private Beta',
+    category: 'AI + Privacy',
     icon: '◇',
     color: 'from-fuchsia-500 to-violet-600',
     accent: 'text-fuchsia-300',
-    desc: 'Privacy-first resume intelligence workspace with target-role selection, editable resume review, prioritized improvement suggestions and a server-side analysis contract.',
-    outcome: 'Shows a thoughtful AI product foundation that distinguishes local preview feedback from real provider-backed analysis.',
-    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'RLS-ready schema', 'AI contract'],
-    status: 'Preview · secure Supabase/Auth/AI configuration in progress',
+    desc: 'Privacy-first resume workspace with protected authentication, owner-scoped data controls, and explicit resume version save, load, and delete actions.',
+    outcome: 'Demonstrates privacy-aware AI product foundations without automatic raw-resume storage or overstating unverified AI capability.',
+    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
+    live: 'https://devcv-ai-blue.vercel.app',
+    status: 'Private Beta · live AI verification-gated',
   },
   {
     name: 'Real-Time Crypto Tracker',
