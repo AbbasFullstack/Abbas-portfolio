@@ -11,6 +11,10 @@ const required = [
   'live AI verification-gated',
   'Four projects. Clear full-stack proof.',
   'Verified credentials',
+  'Back-End Development and APIs',
+  'https://freecodecamp.org/certification/abbashussain/backend-development-and-apis-v9',
+  'B1 English for Developers (Beta)',
+  'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers',
   'Connect on LinkedIn',
 ];
 
