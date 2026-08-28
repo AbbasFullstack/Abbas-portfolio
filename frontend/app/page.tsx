@@ -183,7 +183,7 @@ const MORE_PROJECTS: Project[] = [
 ];
 
 const CERTS = [
-  { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://freecodecamp.org/certification/abbashussain/backend-development-and-apis-v9' },
+  { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9' },
   { title: 'B1 English for Developers (Beta)', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers' },
   { title: 'Foundational C# with Microsoft', issuer: 'freeCodeCamp + Microsoft', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft' },
   { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/responsive-web-design' },
