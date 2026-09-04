@@ -185,6 +185,7 @@ const MORE_PROJECTS: Project[] = [
 
 const CERTS = [
   { title: 'CS50x: Introduction to Computer Science', issuer: 'Harvard University / CS50', year: '2026', url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01' },
+  { title: 'Python', issuer: 'Kaggle', year: 'September 4, 2026', url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python' },
   { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9' },
   { title: 'B1 English for Developers (Beta)', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers' },
   { title: 'Foundational C# with Microsoft', issuer: 'freeCodeCamp + Microsoft', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft' },

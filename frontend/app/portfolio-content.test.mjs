@@ -13,6 +13,8 @@ const required = [
   'Verified credentials',
   'CS50x: Introduction to Computer Science',
   'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
+  "{ title: 'Python', issuer: 'Kaggle', year: 'September 4, 2026'",
+  'https://www.kaggle.com/learn/certification/abbashussaindev/python',
   'Back-End Development and APIs',
   'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
   'B1 English for Developers (Beta)',
