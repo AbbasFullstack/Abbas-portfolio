@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const page = readFileSync(new URL('./page.tsx', import.meta.url), 'utf8');
 const layout = readFileSync(new URL('./layout.tsx', import.meta.url), 'utf8');
@@ -18,6 +18,9 @@ const required = [
   'B1 English for Developers (Beta)',
   'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers',
   'Connect on LinkedIn',
+  'Download CV',
+  '/Abbas-Hussain-Full-Stack-Developer-CV.pdf',
+  'Abbas-Hussain-Full-Stack-Developer-CV.pdf',
 ];
 
 const forbidden = [
@@ -39,6 +42,9 @@ for (const value of forbidden) {
 
 if (!layout.includes('Abbas Hussain | Full-Stack Developer')) {
   throw new Error('Recruiter-facing metadata title is missing.');
+}
+if (!existsSync(new URL('../public/Abbas-Hussain-Full-Stack-Developer-CV.pdf', import.meta.url))) {
+  throw new Error('Downloadable CV PDF asset is missing.');
 }
 
 console.log('Portfolio content contract passed.');
