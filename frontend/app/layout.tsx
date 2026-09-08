@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abbas Hussain | Full-Stack Developer",
-  description: "Self-taught full-stack developer building secure, data-driven web applications with Next.js, React, TypeScript, Supabase, PostgreSQL, and APIs.",
+  title: "Abbas Hussain | Full-Stack Developer | Web3 & AI",
+  description: "I build secure, data-driven web applications with Next.js, React, TypeScript, Supabase, and PostgreSQL.",
+  keywords: ["Full-Stack Developer", "Web3", "AI", "Next.js", "React", "TypeScript", "Supabase", "PostgreSQL"],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
