@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build outputs
+# Build artifacts
 dist/
 build/
 .next/
@@ -12,14 +12,11 @@ out/
 .env.local
 .env.*
 
-# IDE files
+# IDE specific
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Logs
-*.log
 
 # Python
 __pycache__/
@@ -31,36 +28,90 @@ env/
 venv/
 .venv/
 pip-log.txt
-pip-selfcheck.json
-.pytest_cache/
+pip-delete-this-directory.txt
+.tox/
 .coverage
-htmlcov/
-.mypy_cache/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+*.tmp
 
-# Node.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Logs
+*.log
 
 # OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Temporary files
-*.tmp
-*.temp
-*.bak
+# Testing
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
 
-# Archives
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+node_modules/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Coverage
+.coverage*
+
+# Local configuration
+config/local.json
+config/local.yaml
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for web-server logs
+logs
+*.log
+
+# Debug files
+*.trace
+
+# Temporary folders
+tmp/
+temp/
+
+# Compiled and build artifacts
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Compressed files
 *.zip
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.7z
-*.rar
 *.gz
+*.tar
+*.tgz
 *.bz2
 *.xz
+*.7z
+*.rar
 *.zst
 *.lz4
 *.lzh
@@ -71,3 +122,15 @@ Thumbs.db
 *.Z
 *.lz
 *.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+
+# Other common ignores
+*.swp
+*.swo
+*.tmp
+*~
+.DS_Store
+Thumbs.db
