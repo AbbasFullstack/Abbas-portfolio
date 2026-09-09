@@ -199,70 +199,70 @@ const CERTS = [
     issuer: 'Google for Education', 
     year: '2026', 
     url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
-    logo: 'google'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
   },
   { 
     title: 'Build student inquiry skills', 
     issuer: 'Google for Education', 
     year: '2026', 
     url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
-    logo: 'google'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
   },
   { 
     title: 'CS50x: Introduction to Computer Science', 
     issuer: 'Harvard University', 
     year: '2026', 
     url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
-    logo: 'harvard'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/harvard.svg'
   },
   { 
     title: 'Claude 101', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
-    logo: 'anthropic'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Claude Code 101', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
-    logo: 'anthropic'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Model Context Protocol: Advanced Topics', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157',
-    logo: 'anthropic'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'AI Fluency for Creative Work', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
-    logo: 'anthropic'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Collaborate with pull requests in Azure Repos', 
     issuer: 'Microsoft', 
     year: '2026', 
     url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
-    logo: 'microsoft'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg'
   },
   { 
     title: 'Back-End Development and APIs', 
     issuer: 'freeCodeCamp', 
     year: '2026', 
     url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
-    logo: 'freecodecamp'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freecodecamp.svg'
   },
   { 
     title: 'Python', 
     issuer: 'Kaggle', 
     year: '2026', 
     url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
-    logo: 'kaggle'
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg'
   },
 ];
 
@@ -485,7 +485,7 @@ export default function Home() {
             <article key={cert.title} className="group flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
               <div className="flex items-start gap-3">
                 <img 
-                  src={`https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${cert.logo}.svg`} 
+                  src={cert.logo} 
                   alt={`${cert.issuer} logo`}
                   className="h-10 w-10 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5"
                 />
