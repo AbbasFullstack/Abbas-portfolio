@@ -187,6 +187,14 @@ const CERTS = [
   { title: 'CS50x: Introduction to Computer Science', issuer: 'Harvard University / CS50', year: '2026', url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01' },
   { title: 'Python', issuer: 'Kaggle', year: 'September 4, 2026', url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python' },
   { title: 'Claude 101', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52' },
+  { title: 'Claude Code 101', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7' },
+  { title: 'Introduction to Claude Cowork', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/7fcbab40e6bf8aeeadd24874e3dac946' },
+  { title: 'Claude Code in Action', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/43d443e168e01edae03c2039c1831281' },
+  { title: 'Introduction to Model Context Protocol', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/9676641c4aac393d2e91a989e128fdd3' },
+  { title: 'Model Context Protocol: Advanced Topics', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157' },
+  { title: 'Deploying Claude Enterprise with Confidence: The five decisions that shape your rollout', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/c716867add39bcae974cabfbdbdcd8c4' },
+  { title: 'AI Fluency: Framework & Foundations', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/3df5bd13c69a50bb44afc1689ea0008a' },
+  { title: "Claude with Google Cloud's Vertex AI", issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/8f42d461fe0553a1f7f001944e12fdff' },
   { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9' },
   { title: 'B1 English for Developers (Beta)', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers' },
   { title: 'Foundational C# with Microsoft', issuer: 'freeCodeCamp + Microsoft', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft' },
@@ -414,7 +422,7 @@ export default function Home() {
         <div className="grid gap-4 sm:grid-cols-2">
           {CERTS.map((cert) => (
             <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
-              <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Award className="h-5 w-5" /></div>
+              <CredentialMark issuer={cert.issuer} title={cert.title} />
               <div className="min-w-0 flex-1"><h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3><p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p></div>
               <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-1 group-hover:text-orange-300" />
             </a>
@@ -437,6 +445,31 @@ export default function Home() {
 
       <footer className="relative border-t border-white/[0.06] py-8"><p className="text-center text-[11px] text-white/30">© 2026 Abbas Hussain · Built with Next.js through a mobile-first workflow.</p></footer>
     </main>
+  );
+}
+
+function CredentialMark({ issuer, title }: { issuer: string; title: string }) {
+  const normalized = `${issuer} ${title}`.toLowerCase();
+  const brand = normalized.includes('claude') || normalized.includes('anthropic')
+    ? { mark: '✳', label: 'Claude Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
+    : normalized.includes('harvard') || normalized.includes('cs50')
+      ? { mark: 'H', label: 'Harvard CS50', classes: 'border-red-300/25 bg-red-300/10 text-red-200' }
+      : normalized.includes('kaggle') || normalized.includes('python')
+        ? { mark: 'K', label: 'Kaggle', classes: 'border-sky-300/25 bg-sky-300/10 text-sky-200' }
+        : normalized.includes('freecodecamp')
+          ? { mark: 'ƒ', label: 'freeCodeCamp', classes: 'border-green-300/25 bg-green-300/10 text-green-200' }
+          : normalized.includes('microsoft')
+            ? { mark: 'M', label: 'Microsoft', classes: 'border-blue-300/25 bg-blue-300/10 text-blue-200' }
+            : normalized.includes('google')
+              ? { mark: 'G', label: 'Google', classes: 'border-yellow-300/25 bg-yellow-300/10 text-yellow-200' }
+              : normalized.includes('hubspot')
+                ? { mark: 'H', label: 'HubSpot Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
+                : { mark: '✓', label: issuer, classes: 'border-white/15 bg-white/[0.06] text-white/75' };
+
+  return (
+    <div aria-label={`${brand.label} credential`} title={brand.label} className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border text-lg font-black shadow-inner ${brand.classes}`}>
+      <span aria-hidden="true">{brand.mark}</span>
+    </div>
   );
 }
 
