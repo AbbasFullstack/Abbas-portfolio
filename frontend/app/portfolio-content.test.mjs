@@ -29,6 +29,16 @@ const required = [
   'Abbas-Hussain-Full-Stack-Developer-CV.pdf',
 ];
 
+if (!page.includes('<CredentialMark issuer={cert.issuer} title={cert.title} />')) {
+  throw new Error('Credential cards must use the deployment-safe CredentialMark component.');
+}
+
+for (const unstableLogoRef of ['simple-icons', 'cdn.jsdelivr', 'cert.logo']) {
+  if (page.includes(unstableLogoRef)) {
+    throw new Error(`Unstable certificate logo reference remains: ${unstableLogoRef}`);
+  }
+}
+
 const forbidden = [
   'abbas-dev-card.png',
   'Muneeza2071/DevDesk-AI-',
