@@ -194,17 +194,76 @@ const MORE_PROJECTS: Project[] = [
 ];
 
 const CERTS = [
-  { title: 'CS50x: Introduction to Computer Science', issuer: 'Harvard University / CS50', year: '2026', url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01' },
-  { title: 'Python', issuer: 'Kaggle', year: 'September 4, 2026', url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python' },
-  { title: 'Claude 101', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52' },
-  { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9' },
-  { title: 'B1 English for Developers (Beta)', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers' },
-  { title: 'Foundational C# with Microsoft', issuer: 'freeCodeCamp + Microsoft', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft' },
-  { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/responsive-web-design' },
-  { title: 'Front-End Development Libraries', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/front-end-development-libraries' },
-  { title: 'Data Visualization', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/data-visualization' },
-  { title: 'Legacy Front-End', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/legacy-front-end' },
-  { title: 'SEO Certified', issuer: 'HubSpot Academy', year: '2025', url: 'https://app-na2.hubspot.com/academy/achievements/5xkd22gx/en/1/abbas-hussain/seo-certified' },
+  { 
+    title: 'Introduction to Gemini for Education', 
+    issuer: 'Google for Education', 
+    year: '2026', 
+    url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
+    logo: 'google'
+  },
+  { 
+    title: 'Build student inquiry skills', 
+    issuer: 'Google for Education', 
+    year: '2026', 
+    url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
+    logo: 'google'
+  },
+  { 
+    title: 'CS50x: Introduction to Computer Science', 
+    issuer: 'Harvard University', 
+    year: '2026', 
+    url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
+    logo: 'harvard'
+  },
+  { 
+    title: 'Claude 101', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
+    logo: 'anthropic'
+  },
+  { 
+    title: 'Claude Code 101', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
+    logo: 'anthropic'
+  },
+  { 
+    title: 'Model Context Protocol: Advanced Topics', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157',
+    logo: 'anthropic'
+  },
+  { 
+    title: 'AI Fluency for Creative Work', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
+    logo: 'anthropic'
+  },
+  { 
+    title: 'Collaborate with pull requests in Azure Repos', 
+    issuer: 'Microsoft', 
+    year: '2026', 
+    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
+    logo: 'microsoft'
+  },
+  { 
+    title: 'Back-End Development and APIs', 
+    issuer: 'freeCodeCamp', 
+    year: '2026', 
+    url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
+    logo: 'freecodecamp'
+  },
+  { 
+    title: 'Python', 
+    issuer: 'Kaggle', 
+    year: '2026', 
+    url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
+    logo: 'kaggle'
+  },
 ];
 
 const FEATURED_ORDER = ['DevDesk AI', 'VaultX', 'CryptoWatch', 'PulseBoard AI'];
@@ -421,13 +480,29 @@ export default function Home() {
 
       <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Award} text="Verified credentials" />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CERTS.map((cert) => (
-            <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
-              <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Award className="h-5 w-5" /></div>
-              <div className="min-w-0 flex-1"><h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3><p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p></div>
-              <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-1 group-hover:text-orange-300" />
-            </a>
+            <article key={cert.title} className="group flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
+              <div className="flex items-start gap-3">
+                <img 
+                  src={`https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/${cert.logo}.svg`} 
+                  alt={`${cert.issuer} logo`}
+                  className="h-10 w-10 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5"
+                />
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3>
+                  <p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p>
+                </div>
+              </div>
+              <a 
+                href={cert.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
+              >
+                Verify <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </article>
           ))}
         </div>
       </section>

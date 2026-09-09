@@ -1,3 +1,4 @@
+```
 # Dependencies
 node_modules/
 
@@ -12,11 +13,17 @@ out/
 .env.local
 .env.*
 
-# IDE specific
-.vscode/
-.idea/
+# Logs
+*.log
+
+# Temporary files
+*.tmp
 *.swp
 *.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
 
 # Python
 __pycache__/
@@ -37,71 +44,16 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
-*.tmp
-
-# Logs
-*.log
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Testing
-coverage/
-htmlcov/
-.pytest_cache/
+.git/
 .mypy_cache/
+.pytest_cache/
+.hypothesis/
 
-# Distribution / packaging
-.Python
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-node_modules/
+# VS Code
+.vscode/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Coverage
-.coverage*
-
-# Local configuration
-config/local.json
-config/local.yaml
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Directory for web-server logs
-logs
-*.log
-
-# Debug files
-*.trace
-
-# Temporary folders
-tmp/
-temp/
-
-# Compiled and build artifacts
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
+# IntelliJ IDEA
+.idea/
 
 # Compressed files
 *.zip
@@ -126,11 +78,4 @@ temp/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-
-# Other common ignores
-*.swp
-*.swo
-*.tmp
-*~
-.DS_Store
-Thumbs.db
+```
