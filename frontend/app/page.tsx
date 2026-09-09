@@ -199,70 +199,60 @@ const CERTS = [
     issuer: 'Google for Education', 
     year: '2026', 
     url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
   },
   { 
     title: 'Build student inquiry skills', 
     issuer: 'Google for Education', 
     year: '2026', 
     url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
   },
   { 
     title: 'CS50x: Introduction to Computer Science', 
     issuer: 'Harvard University', 
     year: '2026', 
     url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/harvard.svg'
   },
   { 
     title: 'Claude 101', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Claude Code 101', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Model Context Protocol: Advanced Topics', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'AI Fluency for Creative Work', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
   },
   { 
     title: 'Collaborate with pull requests in Azure Repos', 
     issuer: 'Microsoft', 
     year: '2026', 
     url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg'
   },
   { 
     title: 'Back-End Development and APIs', 
     issuer: 'freeCodeCamp', 
     year: '2026', 
     url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freecodecamp.svg'
   },
   { 
     title: 'Python', 
     issuer: 'Kaggle', 
     year: '2026', 
     url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
-    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg'
   },
 ];
 
@@ -484,11 +474,7 @@ export default function Home() {
           {CERTS.map((cert) => (
             <article key={cert.title} className="group flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
               <div className="flex items-start gap-3">
-                <img 
-                  src={cert.logo} 
-                  alt={`${cert.issuer} logo`}
-                  className="h-10 w-10 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5"
-                />
+                <CredentialMark issuer={cert.issuer} title={cert.title} />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3>
                   <p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p>
@@ -548,6 +534,31 @@ export default function Home() {
         </div>
       </footer>
     </main>
+  );
+}
+
+function CredentialMark({ issuer, title }: { issuer: string; title: string }) {
+  const normalized = `${issuer} ${title}`.toLowerCase();
+  const brand = normalized.includes('claude') || normalized.includes('anthropic')
+    ? { mark: '✳', label: 'Claude Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
+    : normalized.includes('harvard') || normalized.includes('cs50')
+      ? { mark: 'H', label: 'Harvard CS50', classes: 'border-red-300/25 bg-red-300/10 text-red-200' }
+      : normalized.includes('kaggle') || normalized.includes('python')
+        ? { mark: 'K', label: 'Kaggle', classes: 'border-sky-300/25 bg-sky-300/10 text-sky-200' }
+        : normalized.includes('freecodecamp')
+          ? { mark: 'ƒ', label: 'freeCodeCamp', classes: 'border-green-300/25 bg-green-300/10 text-green-200' }
+          : normalized.includes('microsoft')
+            ? { mark: 'M', label: 'Microsoft', classes: 'border-blue-300/25 bg-blue-300/10 text-blue-200' }
+            : normalized.includes('google')
+              ? { mark: 'G', label: 'Google', classes: 'border-yellow-300/25 bg-yellow-300/10 text-yellow-200' }
+              : normalized.includes('hubspot')
+                ? { mark: 'H', label: 'HubSpot Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
+                : { mark: '✓', label: issuer, classes: 'border-white/15 bg-white/[0.06] text-white/75' };
+
+  return (
+    <div aria-label={`${brand.label} credential`} title={brand.label} className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border text-lg font-black shadow-inner ${brand.classes}`}>
+      <span aria-hidden="true">{brand.mark}</span>
+    </div>
   );
 }
 
