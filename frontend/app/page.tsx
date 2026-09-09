@@ -10,6 +10,7 @@ import {
   ExternalLink,
   GitBranch,
   Layers3,
+  Mail,
   MapPin,
   Radio,
   Rocket,
@@ -18,6 +19,15 @@ import {
   Sparkles,
   WalletCards,
 } from 'lucide-react';
+
+function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 0 6 5.5 6-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
 
 type Project = {
   name: string;
@@ -184,25 +194,76 @@ const MORE_PROJECTS: Project[] = [
 ];
 
 const CERTS = [
-  { title: 'CS50x: Introduction to Computer Science', issuer: 'Harvard University / CS50', year: '2026', url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01' },
-  { title: 'Python', issuer: 'Kaggle', year: 'September 4, 2026', url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python' },
-  { title: 'Claude 101', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52' },
-  { title: 'Claude Code 101', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7' },
-  { title: 'Introduction to Claude Cowork', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/7fcbab40e6bf8aeeadd24874e3dac946' },
-  { title: 'Claude Code in Action', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/43d443e168e01edae03c2039c1831281' },
-  { title: 'Introduction to Model Context Protocol', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/9676641c4aac393d2e91a989e128fdd3' },
-  { title: 'Model Context Protocol: Advanced Topics', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157' },
-  { title: 'Deploying Claude Enterprise with Confidence: The five decisions that shape your rollout', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/c716867add39bcae974cabfbdbdcd8c4' },
-  { title: 'AI Fluency: Framework & Foundations', issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/3df5bd13c69a50bb44afc1689ea0008a' },
-  { title: "Claude with Google Cloud's Vertex AI", issuer: 'Claude Academy / Anthropic', year: 'September 4, 2026', url: 'https://academy.claude.com/verify/8f42d461fe0553a1f7f001944e12fdff' },
-  { title: 'Back-End Development and APIs', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9' },
-  { title: 'B1 English for Developers (Beta)', issuer: 'freeCodeCamp', year: 'August 28, 2026', url: 'https://www.freecodecamp.org/certification/abbasweb/b1-english-for-developers' },
-  { title: 'Foundational C# with Microsoft', issuer: 'freeCodeCamp + Microsoft', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/foundational-c-sharp-with-microsoft' },
-  { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/responsive-web-design' },
-  { title: 'Front-End Development Libraries', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/front-end-development-libraries' },
-  { title: 'Data Visualization', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/data-visualization' },
-  { title: 'Legacy Front-End', issuer: 'freeCodeCamp', year: '2025', url: 'https://freecodecamp.org/certification/abbasweb/legacy-front-end' },
-  { title: 'SEO Certified', issuer: 'HubSpot Academy', year: '2025', url: 'https://app-na2.hubspot.com/academy/achievements/5xkd22gx/en/1/abbas-hussain/seo-certified' },
+  { 
+    title: 'Introduction to Gemini for Education', 
+    issuer: 'Google for Education', 
+    year: '2026', 
+    url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
+  },
+  { 
+    title: 'Build student inquiry skills', 
+    issuer: 'Google for Education', 
+    year: '2026', 
+    url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg'
+  },
+  { 
+    title: 'CS50x: Introduction to Computer Science', 
+    issuer: 'Harvard University', 
+    year: '2026', 
+    url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/harvard.svg'
+  },
+  { 
+    title: 'Claude 101', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
+  },
+  { 
+    title: 'Claude Code 101', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
+  },
+  { 
+    title: 'Model Context Protocol: Advanced Topics', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
+  },
+  { 
+    title: 'AI Fluency for Creative Work', 
+    issuer: 'Anthropic', 
+    year: '2026', 
+    url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/claude.svg'
+  },
+  { 
+    title: 'Collaborate with pull requests in Azure Repos', 
+    issuer: 'Microsoft', 
+    year: '2026', 
+    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg'
+  },
+  { 
+    title: 'Back-End Development and APIs', 
+    issuer: 'freeCodeCamp', 
+    year: '2026', 
+    url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freecodecamp.svg'
+  },
+  { 
+    title: 'Python', 
+    issuer: 'Kaggle', 
+    year: '2026', 
+    url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
+    logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg'
+  },
 ];
 
 const FEATURED_ORDER = ['DevDesk AI', 'VaultX', 'CryptoWatch', 'PulseBoard AI'];
@@ -261,7 +322,7 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
             )}
             {project.repo && (
               <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
-                <Github className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
+                <GithubIcon className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
               </a>
             )}
             {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-200/85">{project.status}</span>}
@@ -301,7 +362,7 @@ export default function Home() {
               <a href="#contact" className="transition hover:text-white">Contact</a>
             </nav>
             <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="Open Abbas Hussain GitHub profile" className="rounded-xl border border-white/10 bg-white/[0.05] p-2.5 transition hover:bg-white/10">
-              <Github className="h-4 w-4" />
+              <GithubIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -419,13 +480,29 @@ export default function Home() {
 
       <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Award} text="Verified credentials" />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CERTS.map((cert) => (
-            <a key={cert.title} href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
-              <CredentialMark issuer={cert.issuer} title={cert.title} />
-              <div className="min-w-0 flex-1"><h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3><p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p></div>
-              <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-1 group-hover:text-orange-300" />
-            </a>
+            <article key={cert.title} className="group flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
+              <div className="flex items-start gap-3">
+                <img 
+                  src={cert.logo} 
+                  alt={`${cert.issuer} logo`}
+                  className="h-10 w-10 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5"
+                />
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3>
+                  <p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p>
+                </div>
+              </div>
+              <a 
+                href={cert.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
+              >
+                Verify <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </article>
           ))}
         </div>
       </section>
@@ -435,41 +512,42 @@ export default function Home() {
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-200/70">Let&apos;s build something useful</p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85"><ExternalLink className="h-4 w-4" /> Connect on LinkedIn</a>
-            <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]"><Github className="h-4 w-4" /> GitHub</a>
+          
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="mailto:abbaswebdevelopers@gmail.com" className="flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85">
+              <Mail className="h-4 w-4" /> abbaswebdevelopers@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
+              <ExternalLink className="h-4 w-4" /> LinkedIn
+            </a>
+            <a href="https://wa.me/923088361404" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
+              <Smartphone className="h-4 w-4" /> WhatsApp: 03088361404
+            </a>
+            <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
+              <GithubIcon className="h-4 w-4" /> GitHub
+            </a>
           </div>
+          
           <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
         </div>
       </section>
 
-      <footer className="relative border-t border-white/[0.06] py-8"><p className="text-center text-[11px] text-white/30">© 2026 Abbas Hussain · Built with Next.js through a mobile-first workflow.</p></footer>
+      <footer className="relative border-t border-white/[0.06] py-8">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-center text-[11px] text-white/30">Made with ❤️ by Abbas Hussain — Built on a mobile phone</p>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
+                <GithubIcon className="h-5 w-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
+                <ExternalLink className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
-  );
-}
-
-function CredentialMark({ issuer, title }: { issuer: string; title: string }) {
-  const normalized = `${issuer} ${title}`.toLowerCase();
-  const brand = normalized.includes('claude') || normalized.includes('anthropic')
-    ? { mark: '✳', label: 'Claude Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
-    : normalized.includes('harvard') || normalized.includes('cs50')
-      ? { mark: 'H', label: 'Harvard CS50', classes: 'border-red-300/25 bg-red-300/10 text-red-200' }
-      : normalized.includes('kaggle') || normalized.includes('python')
-        ? { mark: 'K', label: 'Kaggle', classes: 'border-sky-300/25 bg-sky-300/10 text-sky-200' }
-        : normalized.includes('freecodecamp')
-          ? { mark: 'ƒ', label: 'freeCodeCamp', classes: 'border-green-300/25 bg-green-300/10 text-green-200' }
-          : normalized.includes('microsoft')
-            ? { mark: 'M', label: 'Microsoft', classes: 'border-blue-300/25 bg-blue-300/10 text-blue-200' }
-            : normalized.includes('google')
-              ? { mark: 'G', label: 'Google', classes: 'border-yellow-300/25 bg-yellow-300/10 text-yellow-200' }
-              : normalized.includes('hubspot')
-                ? { mark: 'H', label: 'HubSpot Academy', classes: 'border-orange-300/25 bg-orange-300/10 text-orange-200' }
-                : { mark: '✓', label: issuer, classes: 'border-white/15 bg-white/[0.06] text-white/75' };
-
-  return (
-    <div aria-label={`${brand.label} credential`} title={brand.label} className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border text-lg font-black shadow-inner ${brand.classes}`}>
-      <span aria-hidden="true">{brand.mark}</span>
-    </div>
   );
 }
 
@@ -481,11 +559,3 @@ function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: 
   return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
 }
 
-function Github(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 0 6 5.5 6-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="M9 18c-4.51 2-5-2-7-2" />
-    </svg>
-  );
-   }
