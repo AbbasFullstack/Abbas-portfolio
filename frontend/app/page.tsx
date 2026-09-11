@@ -435,10 +435,20 @@ export default function Home() {
           />
         </div>
 
-        <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-orange-300">Full-stack developer · Pakistan</p>
-        <h1 className="mb-5 bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
-        <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          I build secure, data-driven web applications with <span className="font-semibold text-white/85">Next.js, React, TypeScript, Supabase, PostgreSQL, and APIs</span>.
+        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
+
+        <div className="mt-4 flex justify-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-semibold text-white/65">
+            <span aria-hidden="true">📍</span>
+            Pakistan · Remote-friendly
+          </span>
+        </div>
+
+        <p className="mx-auto mt-6 max-w-3xl text-lg font-bold leading-snug tracking-tight text-white sm:text-2xl">
+          Full-Stack Developer building AI-powered products &amp; secure Web3 tools.
+        </p>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+          16-year-old self-taught builder from Pakistan — shipping production apps on a mobile phone.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
