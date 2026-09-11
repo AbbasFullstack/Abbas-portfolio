@@ -24,6 +24,7 @@ import {
   CREDENTIAL_BRAND_ORDER,
   type CredentialBrand,
 } from './credential-logos';
+import ProjectScreenshot from './ProjectScreenshot';
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -63,6 +64,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
     live: 'https://openapifrg-ewzpndbh.manus.space',
+    image: '/projects/openapi-forge.webp',
+    imageAlt: 'OpenAPI Forge workspace — a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
   },
   {
@@ -121,6 +124,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'A full SaaS-style build instead of a single chat-page demo.',
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth', 'OpenRouter'],
     live: 'https://abbas-ai-eta.vercel.app',
+    image: '/projects/abbas-ai.webp',
+    imageAlt: 'Abbas AI landing page — a multi-language AI chat platform with a live demo entry point',
     repo: 'https://github.com/AbbasFullstack/abbas-ai',
   },
   {
@@ -134,6 +139,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Shows orchestration across multiple AI capabilities in one product surface.',
     tech: ['Next.js', 'Supabase', 'OpenRouter', 'Hugging Face', 'Tailwind'],
     live: 'https://omnix-pi.vercel.app',
+    image: '/projects/omnix.webp',
+    imageAlt: 'OmniX landing page — an all-in-one personal AI covering chat, voice calls, image generation and slides',
     repo: 'https://github.com/AbbasFullstack/omnix',
   },
   {
@@ -162,6 +169,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Demonstrates backend flow design around Web3 interactions without using real funds.',
     tech: ['Next.js', 'Supabase', 'ethers.js', 'Infura', 'API Routes'],
     live: 'https://faucetx-theta.vercel.app',
+    image: '/projects/faucetx.webp',
+    imageAlt: 'FaucetX landing page — a crypto rewards platform with a timed claim flow and step-by-step onboarding',
     repo: 'https://github.com/AbbasFullstack/faucetx',
   },
 ];
@@ -178,6 +187,8 @@ const MORE_PROJECTS: Project[] = [
     outcome: 'Demonstrates privacy-aware AI product foundations without automatic raw-resume storage or overstating unverified AI capability.',
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
     live: 'https://devcv-ai-blue.vercel.app',
+    image: '/projects/devcv-ai.webp',
+    imageAlt: 'DevCV AI landing page — AI-assisted resume intelligence with analysis and targeting tools',
     status: 'Private Beta · live AI verification-gated',
   },
   {
@@ -191,6 +202,8 @@ const MORE_PROJECTS: Project[] = [
     outcome: 'A focused realtime data interface built around live market movement.',
     tech: ['Next.js', 'WebSocket', 'Binance API', 'Recharts', 'TypeScript'],
     live: 'https://realtime-crypto-tracker.vercel.app',
+    image: '/projects/realtime-crypto-tracker.webp',
+    imageAlt: 'Real-Time Crypto Tracker dashboard — live market cap and volume KPIs above a streaming price table',
     repo: 'https://github.com/AbbasFullstack/realtime-crypto-tracker',
   },
   {
@@ -204,6 +217,8 @@ const MORE_PROJECTS: Project[] = [
     outcome: 'Connects an LLM-style interface to current crypto market data.',
     tech: ['Next.js', 'Groq', 'Binance API', 'WebSocket', 'Tailwind'],
     live: 'https://cryptoai-two.vercel.app',
+    image: '/projects/cryptoai.webp',
+    imageAlt: 'CryptoAI chat interface — a personal crypto assistant for live prices and plain-language explanations',
     repo: 'https://github.com/AbbasFullstack/cryptoai',
   },
 ];
@@ -338,8 +353,17 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
           ))}
         </div>
 
-        {(project.live || project.repo || project.status) && (
+        {(project.live || project.repo || project.status || (compact && project.image)) && (
           <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-white/[0.07] pt-4">
+            {compact && project.image && (
+              <ProjectScreenshot
+                image={project.image}
+                imageAlt={project.imageAlt ?? `${project.name} interface`}
+                projectName={project.name}
+                live={project.live}
+                repo={project.repo}
+              />
+            )}
             {project.live && (
               <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-xs font-bold text-black transition hover:bg-white/85">
                 <ExternalLink className="h-3.5 w-3.5" /> Live demo
