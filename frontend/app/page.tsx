@@ -44,6 +44,7 @@ type Project = {
   accent: string;
   desc: string;
   outcome: string;
+  highlights?: { problem: string; tech: string; impact: string };
   tech: string[];
   live?: string;
   repo?: string;
@@ -70,13 +71,18 @@ const PUBLIC_PROJECTS: Project[] = [
   },
   {
     name: 'DevDesk AI',
-    tag: 'Private Code Intelligence',
-    category: 'AI Developer Tool',
+    tag: 'AI Developer Tool',
+    category: 'Code Intelligence',
     icon: '⌬',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Authenticated developer workspace for importing GitHub repositories or ZIP projects, creating safe source manifests, and asking source-backed code questions with cited file paths.',
     outcome: 'Combines repository context, secure server-side AI routing and developer workflow design in one full-stack product.',
+    highlights: {
+      problem: 'Developers struggle to ask code questions with real context',
+      tech: 'Next.js, Supabase, GitHub API, server-side AI routing',
+      impact: 'Source-backed answers with cited file paths \u2014 no hallucination',
+    },
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
     live: 'https://dev-desk-ai-phi.vercel.app',
     image: '/projects/devdesk-ai.webp',
@@ -92,6 +98,11 @@ const PUBLIC_PROJECTS: Project[] = [
     accent: 'text-cyan-300',
     desc: 'Workspace-scoped customer CRM and pipeline app with Supabase Auth, RLS-protected data, server-side AI boundaries, and manual integration foundations.',
     outcome: 'Demonstrates caller-bound workspace onboarding, real customer and deal flows, and calculated workspace roll-ups.',
+    highlights: {
+      problem: 'Small teams outgrow spreadsheets but not the cost of an enterprise CRM',
+      tech: 'Next.js, Supabase Auth, PostgreSQL row-level security, server-side AI boundaries',
+      impact: 'Caller-bound workspace onboarding with real customer, deal and roll-up flows',
+    },
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
     live: 'https://pulseboard-ai.vercel.app',
     image: '/projects/pulseboard-ai.webp',
@@ -107,6 +118,11 @@ const PUBLIC_PROJECTS: Project[] = [
     accent: 'text-violet-300',
     desc: 'Multi-chain testnet wallet with encrypted keystore flow, account import, live balances, activity history and documented provider proxy routes.',
     outcome: 'Brings wallet UX, RPC security and API contracts into one testnet project.',
+    highlights: {
+      problem: 'Testnet wallet flows are fiddly and often expose RPC access from the browser',
+      tech: 'Next.js, ethers.js, Infura, documented provider proxy routes',
+      impact: 'Encrypted keystore, live balances and activity history with provider keys kept server-side',
+    },
     tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
     image: '/projects/vaultx.webp',
@@ -145,13 +161,18 @@ const PUBLIC_PROJECTS: Project[] = [
   },
   {
     name: 'CryptoWatch',
-    tag: 'Realtime Finance',
+    tag: 'Real-Time Finance',
     category: 'Data Product',
     icon: '↗',
     color: 'from-emerald-500 to-teal-600',
     accent: 'text-emerald-300',
     desc: 'Personal crypto watchlist with Supabase authentication, PostgreSQL row-level security, Binance WebSocket prices and interactive coin charts.',
     outcome: 'Combines per-user data, real-time streams and visual market exploration.',
+    highlights: {
+      problem: 'Tracking coins across scattered tabs gives no per-user, real-time view',
+      tech: 'Next.js, Supabase, PostgreSQL row-level security, Binance WebSocket',
+      impact: 'Live price streams on a personal watchlist, scoped per user by row-level security',
+    },
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
     image: '/projects/cryptowatch.webp',
@@ -339,7 +360,27 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
 
         <h3 className="text-xl font-bold tracking-tight text-white">{project.name}</h3>
         <p className="mt-3 text-sm leading-relaxed text-white/55">{project.desc}</p>
-        {!compact && (
+        {!compact && project.highlights && (
+          <ul className="mt-5 space-y-2.5">
+            {[
+              { label: 'Problem', text: project.highlights.problem },
+              { label: 'Tech', text: project.highlights.tech },
+              { label: 'Impact', text: project.highlights.impact },
+            ].map((row) => (
+              <li key={row.label} className="flex gap-2.5 text-xs leading-relaxed text-white/55">
+                <span
+                  aria-hidden="true"
+                  className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br ${project.color}`}
+                />
+                <span>
+                  <span className={`${project.accent} font-bold`}>{row.label}: </span>
+                  {row.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {!compact && !project.highlights && (
           <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/45">
             <span className={`${project.accent} font-bold`}>Why it matters: </span>{project.outcome}
           </div>
