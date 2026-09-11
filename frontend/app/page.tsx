@@ -721,7 +721,10 @@ export default function Home() {
       <footer className="relative border-t border-white/[0.06] py-8">
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-center text-[11px] text-white/30">Made with ❤️ by Abbas Hussain — Built on a mobile phone</p>
+            <div className="text-center sm:text-left">
+              <p className="text-xs text-white/45">Built with Next.js, Tailwind CSS, and Vercel</p>
+              <p className="mt-1 text-xs font-semibold text-white/60">Designed &amp; developed by Abbas Hussain</p>
+            </div>
             <div className="flex items-center gap-4">
               <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
                 <GithubIcon className="h-5 w-5" />
