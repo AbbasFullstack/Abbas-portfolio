@@ -3,6 +3,7 @@ import {
   ArrowRight,
   Award,
   BrainCircuit,
+  BookOpen,
   Braces,
   Code2,
   Database,
@@ -319,6 +320,54 @@ const SKILLS = [
   { icon: BrainCircuit, cat: 'AI, Realtime & Web3', note: 'Modern product integrations', items: ['Streaming AI', 'WebSockets', 'ethers.js', 'Infura', 'Etherscan', 'Vitest'] },
 ];
 
+const SKILL_LEVELS = {
+  Expert: { dot: 'bg-emerald-400', text: 'text-emerald-300', border: 'border-emerald-400/30', bg: 'bg-emerald-400/[0.08]' },
+  Advanced: { dot: 'bg-yellow-400', text: 'text-yellow-300', border: 'border-yellow-400/30', bg: 'bg-yellow-400/[0.08]' },
+  Intermediate: { dot: 'bg-orange-400', text: 'text-orange-300', border: 'border-orange-400/30', bg: 'bg-orange-400/[0.08]' },
+} as const;
+
+type SkillLevel = keyof typeof SKILL_LEVELS;
+
+const SKILL_PROFICIENCY: Record<SkillLevel, string[]> = {
+  Expert: ['react', 'react 19', 'next.js', 'next.js 16', 'typescript'],
+  Advanced: ['supabase', 'supabase rls', 'postgresql', 'ai apis', 'streaming ai', 'tailwind css', 'tailwind css 4'],
+  Intermediate: ['web3', 'ethers.js', 'prisma', 'drizzle', 'drizzle orm'],
+};
+
+function skillLevel(item: string): SkillLevel | null {
+  const normalized = item.trim().toLowerCase();
+  for (const level of Object.keys(SKILL_LEVELS) as SkillLevel[]) {
+    if (SKILL_PROFICIENCY[level].includes(normalized)) return level;
+  }
+  return null;
+}
+
+const LEARNING = [
+  { title: 'AWS Certified Developer', note: 'Working toward the associate certification — core services, IAM and deployment.', status: 'In progress' },
+  { title: 'Advanced System Design', note: 'Scalability, caching, queues, and the trade-offs behind real architecture decisions.', status: 'In progress' },
+  { title: 'MCP + Agentic AI', note: 'Model Context Protocol servers, tool-using agents, and safe AI boundaries.', status: 'In progress' },
+];
+
+function CurrentlyLearning() {
+  return (
+    <section id="learning" className="relative mx-auto max-w-6xl px-4 py-12">
+      <SectionLabel icon={BookOpen} text="Currently learning" />
+      <div className="grid gap-4 sm:grid-cols-3">
+        {LEARNING.map((item) => (
+          <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/25 hover:bg-white/[0.06]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-orange-300">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+              {item.status}
+            </span>
+            <h3 className="mt-4 font-bold text-white">{item.title}</h3>
+            <p className="mt-1.5 text-xs leading-relaxed text-white/45">{item.note}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   return (
     <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.035] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
@@ -440,6 +489,7 @@ export default function Home() {
           <nav className="hidden items-center gap-6 text-xs font-semibold text-white/60 md:flex" aria-label="Primary navigation">
             <a href="#about" className="transition hover:text-white">About</a>
             <a href="#skills" className="transition hover:text-white">Skills</a>
+            <a href="#learning" className="transition hover:text-white">Learning</a>
             <a href="#work" className="transition hover:text-white">Work</a>
             <a href="#certs" className="transition hover:text-white">Credentials</a>
             <a href="#contact" className="transition hover:text-white">Contact</a>
@@ -546,6 +596,14 @@ export default function Home() {
 
       <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Layers3} text="Capabilities" />
+        <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
+          {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
+            <span key={level} className="flex items-center gap-2 text-[11px] font-semibold text-white/45">
+              <span aria-hidden="true" className={`h-2 w-2 rounded-full ${SKILL_LEVELS[level].dot}`} />
+              {level}
+            </span>
+          ))}
+        </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {SKILLS.map((group) => {
             const Icon = group.icon;
@@ -556,13 +614,29 @@ export default function Home() {
                   <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => <span key={item} className="rounded-lg border border-white/[0.08] bg-black/20 px-3 py-1.5 text-xs font-semibold text-white/65">{item}</span>)}
+                  {group.items.map((item) => {
+                    const level = skillLevel(item);
+                    const style = level ? SKILL_LEVELS[level] : null;
+                    return (
+                      <span
+                        key={item}
+                        title={level ? `${level} proficiency` : undefined}
+                        className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold ${style ? `${style.border} ${style.bg} ${style.text}` : 'border-white/[0.08] bg-black/20 text-white/65'}`}
+                      >
+                        {style && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />}
+                        {item}
+                        {level && <span className="sr-only"> — {level} proficiency</span>}
+                      </span>
+                    );
+                  })}
                 </div>
               </article>
             );
           })}
         </div>
       </section>
+
+      <CurrentlyLearning />
 
       <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
