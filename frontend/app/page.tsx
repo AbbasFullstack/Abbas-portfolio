@@ -112,7 +112,7 @@ const PUBLIC_PROJECTS: Project[] = [
   {
     name: 'VaultX',
     tag: 'Web3 Wallet',
-    category: 'Web3',
+    category: 'Self-Custody',
     icon: '⌘',
     color: 'from-violet-500 to-indigo-600',
     accent: 'text-violet-300',
