@@ -47,6 +47,8 @@ type Project = {
   live?: string;
   repo?: string;
   status?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 const PUBLIC_PROJECTS: Project[] = [
@@ -74,6 +76,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Combines repository context, secure server-side AI routing and developer workflow design in one full-stack product.',
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
     live: 'https://dev-desk-ai-phi.vercel.app',
+    image: '/projects/devdesk-ai.webp',
+    imageAlt: 'DevDesk AI landing page — an authenticated workspace for asking source-backed questions about an imported codebase',
     repo: 'https://github.com/AbbasFullstack/DevDesk-AI-',
   },
   {
@@ -87,6 +91,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Demonstrates caller-bound workspace onboarding, real customer and deal flows, and calculated workspace roll-ups.',
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
     live: 'https://pulseboard-ai.vercel.app',
+    image: '/projects/pulseboard-ai.webp',
+    imageAlt: 'PulseBoard AI landing page — a workspace-scoped CRM with customers, contacts and pipeline views',
     repo: 'https://github.com/AbbasFullstack/PulseBoard-AI',
   },
   {
@@ -100,6 +106,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Brings wallet UX, RPC security and API contracts into one testnet project.',
     tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
+    image: '/projects/vaultx.webp',
+    imageAlt: 'VaultX landing page — a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
     repo: 'https://github.com/AbbasFullstack/vaultx',
   },
   {
@@ -139,6 +147,8 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Combines per-user data, real-time streams and visual market exploration.',
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
+    image: '/projects/cryptowatch.webp',
+    imageAlt: 'CryptoWatch landing page — a personal crypto watchlist with a live price ticker and realtime market charts',
     repo: 'https://github.com/AbbasFullstack/cryptowatch',
   },
   {
@@ -280,6 +290,26 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
     <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.035] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
       <div className={`pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-gradient-to-br ${project.color} opacity-10 blur-3xl transition duration-500 group-hover:opacity-25`} />
       <div className="relative flex h-full flex-col">
+        {project.image && !compact && (
+          <a
+            href={project.live ?? project.repo}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-5 block overflow-hidden rounded-2xl border border-white/10 bg-black/40"
+            aria-label={`Open ${project.name} live demo`}
+          >
+            <div className="relative aspect-[16/10] w-full">
+              <Image
+                src={project.image}
+                alt={project.imageAlt ?? `${project.name} interface`}
+                fill
+                sizes="(min-width: 1024px) 560px, (min-width: 640px) 90vw, 100vw"
+                className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          </a>
+        )}
         <div className="mb-5 flex items-start justify-between gap-4">
           <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${project.color} text-xl font-bold text-white shadow-lg`}>
             {project.icon}
