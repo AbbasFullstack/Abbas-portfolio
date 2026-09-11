@@ -19,11 +19,9 @@ import {
   Sparkles,
   WalletCards,
 } from 'lucide-react';
-import {
-  CREDENTIAL_BRANDS,
-  CREDENTIAL_BRAND_ORDER,
-  type CredentialBrand,
-} from './credential-logos';
+import { CREDENTIAL_BRANDS, CREDENTIAL_BRAND_ORDER } from './credential-logos';
+import { BrandGlyph, CredentialMark } from './credential-mark';
+import Certifications from './Certifications';
 import ProjectScreenshot from './ProjectScreenshot';
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -252,10 +250,10 @@ const CERTS = [
     url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
   },
   { 
-    title: 'Build student inquiry skills', 
-    issuer: 'Google for Education', 
+    title: 'Claude Code 101', 
+    issuer: 'Anthropic', 
     year: '2026', 
-    url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
+    url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
   },
   { 
     title: 'CS50x: Introduction to Computer Science', 
@@ -264,16 +262,22 @@ const CERTS = [
     url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
   },
   { 
+    title: 'Collaborate with pull requests in Azure Repos', 
+    issuer: 'Microsoft', 
+    year: '2026', 
+    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
+  },
+  { 
+    title: 'Build student inquiry skills', 
+    issuer: 'Google for Education', 
+    year: '2026', 
+    url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
+  },
+  { 
     title: 'Claude 101', 
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
-  },
-  { 
-    title: 'Claude Code 101', 
-    issuer: 'Anthropic', 
-    year: '2026', 
-    url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
   },
   { 
     title: 'Model Context Protocol: Advanced Topics', 
@@ -286,12 +290,6 @@ const CERTS = [
     issuer: 'Anthropic', 
     year: '2026', 
     url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
-  },
-  { 
-    title: 'Collaborate with pull requests in Azure Repos', 
-    issuer: 'Microsoft', 
-    year: '2026', 
-    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
   },
   { 
     title: 'Back-End Development and APIs', 
@@ -592,27 +590,33 @@ export default function Home() {
 
       <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Award} text="Verified credentials" />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CERTS.map((cert) => (
-            <article key={cert.title} className="group flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.06]">
-              <div className="flex items-start gap-3">
+        <div className="grid gap-5 sm:grid-cols-2">
+          {CERTS.slice(0, 4).map((cert) => (
+            <article key={cert.title} className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.045] p-6 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.07]">
+              <div className="flex items-start gap-4">
                 <CredentialMark issuer={cert.issuer} title={cert.title} />
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-bold text-white group-hover:text-orange-200">{cert.title}</h3>
-                  <p className="mt-1 text-xs text-white/40">{cert.issuer} · {cert.year}</p>
-                </div>
+                <span className="ml-auto shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">
+                  {cert.year}
+                </span>
               </div>
-              <a 
-                href={cert.url} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
-              >
-                Verify <ArrowRight className="h-3.5 w-3.5" />
-              </a>
+              <h3 className="mt-5 text-lg font-bold leading-snug text-white group-hover:text-orange-200">{cert.title}</h3>
+              <p className="mt-1.5 text-sm text-white/45">{cert.issuer}</p>
+              <div className="mt-6 flex flex-1 items-end">
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Verify ${cert.title} — ${cert.issuer}`}
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
+                >
+                  Verify <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
             </article>
           ))}
         </div>
+
+        <Certifications certifications={CERTS.slice(4)} />
       </section>
 
       <section id="contact" className="relative mx-auto max-w-6xl px-4 py-16">
@@ -656,73 +660,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
-}
-
-type IssuerBrand = CredentialBrand | 'harvard' | 'microsoft' | 'generic';
-
-function resolveIssuerBrand(issuer: string, title: string): IssuerBrand {
-  const normalized = `${issuer} ${title}`.toLowerCase();
-  if (normalized.includes('claude')) return 'claude';
-  if (normalized.includes('anthropic')) return 'anthropic';
-  if (normalized.includes('harvard') || normalized.includes('cs50')) return 'harvard';
-  if (normalized.includes('kaggle')) return 'kaggle';
-  if (normalized.includes('freecodecamp')) return 'freecodecamp';
-  if (normalized.includes('microsoft')) return 'microsoft';
-  if (normalized.includes('google')) return 'google';
-  return 'generic';
-}
-
-/** Renders the authentic issuer mark as an inline SVG — no icon font, no network request. */
-function BrandGlyph({ brand, className = 'h-5 w-5' }: { brand: IssuerBrand; className?: string }) {
-  if (brand === 'microsoft') {
-    return (
-      <svg viewBox="0 0 23 23" className={className} aria-hidden="true">
-        <rect x="1" y="1" width="10" height="10" fill="#F25022" />
-        <rect x="12" y="1" width="10" height="10" fill="#7FBA00" />
-        <rect x="1" y="12" width="10" height="10" fill="#00A4EF" />
-        <rect x="12" y="12" width="10" height="10" fill="#FFB900" />
-      </svg>
-    );
-  }
-  if (brand === 'harvard') {
-    return (
-      <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-        <path fill="#A51C30" d="M12 1.4 3.6 5v7.1c0 5.2 3.7 9.1 8.4 10.5 4.7-1.4 8.4-5.3 8.4-10.5V5L12 1.4Z" />
-        <path fill="#fff" d="M10.6 7.2h1.6v3.3h2.4V7.2h1.6v9.6h-1.6v-4.7h-2.4v4.7h-1.6V7.2Z" />
-      </svg>
-    );
-  }
-  if (brand === 'generic') {
-    return <Award className={`${className} text-white/70`} aria-hidden="true" />;
-  }
-  const mark = CREDENTIAL_BRANDS[brand];
-  return (
-    <svg viewBox="0 0 24 24" className={className} role="img" aria-label={`${mark.title} logo`}>
-      <path fill={mark.fill} d={mark.path} />
-    </svg>
-  );
-}
-
-function issuerName(brand: IssuerBrand, fallback: string): string {
-  if (brand === 'microsoft') return 'Microsoft';
-  if (brand === 'harvard') return 'Harvard CS50';
-  if (brand === 'generic') return fallback;
-  return CREDENTIAL_BRANDS[brand].title;
-}
-
-function CredentialMark({ issuer, title }: { issuer: string; title: string }) {
-  const brand = resolveIssuerBrand(issuer, title);
-  const label = issuerName(brand, issuer);
-
-  return (
-    <div
-      aria-label={`${label} credential`}
-      title={label}
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] shadow-inner"
-    >
-      <BrandGlyph brand={brand} className="h-5 w-5" />
-    </div>
   );
 }
 
