@@ -43,7 +43,7 @@ Encrypted keystore flow, account import, live balances, activity history — pro
 `Next.js` `ethers.js` `Infura` `OpenAPI`
 
 [![Live](https://img.shields.io/badge/=_Live_Demo-vaultx--mu.vercel.app-FF7A00?style=for-the-badge)](https://vaultx-mu.vercel.app)
-[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/vaultx)
+[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/vaultx)
 
 </td>
 <td width="50%" valign="top">
@@ -56,7 +56,7 @@ Import GitHub repos or ZIPs, build safe source manifests, and ask source-backed 
 `Next.js` `Supabase Auth` `GitHub OAuth` `Server-side AI`
 
 [![Live](https://img.shields.io/badge/=_Live_Demo-dev--desk--ai--phi.vercel.app-FF7A00?style=for-the-badge)](https://dev-desk-ai-phi.vercel.app)
-[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/DevDesk-AI-)
+[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/DevDesk-AI-)
 
 </td>
 </tr>
@@ -71,7 +71,7 @@ Personal crypto watchlist with Supabase Auth, PostgreSQL row-level security, Bin
 `Next.js` `Supabase RLS` `WebSocket` `Recharts`
 
 [![Live](https://img.shields.io/badge/=_Live_Demo-cryptowatch--rust.vercel.app-FF7A00?style=for-the-badge)](https://cryptowatch-rust.vercel.app)
-[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/cryptowatch)
+[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/cryptowatch)
 
 </td>
 <td width="50%" valign="top"
@@ -85,14 +85,14 @@ Workspace-scoped customer CRM and pipeline app with RLS-protected data, server-s
 `Next.js` `Supabase Auth` `PostgreSQL/RLS` `Tailwind`
 
 [![Live](https://img.shields.io/badge/=_Live_Demo-pulseboard--ai.vercel.app-FF7A00?style=for-the-badge)](https://pulseboard-ai.vercel.app)
-[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/PulseBoard-AI)
+[![Code](https://img.shields.io/badge/(_Source-181717?style=for-the-badge&logo=github)](https://github.com/AbbasFullstack/PulseBoard-AI)
 
 </td>
 </tr>
 </table>
 
 <details>
-<summary><b>= More builds</b> — OpenAPI Forge נOmniX נAbbas AI נFaucetX נDevCV AI נReal-Time Crypto Tracker נCryptoAI</summary>
+<summary><b>More builds</b> — OpenAPI Forge נOmniX נAbbas AI נFaucetX נDevCV AI נReal-Time Crypto Tracker נCryptoAI</summary>
 
 | Project | What it is | Stack |
 |---|---|---|
@@ -121,7 +121,7 @@ Workspace-scoped customer CRM and pipeline app with RLS-protected data, server-s
 
 ---
 
-## = Tech Stack
+##  Tech Stack
 
 | | | | |
 |---|---|---|---|
