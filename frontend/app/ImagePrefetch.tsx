@@ -2,6 +2,11 @@
 
 import { useEffect } from 'react';
 
+type NetworkInfo = {
+  saveData?: boolean;
+  effectiveType?: string;
+};
+
 /**
  * Warm the image cache before the user reaches the project cards.
  *
@@ -12,16 +17,17 @@ import { useEffect } from 'react';
  */
 export default function ImagePrefetch({ images }: { images: string[] }) {
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!('requestIdleCallback' in window) || !('Connection' in window)) {
-      // Fallback: nothing smart available; browsers handle lazily anyway.
-      return;
-    }
-    const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-    if (connection?.saveData) return; // Respect data-saver preferences.
-    if (connection?.effectiveType === '2g' || connection?.effectiveType === 'slow-2g') return;
+    if (typeof window === 'undefined' || images.length === 0) return;
 
-    const idle = (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback;
+    const nav = navigator as Navigator & { connection?: NetworkInfo; webkitConnection?: NetworkInfo };
+    const conn = nav.connection ?? nav.webkitConnection;
+    if (conn?.saveData) return; // Respect data-saver preferences.
+    const effectiveType = conn?.effectiveType ?? '';
+    if (effectiveType === '2g' || effectiveType === 'slow-2g') return; // Skip on slow networks.
+
+    const idle = (window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback;
+    if (!idle) return; // Older browsers: keep normal lazy loading.
+
     const timer = idle(
       () => {
         images.forEach((src) => {
@@ -32,9 +38,9 @@ export default function ImagePrefetch({ images }: { images: string[] }) {
       },
       { timeout: 3000 },
     );
+
     return () => {
-      const cancel = (window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback;
-      cancel?.(timer);
+      (window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(timer);
     };
   }, [images]);
 
