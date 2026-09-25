@@ -73,7 +73,7 @@ const PUBLIC_PROJECTS: Project[] = [
     desc: 'Contract-first API workspace for OpenAPI validation, documentation preview, schema-derived mocks, versioned specifications and TypeScript SDK generation.',
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
-    live: 'https://openapifrg-ewzpndbh.manus.space',
+    status: 'Live demo offline — run from source',
     image: '/projects/openapi-forge.webp',
     imageAlt: 'OpenAPI Forge workspace â a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
@@ -361,7 +361,7 @@ const EXPERIENCES: Experience[] = [
     period: 'Sep 2026 – Oct 2026',
     achievements: [
       'Built an e-commerce platform and FlowBoard — a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
-      'Integrated GitHub Actions CI/CD.',
+      'Integrated GitHub Actions CI/CD pipelines across both apps.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
   },
@@ -389,14 +389,13 @@ const EXPERIENCES: Experience[] = [
     role: 'Frontend Web Developer Intern',
     period: 'Sep 2026 – Oct 2026',
     achievements: [
-      'Built a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
+      'Built 2 production apps: a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
     ],
     tech: ['JavaScript', 'HTML', 'CSS', 'REST APIs', 'LocalStorage'],
   },
 ];
 
 const SKILL_LEVELS = {
-  Expert: { dot: 'bg-emerald-400', text: 'text-emerald-300', border: 'border-emerald-400/30', bg: 'bg-emerald-400/[0.08]' },
   Advanced: { dot: 'bg-yellow-400', text: 'text-yellow-300', border: 'border-yellow-400/30', bg: 'bg-yellow-400/[0.08]' },
   Intermediate: { dot: 'bg-orange-400', text: 'text-orange-300', border: 'border-orange-400/30', bg: 'bg-orange-400/[0.08]' },
 } as const;
@@ -404,8 +403,7 @@ const SKILL_LEVELS = {
 type SkillLevel = keyof typeof SKILL_LEVELS;
 
 const SKILL_PROFICIENCY: Record<SkillLevel, string[]> = {
-  Expert: ['react', 'react 19', 'next.js', 'next.js 16', 'typescript'],
-  Advanced: ['supabase', 'supabase rls', 'postgresql', 'ai apis', 'streaming ai', 'tailwind css', 'tailwind css 4'],
+  Advanced: ['react', 'react 19', 'next.js', 'next.js 16', 'typescript', 'supabase', 'supabase rls', 'postgresql', 'ai apis', 'streaming ai', 'tailwind css', 'tailwind css 4'],
   Intermediate: ['web3', 'ethers.js', 'prisma', 'drizzle', 'drizzle orm'],
 };
 
@@ -418,7 +416,7 @@ function skillLevel(item: string): SkillLevel | null {
 }
 
 const LEARNING = [
-  { title: 'AWS Certified Developer', note: 'Working toward the associate certification â core services, IAM and deployment.', status: 'In progress' },
+  { title: 'AWS Certified Developer', note: 'Associate exam scheduled for 2026 â core services, IAM and deployment.', status: 'In progress' },
   { title: 'Advanced System Design', note: 'Scalability, caching, queues, and the trade-offs behind real architecture decisions.', status: 'In progress' },
   { title: 'MCP + Agentic AI', note: 'Model Context Protocol servers, tool-using agents, and safe AI boundaries.', status: 'In progress' },
 ];
@@ -677,6 +675,9 @@ export default function Home() {
 
       <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Briefcase} text="Experience" />
+        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/50">
+          Project-based virtual internship programs, completed in parallel as structured, mentor-reviewed builds — each with a public GitHub repository.
+        </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {EXPERIENCES.map((job) => (
             <article key={job.company} className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.05] p-6 transition hover:border-orange-500/25 hover:bg-white/[0.07]">
