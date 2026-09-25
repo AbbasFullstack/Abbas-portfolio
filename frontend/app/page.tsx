@@ -555,6 +555,8 @@ export default function Home() {
           background:
             'radial-gradient(ellipse 52rem 36rem at 50% -10%, rgba(249,115,22,0.10), transparent 60%), radial-gradient(circle 24rem at 5% 32%, rgba(139,92,246,0.08), transparent 60%), radial-gradient(circle 16rem at 95% 90%, rgba(6,182,212,0.07), transparent 60%), linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px)',
           backgroundSize: '100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px',
+          // Promote to its own GPU layer so scrolling never repaints the background.
+          transform: 'translateZ(0)',
         }}
       />
       <ImagePrefetch images={[...PUBLIC_PROJECTS, ...MORE_PROJECTS].filter((p) => p.image).map((p) => p.image as string)} />
@@ -592,7 +594,7 @@ export default function Home() {
         </div>
 
         <div className="relative mb-8 flex justify-center">
-          <div className="absolute -inset-6 rounded-full bg-orange-500/20 blur-3xl" />
+          <div aria-hidden="true" className="absolute -inset-6 rounded-full" style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.22), rgba(249,115,22,0.10) 45%, transparent 70%)' }} />
           <Image
             src="/Abbasdev.png"
             alt="Portrait of Abbas Hussain"

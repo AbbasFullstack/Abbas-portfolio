@@ -17,3 +17,13 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
+
+/*
+ * Scroll performance: skip layout and paint for sections that are
+ * off-screen. The browser renders only what is visible, which keeps
+ * scrolling smooth on low-end mobile devices.
+ */
+section[id]:not(#top) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
