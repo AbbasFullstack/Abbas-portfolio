@@ -3,6 +3,7 @@ import {
   ArrowRight,
   Award,
   BrainCircuit,
+  Briefcase,
   BookOpen,
   Braces,
   Code2,
@@ -27,10 +28,10 @@ import { BrandGlyph, CredentialMark } from './credential-mark';
 // Code splitting: the interactive islands below load as separate chunks
 // instead of being bundled into the initial page JavaScript.
 const Certifications = dynamic(() => import('./Certifications'), {
-  loading: () => <div className="mx-auto mt-8 h-14 w-64 animate-pulse rounded-xl border border-white/[0.07] bg-white/[0.03]" aria-hidden="true" />,
+  loading: () => <div className="mx-auto mt-8 h-14 w-64 animate-pulse rounded-xl border border-white/[0.07] bg-white/[0.06]" aria-hidden="true" />,
 });
 const ProjectScreenshot = dynamic(() => import('./ProjectScreenshot'), {
-  loading: () => <span className="inline-flex h-9 w-36 animate-pulse rounded-lg border border-white/10 bg-white/[0.04]" aria-hidden="true" />,
+  loading: () => <span className="inline-flex h-9 w-36 animate-pulse rounded-lg border border-white/10 bg-white/[0.055]" aria-hidden="true" />,
 });
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -334,6 +335,65 @@ const SKILLS = [
   { icon: BrainCircuit, cat: 'AI, Realtime & Web3', note: 'Modern product integrations', items: ['Streaming AI', 'WebSockets', 'ethers.js', 'Infura', 'Etherscan', 'Vitest'] },
 ];
 
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  achievements: string[];
+  tech: string[];
+};
+
+const EXPERIENCES: Experience[] = [
+  {
+    company: 'Internify',
+    role: 'Backend Development Intern',
+    period: 'Sep 2026  Oct 2026',
+    achievements: [
+      'Built 4 production-ready backend systems: RESTful Books API, JWT + bcrypt auth, RBAC, and a Blog System with Multer & Nodemailer.',
+      '146 automated tests, 100% passing.',
+    ],
+    tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'Multer', 'Nodemailer'],
+  },
+  {
+    company: 'CodeAlpha',
+    role: 'Full Stack Development Intern',
+    period: 'Sep 2026  Oct 2026',
+    achievements: [
+      'Built an e-commerce platform and FlowBoard  a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
+      'Integrated GitHub Actions CI/CD.',
+    ],
+    tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
+  },
+  {
+    company: 'Oasis Infobyte',
+    role: 'Web Development & Designing Intern',
+    period: 'Sep 2026  Oct 2026',
+    achievements: [
+      'Built a full-stack Pizza Delivery App with Razorpay payments and Socket.io real-time tracking.',
+      '30 API tests + 4 socket tests passing.',
+    ],
+    tech: ['React', 'Node.js', 'MongoDB', 'Razorpay', 'Socket.io'],
+  },
+  {
+    company: 'ArithMatrix',
+    role: 'Full Stack Development Intern',
+    period: 'Sep 2026  Oct 2026',
+    achievements: [
+      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log  an un-editable audit trail.',
+    ],
+    tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
+  },
+  {
+    company: 'Barakah TechLabs',
+    role: 'Frontend Web Developer Intern',
+    period: 'Sep 2026  Oct 2026',
+    achievements: [
+      'Built a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
+    ],
+    tech: ['JavaScript', 'HTML', 'CSS', 'REST APIs', 'LocalStorage'],
+  },
+];
+
 const SKILL_LEVELS = {
   Expert: { dot: 'bg-emerald-400', text: 'text-emerald-300', border: 'border-emerald-400/30', bg: 'bg-emerald-400/[0.08]' },
   Advanced: { dot: 'bg-yellow-400', text: 'text-yellow-300', border: 'border-yellow-400/30', bg: 'bg-yellow-400/[0.08]' },
@@ -364,12 +424,12 @@ const LEARNING = [
 
 function CurrentlyLearning() {
   return (
-    <section id="learning" className="relative mx-auto max-w-6xl px-4 py-12">
+    <section id="learning" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
       <SectionLabel icon={BookOpen} text="Currently learning" />
       <div className="grid gap-4 sm:grid-cols-3">
         {LEARNING.map((item) => (
 
-          <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/25 hover:bg-white/[0.06]">
+          <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-5 transition hover:border-orange-500/25 hover:bg-white/[0.06]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-orange-300">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-orange-400" />
               {item.status}
@@ -385,7 +445,7 @@ function CurrentlyLearning() {
 
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   return (
-    <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.035] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
+    <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.05] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
       <div className={`pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-gradient-to-br ${project.color} opacity-10 blur-3xl transition duration-500 group-hover:opacity-25`} />
       <div className="relative flex h-full flex-col">
         {project.image && !compact && (
@@ -473,7 +533,7 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
               </a>
             )}
             {project.repo && (
-              <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
+              <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.055] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
                 <GithubIcon className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
               </a>
             )}
@@ -495,7 +555,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.022)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.022)_1px,transparent_1px)] bg-[size:56px_56px]" />
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/45 backdrop-blur-2xl">
+      <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/70 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 text-sm font-black shadow-lg shadow-orange-500/20">A</div>
@@ -503,6 +563,7 @@ export default function Home() {
           </a>
           <nav className="hidden items-center gap-6 text-xs font-semibold text-white/60 md:flex" aria-label="Primary navigation">
             <a href="#about" className="transition hover:text-white">About</a>
+            <a href="#experience" className="transition hover:text-white">Experience</a>
             <a href="#skills" className="transition hover:text-white">Skills</a>
             <a href="#learning" className="transition hover:text-white">Learning</a>
             <a href="#work" className="transition hover:text-white">Work</a>
@@ -571,7 +632,7 @@ export default function Home() {
             { label: 'Live demos and public source' },
             { label: 'Auth, data and API boundaries' },
           ].map((stat) => (
-            <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-4 backdrop-blur-xl">
+            <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-4">
               <p className="text-xs font-bold uppercase tracking-wide text-orange-200/90">{stat.label}</p>
             </div>
           ))}
@@ -590,10 +651,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative mx-auto max-w-6xl px-4 py-12">
+      <section id="about" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
         <SectionLabel icon={Sparkles} text="About me" />
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
-          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-7 backdrop-blur-xl sm:p-8">
+          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
             <p className="leading-relaxed text-white/68">
               I am a Full-Stack Developer focused on building complete, usable productsnot just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
             </p>
@@ -601,7 +662,7 @@ export default function Home() {
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
             </p>
           </div>
-          <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7 backdrop-blur-xl">
+          <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7">
             <Smartphone className="mb-5 h-6 w-6 text-orange-300" />
             <p className="text-sm font-bold text-orange-200">Mobile-first builder</p>
             <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was developed through a mobile-first workflow with GitHub, Codespaces and Termux.</p>
@@ -609,7 +670,37 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
+      <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+        <SectionLabel icon={Briefcase} text="Experience" />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {EXPERIENCES.map((job) => (
+            <article key={job.company} className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.05] p-6 transition hover:border-orange-500/25 hover:bg-white/[0.07]">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-bold text-white">{job.company}</h3>
+                  <p className="mt-0.5 text-sm font-semibold text-orange-300">{job.role}</p>
+                </div>
+                <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">{job.period}</span>
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {job.achievements.map((item) => (
+                  <li key={item} className="flex gap-2.5 text-xs leading-relaxed text-white/55">
+                    <span aria-hidden="true" className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-orange-500 to-amber-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 flex flex-1 flex-wrap content-end gap-1.5 border-t border-white/[0.07] pt-4">
+                {job.tech.map((t) => (
+                  <span key={t} className="rounded-md border border-white/[0.08] bg-black/20 px-2 py-1 text-[10px] font-semibold text-white/55">{t}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
         <SectionLabel icon={Layers3} text="Capabilities" />
         <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
           {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
@@ -623,7 +714,7 @@ export default function Home() {
           {SKILLS.map((group) => {
             const Icon = group.icon;
             return (
-              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
+              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-6">
                 <div className="mb-5 flex items-start gap-3">
                   <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
                   <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
@@ -653,7 +744,7 @@ export default function Home() {
 
       <CurrentlyLearning />
 
-      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
+      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div><SectionLabel icon={Rocket} text="Featured work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Four projects. Clear full-stack proof.</h2></div>
           <p className="max-w-sm text-sm leading-relaxed text-white/45">These projects match the public GitHub showcase and link to a live build or source repository.</p>
@@ -669,7 +760,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-4 py-12">
+      <section className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
         <div className="grid gap-4 md:grid-cols-3">
           <ProofCard icon={ShieldCheck} title="Security-aware" text="Environment variables, server-side provider routes and testnet-only Web3 demonstrations." />
           <ProofCard icon={Radio} title="Realtime systems" text="WebSocket market streams, live activity data and responsive chart experiences." />
@@ -677,11 +768,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
+      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
         <SectionLabel icon={Award} text="Verified credentials" />
         <div className="grid gap-5 sm:grid-cols-2">
           {CERTS.slice(0, 4).map((cert) => (
-            <article key={cert.title} className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.045] p-6 backdrop-blur-xl transition hover:border-orange-500/30 hover:bg-white/[0.07]">
+            <article key={cert.title} className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.06] p-6 transition hover:border-orange-500/30 hover:bg-white/[0.07]">
               <div className="flex items-start gap-4">
                 <CredentialMark issuer={cert.issuer} title={cert.title} />
                 <span className="ml-auto shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">
@@ -709,7 +800,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="relative mx-auto max-w-6xl px-4 py-16">
-        <div className="overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/[0.13] via-amber-600/[0.08] to-transparent p-8 text-center backdrop-blur-xl sm:p-12">
+        <div className="overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/[0.13] via-amber-600/[0.08] to-transparent p-8 text-center sm:p-12">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-200/70">Let&apos;s build something useful</p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
@@ -760,5 +851,5 @@ function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: strin
 }
 
 function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
-  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
+  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.06] p-6"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
 }
