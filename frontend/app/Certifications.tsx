@@ -50,7 +50,7 @@ export default function Certifications({ certifications }: { certifications: Cer
                     {cert.title}
                   </h3>
                   <p className="mt-1 text-[11px] text-white/40">
-                    {cert.issuer} נ{cert.year}
+                    {cert.issuer} · {cert.year}
                   </p>
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default function Certifications({ certifications }: { certifications: Cer
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Verify ${cert.title}  ${cert.issuer}`}
+                  aria-label={`Verify ${cert.title} — ${cert.issuer}`}
                   className="inline-flex items-center gap-1.5 text-[11px] font-bold text-orange-300 transition hover:text-orange-200"
                 >
                   Verify <ArrowRight className="h-3 w-3" />
