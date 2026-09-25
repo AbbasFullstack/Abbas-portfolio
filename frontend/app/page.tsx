@@ -31,6 +31,11 @@ const Certifications = dynamic(() => import('./Certifications'), {
   loading: () => <div className="mx-auto mt-8 h-14 w-64 animate-pulse rounded-xl border border-white/[0.07] bg-white/[0.06]" aria-hidden="true" />,
 });
 const ProjectScreenshot = dynamic(() => import('./ProjectScreenshot'), {
+const ProjectScreenshot = dynamic(() => import('./ProjectScreenshot'), {
+  loading: () => <span className="inline-flex h-9 w-36 animate-pulse rounded-lg border border-white/10 bg-white/[0.055]" aria-hidden="true" />,
+});
+const ImagePrefetch = dynamic(() => import('./ImagePrefetch'));
+
   loading: () => <span className="inline-flex h-9 w-36 animate-pulse rounded-lg border border-white/10 bg-white/[0.055]" aria-hidden="true" />,
 });
 
@@ -556,6 +561,7 @@ export default function Home() {
           backgroundSize: '100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px',
         }}
       />
+      <ImagePrefetch images={[...PUBLIC_PROJECTS, ...MORE_PROJECTS].filter((p) => p.image).map((p) => p.image as string)} />
       <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/75">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2.5">
