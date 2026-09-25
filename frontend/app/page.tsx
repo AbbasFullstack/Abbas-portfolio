@@ -62,7 +62,8 @@ type Project = {
   imageAlt?: string;
 };
 
-const PUBLIC_PROJECTS: Project[] = [
+const PU
+BLIC_PROJECTS: Project[] = [
   {
     name: 'OpenAPI Forge',
     tag: 'Developer Tool',
@@ -100,7 +101,8 @@ const PUBLIC_PROJECTS: Project[] = [
   },
   {
     name: 'PulseBoard AI',
-    tag: 'Workspace CRM',
+    tag: 'W
+orkspace CRM',
     category: 'Full-Stack Product',
     icon: '◍',
     color: 'from-cyan-500 to-violet-600',
@@ -135,7 +137,8 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
     image: '/projects/vaultx.webp',
-    imageAlt: 'VaultX landing page — a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
+    imageAlt: 'VaultX landing page — a mult
+i-chain testnet wallet with encrypted keystore and a vault-like asset flow',
     repo: 'https://github.com/AbbasFullstack/vaultx',
   },
   {
@@ -176,7 +179,8 @@ const PUBLIC_PROJECTS: Project[] = [
     color: 'from-emerald-500 to-teal-600',
     accent: 'text-emerald-300',
     desc: 'Personal crypto watchlist with Supabase authentication, PostgreSQL row-level security, Binance WebSocket prices and interactive coin charts.',
-    outcome: 'Combines per-user data, real-time streams and visual market exploration.',
+    outcome: 'Combines per-user data, real-time streams and visual market exp
+loration.',
     highlights: {
       problem: 'Tracking coins across scattered tabs gives no per-user, real-time view',
       tech: 'Next.js, Supabase, PostgreSQL row-level security, Binance WebSocket',
@@ -215,7 +219,8 @@ const MORE_PROJECTS: Project[] = [
     accent: 'text-fuchsia-300',
     desc: 'Privacy-first resume workspace with protected authentication, owner-scoped data controls, and explicit resume version save, load, and delete actions.',
     outcome: 'Demonstrates privacy-aware AI product foundations without automatic raw-resume storage or overstating unverified AI capability.',
-    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
+    tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'Po
+stgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
     live: 'https://devcv-ai-blue.vercel.app',
     image: '/projects/devcv-ai.webp',
     imageAlt: 'DevCV AI landing page — AI-assisted resume intelligence with analysis and targeting tools',
@@ -258,7 +263,8 @@ const CERTS = [
     title: 'Introduction to Gemini for Education', 
     issuer: 'Google for Education', 
     year: '2026', 
-    url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
+    url: 'https://edu.google.accred
+ible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
   },
   { 
     title: 'Claude Code 101', 
@@ -315,14 +321,15 @@ const CERTS = [
     url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
   },
   {
-    title: 'AWS Certified Developer  Associate (Exam Prep Plan Completed)',
+    title: 'AWS Certified Developer – Associate (Exam Prep Plan Completed)',
     issuer: 'AWS Skill Builder',
     year: '2026',
     url: 'https://aws.amazon.com/certification/certified-developer-associate/',
   },
 ];
 
-const FEATURED_ORDER = ['DevDesk AI', 'VaultX', 'CryptoWatch', 'PulseBoard AI'];
+const FEATURED_ORDER = ['DevDesk AI', 'Vault
+X', 'CryptoWatch', 'PulseBoard AI'];
 const FEATURED_PROJECTS = FEATURED_ORDER.flatMap((name) => PUBLIC_PROJECTS.filter((project) => project.name === name));
 const ADDITIONAL_PROJECTS = [
   ...PUBLIC_PROJECTS.filter((project) => !FEATURED_ORDER.includes(project.name)),
@@ -348,7 +355,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'Internify',
     role: 'Backend Development Intern',
-    period: 'Sep 2026  Oct 2026',
+    period: 'Sep 2026 – Oct 2026',
     achievements: [
       'Built 4 production-ready backend systems: RESTful Books API, JWT + bcrypt auth, RBAC, and a Blog System with Multer & Nodemailer.',
       '146 automated tests, 100% passing.',
@@ -358,17 +365,18 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'CodeAlpha',
     role: 'Full Stack Development Intern',
-    period: 'Sep 2026  Oct 2026',
+    period: 'Sep 2026 – Oct 2026',
     achievements: [
-      'Built an e-commerce platform and FlowBoard  a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
+      'Built an e-commerce platform and FlowBoard — a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
       'Integrated GitHub Actions CI/CD.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
   },
   {
-    company: 'Oasis Infobyte',
+    company: 'Oas
+is Infobyte',
     role: 'Web Development & Designing Intern',
-    period: 'Sep 2026  Oct 2026',
+    period: 'Sep 2026 – Oct 2026',
     achievements: [
       'Built a full-stack Pizza Delivery App with Razorpay payments and Socket.io real-time tracking.',
       '30 API tests + 4 socket tests passing.',
@@ -378,16 +386,16 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'ArithMatrix',
     role: 'Full Stack Development Intern',
-    period: 'Sep 2026  Oct 2026',
+    period: 'Sep 2026 – Oct 2026',
     achievements: [
-      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log  an un-editable audit trail.',
+      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log — an un-editable audit trail.',
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
   },
   {
     company: 'Barakah TechLabs',
     role: 'Frontend Web Developer Intern',
-    period: 'Sep 2026  Oct 2026',
+    period: 'Sep 2026 – Oct 2026',
     achievements: [
       'Built a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
     ],
@@ -412,7 +420,8 @@ const SKILL_PROFICIENCY: Record<SkillLevel, string[]> = {
 function skillLevel(item: string): SkillLevel | null {
   const normalized = item.trim().toLowerCase();
   for (const level of Object.keys(SKILL_LEVELS) as SkillLevel[]) {
-    if (SKILL_PROFICIENCY[level].includes(normalized)) return level;
+    if (SKILL_PROFICIENCY[level].includes(normalize
+d)) return level;
   }
   return null;
 }
@@ -451,7 +460,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
         {project.image && !compact && (
           <a
             href={project.live ?? project.repo}
-            target="_blank"
+     
+       target="_blank"
             rel="noreferrer"
             className="mb-5 block overflow-hidden rounded-2xl border border-white/10 bg-black/40"
             aria-label={`Open ${project.name} live demo`}
@@ -489,7 +499,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
               { label: 'Tech', text: project.highlights.tech },
               { label: 'Impact', text: project.highlights.impact },
             ].map((row) => (
-              <li key={row.label} className="flex gap-2.5 text-xs leading-relaxed text-white/55">
+    
+          <li key={row.label} className="flex gap-2.5 text-xs leading-relaxed text-white/55">
                 <span
                   aria-hidden="true"
                   className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br ${project.color}`}
@@ -533,7 +544,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
               </a>
             )}
             {project.repo && (
-              <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.055] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
+         
+     <a href={project.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.055] px-3.5 py-2 text-xs font-bold text-white/70 transition hover:bg-white/[0.09] hover:text-white">
                 <GithubIcon className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
               </a>
             )}
@@ -563,7 +575,8 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/75">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 text-sm font-black shadow-lg shadow-orange-500/20">A</div>
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradien
+t-to-br from-orange-500 to-amber-600 text-sm font-black shadow-lg shadow-orange-500/20">A</div>
             <span className="font-semibold tracking-tight">Abbas Hussain</span>
           </a>
           <nav className="hidden items-center gap-6 text-xs font-semibold text-white/60 md:flex" aria-label="Primary navigation">
@@ -589,7 +602,8 @@ export default function Home() {
 
       <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 text-center sm:pt-16">
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold text-emerald-400">
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-400" /
+>
           Open to internships & junior roles
         </div>
 
@@ -623,7 +637,8 @@ export default function Home() {
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition duration-200 hover:scale-[1.02]"><Rocket className="h-4 w-4" /> View featured work</a>
-          <a href="/Abbas-Hussain-Full-Stack-Developer-CV.pdf" download="Abbas-Hussain-Full-Stack-Developer-CV.pdf" aria-label="Download Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
+          <a href="/Abbas-Hussain-Full-Stack-Developer-CV.pdf" download="Abbas-H
+ussain-Full-Stack-Developer-CV.pdf" aria-label="Download Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
             <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/20 transition-transform duration-700 group-hover:translate-x-[420%]" aria-hidden="true" />
             <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span className="relative">Download CV</span>
@@ -645,7 +660,8 @@ export default function Home() {
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-4">
           <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/35">Credentials from</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <div className="flex flex-wr
+ap items-center justify-center gap-x-6 gap-y-3">
             {CREDENTIAL_BRAND_ORDER.map((brand) => (
               <span key={brand} className="flex items-center gap-2 text-xs font-semibold text-white/55" title={CREDENTIAL_BRANDS[brand].title}>
                 <BrandGlyph brand={brand} className="h-4 w-4" />
@@ -660,201 +676,6 @@ export default function Home() {
         <SectionLabel icon={Sparkles} text="About me" />
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
-            <p className="leading-relaxed text-white/68">
-              I am a Full-Stack Developer focused on building complete, usable productsnot just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
-            </p>
-            <p className="mt-4 leading-relaxed text-white/48">
-              I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7">
-            <Smartphone className="mb-5 h-6 w-6 text-orange-300" />
-            <p className="text-sm font-bold text-orange-200">Mobile-first builder</p>
-            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was developed through a mobile-first workflow with GitHub, Codespaces and Termux.</p>
-          </div>
-        </div>
-      </section>
+            
 
-      <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
-        <SectionLabel icon={Briefcase} text="Experience" />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {EXPERIENCES.map((job) => (
-            <article key={job.company} className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.05] p-6 transition hover:border-orange-500/25 hover:bg-white/[0.07]">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <h3 className="text-lg font-bold text-white">{job.company}</h3>
-                  <p className="mt-0.5 text-sm font-semibold text-orange-300">{job.role}</p>
-                </div>
-                <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">{job.period}</span>
-              </div>
-              <ul className="mt-4 space-y-2.5">
-                {job.achievements.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-xs leading-relaxed text-white/55">
-                    <span aria-hidden="true" className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-orange-500 to-amber-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-5 flex flex-1 flex-wrap content-end gap-1.5 border-t border-white/[0.07] pt-4">
-                {job.tech.map((t) => (
-                  <span key={t} className="rounded-md border border-white/[0.08] bg-black/20 px-2 py-1 text-[10px] font-semibold text-white/55">{t}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
-        <SectionLabel icon={Layers3} text="Capabilities" />
-        <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
-          {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
-            <span key={level} className="flex items-center gap-2 text-[11px] font-semibold text-white/45">
-              <span aria-hidden="true" className={`h-2 w-2 rounded-full ${SKILL_LEVELS[level].dot}`} />
-              {level}
-            </span>
-          ))}
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {SKILLS.map((group) => {
-            const Icon = group.icon;
-            return (
-              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-6">
-                <div className="mb-5 flex items-start gap-3">
-                  <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
-                  <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => {
-                    const level = skillLevel(item);
-                    const style = level ? SKILL_LEVELS[level] : null;
-                    return (
-                      <span
-                        key={item}
-                        title={level ? `${level} proficiency` : undefined}
-                        className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold ${style ? `${style.border} ${style.bg} ${style.text}` : 'border-white/[0.08] bg-black/20 text-white/65'}`}
-                      >
-                        {style && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />}
-                        {item}
-                        {level && <span className="sr-only">  {level} proficiency</span>}
-                      </span>
-                    );
-                  })}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <CurrentlyLearning />
-
-      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
-        <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div><SectionLabel icon={Rocket} text="Featured work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Four projects. Clear full-stack proof.</h2></div>
-          <p className="max-w-sm text-sm leading-relaxed text-white/45">These projects match the public GitHub showcase and link to a live build or source repository.</p>
-        </div>
-
-        <div className="grid gap-4 lg:grid-cols-2">
-          {FEATURED_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} />)}
-        </div>
-
-        <div className="mt-12 border-t border-white/[0.08] pt-10">
-          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Additional public builds</p><p className="mt-1 text-sm text-white/45">Focused experiments, API tools, market data and AI context.</p></div></div>
-          <div className="grid gap-4 md:grid-cols-2">{ADDITIONAL_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
-        </div>
-      </section>
-
-      <section className="relative mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-4 md:grid-cols-3">
-          <ProofCard icon={ShieldCheck} title="Security-aware" text="Environment variables, server-side provider routes and testnet-only Web3 demonstrations." />
-          <ProofCard icon={Radio} title="Realtime systems" text="WebSocket market streams, live activity data and responsive chart experiences." />
-          <ProofCard icon={WalletCards} title="Product thinking" text="Auth, databases, API contracts and frontend flows designed as connected systems." />
-        </div>
-      </section>
-
-      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
-        <SectionLabel icon={Award} text="Verified credentials" />
-        <div className="grid gap-5 sm:grid-cols-2">
-          {CERTS.slice(0, 4).map((cert) => (
-            <article key={cert.title} className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.06] p-6 transition hover:border-orange-500/30 hover:bg-white/[0.07]">
-              <div className="flex items-start gap-4">
-                <CredentialMark issuer={cert.issuer} title={cert.title} />
-                <span className="ml-auto shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">
-                  {cert.year}
-                </span>
-              </div>
-              <h3 className="mt-5 text-lg font-bold leading-snug text-white group-hover:text-orange-200">{cert.title}</h3>
-              <p className="mt-1.5 text-sm text-white/45">{cert.issuer}</p>
-              <div className="mt-6 flex flex-1 items-end">
-                <a
-                  href={cert.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Verify ${cert.title}  ${cert.issuer}`}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
-                >
-                  Verify <ArrowRight className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <Certifications certifications={CERTS.slice(4)} />
-      </section>
-
-      <section id="contact" className="relative mx-auto max-w-6xl px-4 py-16">
-        <div className="overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/[0.13] via-amber-600/[0.08] to-transparent p-8 text-center sm:p-12">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-200/70">Let&apos;s build something useful</p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="mailto:abbaswebdevelopers@gmail.com" className="flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85">
-              <Mail className="h-4 w-4" /> abbaswebdevelopers@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
-              <ExternalLink className="h-4 w-4" /> LinkedIn
-            </a>
-            <a href="https://wa.me/923088361404" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
-              <Smartphone className="h-4 w-4" /> WhatsApp: 03088361404
-            </a>
-            <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/85 transition hover:bg-white/[0.10]">
-              <GithubIcon className="h-4 w-4" /> GitHub
-            </a>
-          </div>
-
-          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan נRemote-friendly</p>
-        </div>
-      </section>
-
-      <footer className="relative border-t border-white/[0.06] py-8">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="text-center sm:text-left">
-              <p className="text-xs text-white/45">Built with Next.js, Tailwind CSS, and Vercel</p>
-              <p className="mt-1 text-xs font-semibold text-white/60">Designed &amp; developed by Abbas Hussain</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
-                <GithubIcon className="h-5 w-5" />
-              </a>
-              <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
-                <ExternalLink className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-  );
-}
-
-function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: string }) {
-  return <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/40"><Icon className="h-3.5 w-3.5 text-orange-300" /> {text}</p>;
-}
-
-function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
-  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.06] p-6"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
-}
+... [Content truncated]
