@@ -446,7 +446,6 @@ function CurrentlyLearning() {
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   return (
     <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.05] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
-      <div className={`pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-gradient-to-br ${project.color} opacity-10 blur-3xl transition duration-500 group-hover:opacity-25`} />
       <div className="relative flex h-full flex-col">
         {project.image && !compact && (
           <a
@@ -548,14 +547,16 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-orange-400/30">
-      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-40 left-1/2 h-[36rem] w-[52rem] -translate-x-1/2 rounded-full bg-orange-500/[0.10] blur-[160px]" />
-        <div className="absolute top-[32%] -left-52 h-96 w-96 rounded-full bg-violet-500/[0.08] blur-[145px]" />
-        <div className="absolute bottom-0 -right-52 h-[32rem] w-[32rem] rounded-full bg-cyan-500/[0.07] blur-[145px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.022)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.022)_1px,transparent_1px)] bg-[size:56px_56px]" />
-      </div>
-
-      <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/70 backdrop-blur-md">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 52rem 36rem at 50% -10%, rgba(249,115,22,0.10), transparent 60%), radial-gradient(circle 24rem at 5% 32%, rgba(139,92,246,0.08), transparent 60%), radial-gradient(circle 16rem at 95% 90%, rgba(6,182,212,0.07), transparent 60%), linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px)',
+          backgroundSize: '100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px',
+        }}
+      />
+      <header className="sticky top-0 z-20 border-b border-white/[0.06] bg-black/75">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 text-sm font-black shadow-lg shadow-orange-500/20">A</div>
