@@ -20,10 +20,18 @@ import {
   Sparkles,
   WalletCards,
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { CREDENTIAL_BRANDS, CREDENTIAL_BRAND_ORDER } from './credential-logos';
 import { BrandGlyph, CredentialMark } from './credential-mark';
-import Certifications from './Certifications';
-import ProjectScreenshot from './ProjectScreenshot';
+
+// Code splitting: the interactive islands below load as separate chunks
+// instead of being bundled into the initial page JavaScript.
+const Certifications = dynamic(() => import('./Certifications'), {
+  loading: () => <div className="mx-auto mt-8 h-14 w-64 animate-pulse rounded-xl border border-white/[0.07] bg-white/[0.03]" aria-hidden="true" />,
+});
+const ProjectScreenshot = dynamic(() => import('./ProjectScreenshot'), {
+  loading: () => <span className="inline-flex h-9 w-36 animate-pulse rounded-lg border border-white/10 bg-white/[0.04]" aria-hidden="true" />,
+});
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -57,22 +65,23 @@ const PUBLIC_PROJECTS: Project[] = [
     name: 'OpenAPI Forge',
     tag: 'Developer Tool',
     category: 'API Platform',
-    icon: '◈',
+    icon: 'â',
     color: 'from-cyan-500 to-blue-600',
     accent: 'text-cyan-300',
     desc: 'Contract-first API workspace for OpenAPI validation, documentation preview, schema-derived mocks, versioned specifications and TypeScript SDK generation.',
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
     live: 'https://openapifrg-ewzpndbh.manus.space',
-    image: '/projects/openapi-forge.webp',
-    imageAlt: 'OpenAPI Forge workspace — a specification editor with contract validation, saved versions and generated TypeScript SDKs',
+    image: '/projects/op
+enapi-forge.webp',
+    imageAlt: 'OpenAPI Forge workspace â a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
   },
   {
     name: 'DevDesk AI',
     tag: 'AI Developer Tool',
     category: 'Code Intelligence',
-    icon: '⌬',
+    icon: 'â¬',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Authenticated developer workspace for importing GitHub repositories or ZIP projects, creating safe source manifests, and asking source-backed code questions with cited file paths.',
@@ -85,34 +94,35 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
     live: 'https://dev-desk-ai-phi.vercel.app',
     image: '/projects/devdesk-ai.webp',
-    imageAlt: 'DevDesk AI landing page — an authenticated workspace for asking source-backed questions about an imported codebase',
+    imageAlt: 'DevDesk AI landing page â an authenticated workspace for asking source-backed questions about an imported codebase',
     repo: 'https://github.com/AbbasFullstack/DevDesk-AI-',
   },
   {
     name: 'PulseBoard AI',
     tag: 'Workspace CRM',
     category: 'Full-Stack Product',
-    icon: '◍',
+    icon: 'â',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Workspace-scoped customer CRM and pipeline app with Supabase Auth, RLS-protected data, server-side AI boundaries, and manual integration foundations.',
     outcome: 'Demonstrates caller-bound workspace onboarding, real customer and deal flows, and calculated workspace roll-ups.',
     highlights: {
       problem: 'Small teams outgrow spreadsheets but not the cost of an enterprise CRM',
-      tech: 'Next.js, Supabase Auth, PostgreSQL row-level security, server-side AI boundaries',
+      tech: 'Next.js, Supabase Auth, PostgreSQL row-l
+evel security, server-side AI boundaries',
       impact: 'Caller-bound workspace onboarding with real customer, deal and roll-up flows',
     },
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
     live: 'https://pulseboard-ai.vercel.app',
     image: '/projects/pulseboard-ai.webp',
-    imageAlt: 'PulseBoard AI landing page — a workspace-scoped CRM with customers, contacts and pipeline views',
+    imageAlt: 'PulseBoard AI landing page â a workspace-scoped CRM with customers, contacts and pipeline views',
     repo: 'https://github.com/AbbasFullstack/PulseBoard-AI',
   },
   {
     name: 'VaultX',
     tag: 'Web3 Wallet',
     category: 'Self-Custody',
-    icon: '⌘',
+    icon: 'â',
     color: 'from-violet-500 to-indigo-600',
     accent: 'text-violet-300',
     desc: 'Multi-chain testnet wallet with encrypted keystore flow, account import, live balances, activity history and documented provider proxy routes.',
@@ -125,29 +135,30 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
     image: '/projects/vaultx.webp',
-    imageAlt: 'VaultX landing page — a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
+    imageAlt: 'VaultX landing page â a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
     repo: 'https://github.com/AbbasFullstack/vaultx',
   },
   {
     name: 'Abbas AI',
     tag: 'AI SaaS',
     category: 'Full Stack',
-    icon: '◌',
+    icon: 'â',
     color: 'from-fuchsia-500 to-rose-600',
     accent: 'text-fuchsia-300',
     desc: 'Authenticated AI chat product with streaming responses, multi-conversation history, code rendering, account flows and a production database layer.',
     outcome: 'A full SaaS-style build instead of a single chat-page demo.',
-    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth', 'OpenRouter'],
+    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAu
+th', 'OpenRouter'],
     live: 'https://abbas-ai-eta.vercel.app',
     image: '/projects/abbas-ai.webp',
-    imageAlt: 'Abbas AI landing page — a multi-language AI chat platform with a live demo entry point',
+    imageAlt: 'Abbas AI landing page â a multi-language AI chat platform with a live demo entry point',
     repo: 'https://github.com/AbbasFullstack/abbas-ai',
   },
   {
     name: 'OmniX',
     tag: 'AI Workspace',
     category: 'AI Engineering',
-    icon: '✦',
+    icon: 'â¦',
     color: 'from-orange-500 to-red-600',
     accent: 'text-orange-300',
     desc: 'A multi-modal AI workspace with server routes for chat, audio, image, model and slides experiences, backed by Supabase user data.',
@@ -155,14 +166,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'OpenRouter', 'Hugging Face', 'Tailwind'],
     live: 'https://omnix-pi.vercel.app',
     image: '/projects/omnix.webp',
-    imageAlt: 'OmniX landing page — an all-in-one personal AI covering chat, voice calls, image generation and slides',
+    imageAlt: 'OmniX landing page â an all-in-one personal AI covering chat, voice calls, image generation and slides',
     repo: 'https://github.com/AbbasFullstack/omnix',
   },
   {
     name: 'CryptoWatch',
     tag: 'Real-Time Finance',
     category: 'Data Product',
-    icon: '↗',
+    icon: 'â',
     color: 'from-emerald-500 to-teal-600',
     accent: 'text-emerald-300',
     desc: 'Personal crypto watchlist with Supabase authentication, PostgreSQL row-level security, Binance WebSocket prices and interactive coin charts.',
@@ -175,14 +186,15 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
     image: '/projects/cryptowatch.webp',
-    imageAlt: 'CryptoWatch landing page — a personal crypto watchlist with a live price ticker and realtime market charts',
+    imageAlt: 'CryptoWatch landing page â a personal crypto watchlist with a live price ticker and realtime market ch
+arts',
     repo: 'https://github.com/AbbasFullstack/cryptowatch',
   },
   {
     name: 'FaucetX',
     tag: 'Testnet Faucet',
     category: 'Web3 Backend',
-    icon: '◒',
+    icon: 'â',
     color: 'from-sky-500 to-cyan-600',
     accent: 'text-sky-300',
     desc: 'Testnet faucet workflow with claim and withdrawal API routes, account data, server-side transaction handling and testnet-only payout logic.',
@@ -190,17 +202,17 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'ethers.js', 'Infura', 'API Routes'],
     live: 'https://faucetx-theta.vercel.app',
     image: '/projects/faucetx.webp',
-    imageAlt: 'FaucetX landing page — a crypto rewards platform with a timed claim flow and step-by-step onboarding',
+    imageAlt: 'FaucetX landing page â a crypto rewards platform with a timed claim flow and step-by-step onboarding',
     repo: 'https://github.com/AbbasFullstack/faucetx',
   },
 ];
 
 const MORE_PROJECTS: Project[] = [
   {
-    name: 'DevCV AI — Private Beta',
+    name: 'DevCV AI â Private Beta',
     tag: 'Private Beta',
     category: 'AI + Privacy',
-    icon: '◇',
+    icon: 'â',
     color: 'from-fuchsia-500 to-violet-600',
     accent: 'text-fuchsia-300',
     desc: 'Privacy-first resume workspace with protected authentication, owner-scoped data controls, and explicit resume version save, load, and delete actions.',
@@ -208,29 +220,30 @@ const MORE_PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
     live: 'https://devcv-ai-blue.vercel.app',
     image: '/projects/devcv-ai.webp',
-    imageAlt: 'DevCV AI landing page — AI-assisted resume intelligence with analysis and targeting tools',
-    status: 'Private Beta · live AI verification-gated',
+    imageAlt: 'DevCV AI landing page â AI-assisted resume intelligence with analysis and targeting tools',
+    status: 'Private Beta Â· live AI verification-gated',
   },
   {
     name: 'Real-Time Crypto Tracker',
     tag: 'Market Dashboard',
     category: 'Realtime Data',
-    icon: '⌁',
+    icon: 'â',
     color: 'from-amber-500 to-orange-600',
     accent: 'text-amber-300',
-    desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, interactive charts, search and coin detail pages.',
+    desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, inter
+active charts, search and coin detail pages.',
     outcome: 'A focused realtime data interface built around live market movement.',
     tech: ['Next.js', 'WebSocket', 'Binance API', 'Recharts', 'TypeScript'],
     live: 'https://realtime-crypto-tracker.vercel.app',
     image: '/projects/realtime-crypto-tracker.webp',
-    imageAlt: 'Real-Time Crypto Tracker dashboard — live market cap and volume KPIs above a streaming price table',
+    imageAlt: 'Real-Time Crypto Tracker dashboard â live market cap and volume KPIs above a streaming price table',
     repo: 'https://github.com/AbbasFullstack/realtime-crypto-tracker',
   },
   {
     name: 'CryptoAI',
     tag: 'AI Assistant',
     category: 'AI + Data',
-    icon: '◉',
+    icon: 'â',
     color: 'from-blue-500 to-violet-600',
     accent: 'text-blue-300',
     desc: 'AI crypto assistant that enriches answers with live market context from Binance streams and market-data APIs through a server-side chat route.',
@@ -238,7 +251,7 @@ const MORE_PROJECTS: Project[] = [
     tech: ['Next.js', 'Groq', 'Binance API', 'WebSocket', 'Tailwind'],
     live: 'https://cryptoai-two.vercel.app',
     image: '/projects/cryptoai.webp',
-    imageAlt: 'CryptoAI chat interface — a personal crypto assistant for live prices and plain-language explanations',
+    imageAlt: 'CryptoAI chat interface â a personal crypto assistant for live prices and plain-language explanations',
     repo: 'https://github.com/AbbasFullstack/cryptoai',
   },
 ];
@@ -266,7 +279,8 @@ const CERTS = [
     title: 'Collaborate with pull requests in Azure Repos', 
     issuer: 'Microsoft', 
     year: '2026', 
-    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
+    url: 'https://learn.microsoft.com/api/achievements
+/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
   },
   { 
     title: 'Build student inquiry skills', 
@@ -304,6 +318,12 @@ const CERTS = [
     year: '2026', 
     url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
   },
+  {
+    title: 'AWS Certified Developer – Associate (Exam Prep Plan Completed)',
+    issuer: 'AWS Skill Builder',
+    year: '2026',
+    url: 'https://aws.amazon.com/certification/certified-developer-associate/',
+  },
 ];
 
 const FEATURED_ORDER = ['DevDesk AI', 'VaultX', 'CryptoWatch', 'PulseBoard AI'];
@@ -316,7 +336,8 @@ const ADDITIONAL_PROJECTS = [
 const SKILLS = [
   { icon: Code2, cat: 'Frontend', note: 'Interfaces that feel intentional', items: ['React 19', 'Next.js 16', 'Vite', 'TypeScript', 'Tailwind CSS 4', 'Responsive UI'] },
   { icon: Braces, cat: 'Backend & APIs', note: 'Contracts, routes and typed clients', items: ['API Routes', 'Express', 'tRPC', 'REST + JSON-RPC', 'OpenAPI', 'TypeScript SDKs'] },
-  { icon: Database, cat: 'Data & Auth', note: 'User data with clear boundaries', items: ['PostgreSQL', 'MySQL / TiDB', 'Supabase RLS', 'Prisma', 'Drizzle ORM', 'OAuth + NextAuth'] },
+  { icon: Database, cat: 'Data & Auth', note: 'User data with clear boundaries', items: ['PostgreSQL', 'MySQL / TiDB', 'Supabase RLS', 'Prisma', 'D
+rizzle ORM', 'OAuth + NextAuth'] },
   { icon: BrainCircuit, cat: 'AI, Realtime & Web3', note: 'Modern product integrations', items: ['Streaming AI', 'WebSockets', 'ethers.js', 'Infura', 'Etherscan', 'Vitest'] },
 ];
 
@@ -343,7 +364,7 @@ function skillLevel(item: string): SkillLevel | null {
 }
 
 const LEARNING = [
-  { title: 'AWS Certified Developer', note: 'Working toward the associate certification — core services, IAM and deployment.', status: 'In progress' },
+  { title: 'AWS Certified Developer', note: 'Working toward the associate certification â core services, IAM and deployment.', status: 'In progress' },
   { title: 'Advanced System Design', note: 'Scalability, caching, queues, and the trade-offs behind real architecture decisions.', status: 'In progress' },
   { title: 'MCP + Agentic AI', note: 'Model Context Protocol servers, tool-using agents, and safe AI boundaries.', status: 'In progress' },
 ];
@@ -354,6 +375,7 @@ function CurrentlyLearning() {
       <SectionLabel icon={BookOpen} text="Currently learning" />
       <div className="grid gap-4 sm:grid-cols-3">
         {LEARNING.map((item) => (
+
           <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-5 backdrop-blur-xl transition hover:border-orange-500/25 hover:bg-white/[0.06]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-orange-300">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-orange-400" />
@@ -387,7 +409,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
                 alt={project.imageAlt ?? `${project.name} interface`}
                 fill
                 sizes="(min-width: 1024px) 560px, (min-width: 640px) 90vw, 100vw"
-                className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                className="object-cov
+er object-top transition duration-500 group-hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
@@ -427,7 +450,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
             ))}
           </ul>
         )}
-        {!compact && !project.highlights && (
+        {!compact && !project.highlights
+ && (
           <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/45">
             <span className={`${project.accent} font-bold`}>Why it matters: </span>{project.outcome}
           </div>
@@ -462,7 +486,8 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
                 <GithubIcon className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
               </a>
             )}
-            {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-200/85">{project.status}</span>}
+            {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-2
+00/85">{project.status}</span>}
           </div>
         )}
       </div>
@@ -492,7 +517,8 @@ export default function Home() {
             <a href="#learning" className="transition hover:text-white">Learning</a>
             <a href="#work" className="transition hover:text-white">Work</a>
             <a href="#certs" className="transition hover:text-white">Credentials</a>
-            <a href="#contact" className="transition hover:text-white">Contact</a>
+         
+   <a href="#contact" className="transition hover:text-white">Contact</a>
           </nav>
           <div className="flex items-center gap-2">
             <nav className="flex items-center gap-3 text-[11px] font-semibold text-white/70 md:hidden" aria-label="Compact navigation">
@@ -524,12 +550,13 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
+        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-ti
+ght text-transparent sm:text-6xl">Abbas Hussain</h1>
 
         <div className="mt-4 flex justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-semibold text-white/65">
-            <span aria-hidden="true">📍</span>
-            Pakistan · Remote-friendly
+            <span aria-hidden="true">ð</span>
+            Pakistan Â· Remote-friendly
           </span>
         </div>
 
@@ -537,14 +564,15 @@ export default function Home() {
           Full-Stack Developer building AI-powered products &amp; secure Web3 tools.
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          16-year-old self-taught builder from Pakistan — shipping production apps on a mobile phone.
+          Shipping production-ready applications from Pakistan.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition duration-200 hover:scale-[1.02]"><Rocket className="h-4 w-4" /> View featured work</a>
           <a href="/Abbas-Hussain-Full-Stack-Developer-CV.pdf" download="Abbas-Hussain-Full-Stack-Developer-CV.pdf" aria-label="Download Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
             <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/20 transition-transform duration-700 group-hover:translate-x-[420%]" aria-hidden="true" />
-            <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
+            <Download className="relative h-4 w-4 tran
+sition-transform duration-200 group-hover:translate-y-0.5" />
             <span className="relative">Download CV</span>
           </a>
           <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/80 transition hover:bg-white/[0.10]"><ExternalLink className="h-4 w-4" /> Connect on LinkedIn</a>
@@ -578,9 +606,10 @@ export default function Home() {
       <section id="about" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Sparkles} text="About me" />
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
-          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-7 backdrop-blur-xl sm:p-8">
+          <div className="rounded-3xl border border-white/[0.07] bg-white/
+[0.035] p-7 backdrop-blur-xl sm:p-8">
             <p className="leading-relaxed text-white/68">
-              I am a self-taught full-stack developer focused on building complete, usable products—not just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations and Web3 testnet workflows.
+              I am a Full-Stack Developer focused on building complete, usable products—not just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
             </p>
             <p className="mt-4 leading-relaxed text-white/48">
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
@@ -608,7 +637,8 @@ export default function Home() {
           {SKILLS.map((group) => {
             const Icon = group.icon;
             return (
-              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
+              <article key={group.cat} className="rounded-3xl border border-white
+/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
                 <div className="mb-5 flex items-start gap-3">
                   <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
                   <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
@@ -698,7 +728,7 @@ export default function Home() {
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-200/70">Let&apos;s build something useful</p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Available for internships, junior roles and collaboration.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/55">I am interested in teams building developer tools, AI products, data-rich interfaces and responsible Web3 experiences.</p>
-          
+
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="mailto:abbaswebdevelopers@gmail.com" className="flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-white/85">
               <Mail className="h-4 w-4" /> abbaswebdevelopers@gmail.com
@@ -713,7 +743,7 @@ export default function Home() {
               <GithubIcon className="h-4 w-4" /> GitHub
             </a>
           </div>
-          
+
           <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
         </div>
       </section>
@@ -747,4 +777,3 @@ function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: strin
 function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
   return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
 }
-

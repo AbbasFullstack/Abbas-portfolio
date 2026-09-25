@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 const SITE_URL = "https://abbas-portfolio-beta.vercel.app";
 const SITE_TITLE = "Abbas Hussain | Full-Stack Developer | AI & Web3";
 const SITE_DESCRIPTION =
-  "16-year-old self-taught full-stack developer from Pakistan building AI-powered products and secure Web3 tools.";
+  "Full-Stack Developer from Pakistan building AI-powered products and secure Web3 tools.";
 const OG_IMAGE = {
   url: "/og-image.png",
   width: 1200,
   height: 630,
-  alt: "Abbas Hussain — Full-Stack Developer, AI & Web3",
+  alt: "Abbas Hussain â Full-Stack Developer, AI & Web3",
 };
 
 export const metadata: Metadata = {
@@ -80,7 +80,8 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export const viewport: Viewport = {
+export const viewport: Viewp
+ort = {
   themeColor: "#050505",
   colorScheme: "dark",
   width: "device-width",
@@ -118,3 +119,4 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
