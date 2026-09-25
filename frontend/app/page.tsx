@@ -424,7 +424,7 @@ const LEARNING = [
 
 function CurrentlyLearning() {
   return (
-    <section id="learning" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+    <section id="learning" className="relative mx-auto max-w-6xl px-4 py-12">
       <SectionLabel icon={BookOpen} text="Currently learning" />
       <div className="grid gap-4 sm:grid-cols-3">
         {LEARNING.map((item) => (
@@ -445,7 +445,7 @@ function CurrentlyLearning() {
 
 function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   return (
-    <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.05] ${compact ? 'p-5' : 'p-6'} transition duration-300 hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
+    <article className={`group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.05] ${compact ? 'p-5' : 'p-6'} transition-colors duration-200 hover:border-white/[0.16] hover:bg-white/[0.06]`}>
       <div className="relative flex h-full flex-col">
         {project.image && !compact && (
           <a
@@ -585,7 +585,7 @@ export default function Home() {
 
       <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 text-center sm:pt-16">
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold text-emerald-400">
-          <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" /></span>
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
           Open to internships & junior roles
         </div>
 
@@ -652,7 +652,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section id="about" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Sparkles} text="About me" />
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
@@ -671,7 +671,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Briefcase} text="Experience" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {EXPERIENCES.map((job) => (
@@ -701,7 +701,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Layers3} text="Capabilities" />
         <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
           {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
@@ -745,7 +745,7 @@ export default function Home() {
 
       <CurrentlyLearning />
 
-      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div><SectionLabel icon={Rocket} text="Featured work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Four projects. Clear full-stack proof.</h2></div>
           <p className="max-w-sm text-sm leading-relaxed text-white/45">These projects match the public GitHub showcase and link to a live build or source repository.</p>
@@ -761,7 +761,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-4 md:grid-cols-3">
           <ProofCard icon={ShieldCheck} title="Security-aware" text="Environment variables, server-side provider routes and testnet-only Web3 demonstrations." />
           <ProofCard icon={Radio} title="Realtime systems" text="WebSocket market streams, live activity data and responsive chart experiences." />
@@ -769,7 +769,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12 [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+      <section id="certs" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Award} text="Verified credentials" />
         <div className="grid gap-5 sm:grid-cols-2">
           {CERTS.slice(0, 4).map((cert) => (
