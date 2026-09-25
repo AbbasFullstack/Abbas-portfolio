@@ -72,8 +72,7 @@ const PUBLIC_PROJECTS: Project[] = [
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
     live: 'https://openapifrg-ewzpndbh.manus.space',
-    image: '/projects/op
-enapi-forge.webp',
+    image: '/projects/openapi-forge.webp',
     imageAlt: 'OpenAPI Forge workspace — a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
   },
@@ -108,8 +107,7 @@ enapi-forge.webp',
     outcome: 'Demonstrates caller-bound workspace onboarding, real customer and deal flows, and calculated workspace roll-ups.',
     highlights: {
       problem: 'Small teams outgrow spreadsheets but not the cost of an enterprise CRM',
-      tech: 'Next.js, Supabase Auth, PostgreSQL row-l
-evel security, server-side AI boundaries',
+      tech: 'Next.js, Supabase Auth, PostgreSQL row-level security, server-side AI boundaries',
       impact: 'Caller-bound workspace onboarding with real customer, deal and roll-up flows',
     },
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
@@ -147,8 +145,7 @@ evel security, server-side AI boundaries',
     accent: 'text-fuchsia-300',
     desc: 'Authenticated AI chat product with streaming responses, multi-conversation history, code rendering, account flows and a production database layer.',
     outcome: 'A full SaaS-style build instead of a single chat-page demo.',
-    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAu
-th', 'OpenRouter'],
+    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth', 'OpenRouter'],
     live: 'https://abbas-ai-eta.vercel.app',
     image: '/projects/abbas-ai.webp',
     imageAlt: 'Abbas AI landing page — a multi-language AI chat platform with a live demo entry point',
@@ -186,8 +183,7 @@ th', 'OpenRouter'],
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
     image: '/projects/cryptowatch.webp',
-    imageAlt: 'CryptoWatch landing page — a personal crypto watchlist with a live price ticker and realtime market ch
-arts',
+    imageAlt: 'CryptoWatch landing page — a personal crypto watchlist with a live price ticker and realtime market charts',
     repo: 'https://github.com/AbbasFullstack/cryptowatch',
   },
   {
@@ -230,8 +226,7 @@ const MORE_PROJECTS: Project[] = [
     icon: '⌁',
     color: 'from-amber-500 to-orange-600',
     accent: 'text-amber-300',
-    desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, inter
-active charts, search and coin detail pages.',
+    desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, interactive charts, search and coin detail pages.',
     outcome: 'A focused realtime data interface built around live market movement.',
     tech: ['Next.js', 'WebSocket', 'Binance API', 'Recharts', 'TypeScript'],
     live: 'https://realtime-crypto-tracker.vercel.app',
@@ -279,8 +274,7 @@ const CERTS = [
     title: 'Collaborate with pull requests in Azure Repos', 
     issuer: 'Microsoft', 
     year: '2026', 
-    url: 'https://learn.microsoft.com/api/achievements
-/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
+    url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
   },
   { 
     title: 'Build student inquiry skills', 
@@ -336,8 +330,7 @@ const ADDITIONAL_PROJECTS = [
 const SKILLS = [
   { icon: Code2, cat: 'Frontend', note: 'Interfaces that feel intentional', items: ['React 19', 'Next.js 16', 'Vite', 'TypeScript', 'Tailwind CSS 4', 'Responsive UI'] },
   { icon: Braces, cat: 'Backend & APIs', note: 'Contracts, routes and typed clients', items: ['API Routes', 'Express', 'tRPC', 'REST + JSON-RPC', 'OpenAPI', 'TypeScript SDKs'] },
-  { icon: Database, cat: 'Data & Auth', note: 'User data with clear boundaries', items: ['PostgreSQL', 'MySQL / TiDB', 'Supabase RLS', 'Prisma', 'D
-rizzle ORM', 'OAuth + NextAuth'] },
+  { icon: Database, cat: 'Data & Auth', note: 'User data with clear boundaries', items: ['PostgreSQL', 'MySQL / TiDB', 'Supabase RLS', 'Prisma', 'Drizzle ORM', 'OAuth + NextAuth'] },
   { icon: BrainCircuit, cat: 'AI, Realtime & Web3', note: 'Modern product integrations', items: ['Streaming AI', 'WebSockets', 'ethers.js', 'Infura', 'Etherscan', 'Vitest'] },
 ];
 
@@ -409,8 +402,7 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
                 alt={project.imageAlt ?? `${project.name} interface`}
                 fill
                 sizes="(min-width: 1024px) 560px, (min-width: 640px) 90vw, 100vw"
-                className="object-cov
-er object-top transition duration-500 group-hover:scale-[1.03]"
+                className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
@@ -450,8 +442,7 @@ er object-top transition duration-500 group-hover:scale-[1.03]"
             ))}
           </ul>
         )}
-        {!compact && !project.highlights
- && (
+        {!compact && !project.highlights && (
           <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/45">
             <span className={`${project.accent} font-bold`}>Why it matters: </span>{project.outcome}
           </div>
@@ -486,8 +477,7 @@ er object-top transition duration-500 group-hover:scale-[1.03]"
                 <GithubIcon className="h-3.5 w-3.5" /> {project.live ? 'Code' : 'View code'}
               </a>
             )}
-            {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-2
-00/85">{project.status}</span>}
+            {project.status && <span className="rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-amber-200/85">{project.status}</span>}
           </div>
         )}
       </div>
@@ -517,8 +507,7 @@ export default function Home() {
             <a href="#learning" className="transition hover:text-white">Learning</a>
             <a href="#work" className="transition hover:text-white">Work</a>
             <a href="#certs" className="transition hover:text-white">Credentials</a>
-         
-   <a href="#contact" className="transition hover:text-white">Contact</a>
+            <a href="#contact" className="transition hover:text-white">Contact</a>
           </nav>
           <div className="flex items-center gap-2">
             <nav className="flex items-center gap-3 text-[11px] font-semibold text-white/70 md:hidden" aria-label="Compact navigation">
@@ -550,8 +539,7 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-ti
-ght text-transparent sm:text-6xl">Abbas Hussain</h1>
+        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
 
         <div className="mt-4 flex justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-semibold text-white/65">
@@ -571,8 +559,7 @@ ght text-transparent sm:text-6xl">Abbas Hussain</h1>
           <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition duration-200 hover:scale-[1.02]"><Rocket className="h-4 w-4" /> View featured work</a>
           <a href="/Abbas-Hussain-Full-Stack-Developer-CV.pdf" download="Abbas-Hussain-Full-Stack-Developer-CV.pdf" aria-label="Download Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
             <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/20 transition-transform duration-700 group-hover:translate-x-[420%]" aria-hidden="true" />
-            <Download className="relative h-4 w-4 tran
-sition-transform duration-200 group-hover:translate-y-0.5" />
+            <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span className="relative">Download CV</span>
           </a>
           <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-6 py-3 text-sm font-bold text-white/80 transition hover:bg-white/[0.10]"><ExternalLink className="h-4 w-4" /> Connect on LinkedIn</a>
@@ -606,8 +593,7 @@ sition-transform duration-200 group-hover:translate-y-0.5" />
       <section id="about" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Sparkles} text="About me" />
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
-          <div className="rounded-3xl border border-white/[0.07] bg-white/
-[0.035] p-7 backdrop-blur-xl sm:p-8">
+          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-7 backdrop-blur-xl sm:p-8">
             <p className="leading-relaxed text-white/68">
               I am a Full-Stack Developer focused on building complete, usable productsnot just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
             </p>
@@ -637,8 +623,7 @@ sition-transform duration-200 group-hover:translate-y-0.5" />
           {SKILLS.map((group) => {
             const Icon = group.icon;
             return (
-              <article key={group.cat} className="rounded-3xl border border-white
-/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
+              <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.035] p-6 backdrop-blur-xl">
                 <div className="mb-5 flex items-start gap-3">
                   <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
                   <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>

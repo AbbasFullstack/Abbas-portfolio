@@ -80,8 +80,7 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export const viewport: Viewp
-ort = {
+export const viewport: Viewport = {
   themeColor: "#050505",
   colorScheme: "dark",
   width: "device-width",
