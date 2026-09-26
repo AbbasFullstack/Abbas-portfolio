@@ -37,7 +37,7 @@ const ImagePrefetch = dynamic(() => import('./ImagePrefetch'));
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg {...props} viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 0 6 5.5 6-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
       <path d="M9 18c-4.51 2-5-2-7-2" />
     </svg>
@@ -440,7 +440,7 @@ function CurrentlyLearning() {
               {item.status}
             </span>
             <h3 className="mt-4 font-bold text-white">{item.title}</h3>
-            <p className="mt-1.5 text-xs leading-relaxed text-white/45">{item.note}</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-white/60">{item.note}</p>
           </article>
         ))}
       </div>
@@ -477,7 +477,7 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
             {project.icon}
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">{project.category}</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">{project.category}</p>
             <span className={`mt-1 inline-flex rounded-full border border-white/10 bg-black/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${project.accent}`}>
               {project.tag}
             </span>
@@ -507,7 +507,7 @@ function ProjectCard({ project, compact = false }: { project: Project; compact?:
           </ul>
         )}
         {!compact && !project.highlights && (
-          <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/45">
+          <div className="mt-5 border-l border-white/15 pl-3 text-xs leading-relaxed text-white/60">
             <span className={`${project.accent} font-bold`}>Why it matters: </span>{project.outcome}
           </div>
         )}
@@ -609,7 +609,7 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="bg-gradient-to-b from-white via-white to-white/35 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
+        <h1 className="bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">Abbas Hussain</h1>
 
         <div className="mt-4 flex justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-semibold text-white/65">
@@ -648,7 +648,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/35">Credentials from</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/55">Credentials from</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
             {CREDENTIAL_BRAND_ORDER.map((brand) => (
               <span key={brand} className="flex items-center gap-2 text-xs font-semibold text-white/55" title={CREDENTIAL_BRANDS[brand].title}>
@@ -681,7 +681,7 @@ export default function Home() {
 
       <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Briefcase} text="Experience" />
-        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/50">
+        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/60">
           Project-based virtual internship programs, completed in parallel as structured, mentor-reviewed builds — each with a public GitHub repository.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -692,7 +692,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-white">{job.company}</h3>
                   <p className="mt-0.5 text-sm font-semibold text-orange-300">{job.role}</p>
                 </div>
-                <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">{job.period}</span>
+                <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/60">{job.period}</span>
               </div>
               <ul className="mt-4 space-y-2.5">
                 {job.achievements.map((item) => (
@@ -727,7 +727,7 @@ export default function Home() {
         <SectionLabel icon={Layers3} text="Capabilities" />
         <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
           {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
-            <span key={level} className="flex items-center gap-2 text-[11px] font-semibold text-white/45">
+            <span key={level} className="flex items-center gap-2 text-[11px] font-semibold text-white/60">
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${SKILL_LEVELS[level].dot}`} />
               {level}
             </span>
@@ -740,7 +740,7 @@ export default function Home() {
               <article key={group.cat} className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-6">
                 <div className="mb-5 flex items-start gap-3">
                   <div className="rounded-xl border border-orange-500/20 bg-orange-500/10 p-2.5 text-orange-300"><Icon className="h-5 w-5" /></div>
-                  <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/40">{group.note}</p></div>
+                  <div><h3 className="font-bold">{group.cat}</h3><p className="mt-0.5 text-xs text-white/60">{group.note}</p></div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => {
@@ -770,7 +770,7 @@ export default function Home() {
       <section id="work" className="relative mx-auto max-w-6xl px-4 py-12">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div><SectionLabel icon={Rocket} text="Featured work" /><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Four projects. Clear full-stack proof.</h2></div>
-          <p className="max-w-sm text-sm leading-relaxed text-white/45">These projects match the public GitHub showcase and link to a live build or source repository.</p>
+          <p className="max-w-sm text-sm leading-relaxed text-white/60">These projects match the public GitHub showcase and link to a live build or source repository.</p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
@@ -778,7 +778,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12 border-t border-white/[0.08] pt-10">
-          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Additional public builds</p><p className="mt-1 text-sm text-white/45">Focused experiments, API tools, market data and AI context.</p></div></div>
+          <div className="mb-5 flex items-center gap-3"><GitBranch className="h-4 w-4 text-orange-300" /><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Additional public builds</p><p className="mt-1 text-sm text-white/60">Focused experiments, API tools, market data and AI context.</p></div></div>
           <div className="grid gap-4 md:grid-cols-2">{ADDITIONAL_PROJECTS.map((project) => <ProjectCard key={project.name} project={project} compact />)}</div>
         </div>
       </section>
@@ -798,12 +798,12 @@ export default function Home() {
             <article key={cert.title} className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.06] p-6 transition hover:border-orange-500/30 hover:bg-white/[0.07]">
               <div className="flex items-start gap-4">
                 <CredentialMark issuer={cert.issuer} title={cert.title} />
-                <span className="ml-auto shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/45">
+                <span className="ml-auto shrink-0 rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/60">
                   {cert.year}
                 </span>
               </div>
               <h3 className="mt-5 text-lg font-bold leading-snug text-white group-hover:text-orange-200">{cert.title}</h3>
-              <p className="mt-1.5 text-sm text-white/45">{cert.issuer}</p>
+              <p className="mt-1.5 text-sm text-white/60">{cert.issuer}</p>
               <div className="mt-6 flex flex-1 items-end">
                 <a
                   href={cert.url}
@@ -843,7 +843,7 @@ export default function Home() {
             </a>
           </div>
 
-          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/35"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
+          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/55"><MapPin className="h-3 w-3" /> Pakistan · Remote-friendly</p>
         </div>
       </section>
 
@@ -851,14 +851,14 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="text-center sm:text-left">
-              <p className="text-xs text-white/45">Built with Next.js, Tailwind CSS, and Vercel</p>
+              <p className="text-xs text-white/60">Built with Next.js, Tailwind CSS, and Vercel</p>
               <p className="mt-1 text-xs font-semibold text-white/60">Designed &amp; developed by Abbas Hussain</p>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
+              <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/60 transition hover:bg-white/[0.08] hover:text-white">
                 <GithubIcon className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-lg p-2 text-white/50 transition hover:bg-white/[0.08] hover:text-white">
+              <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-lg p-2 text-white/60 transition hover:bg-white/[0.08] hover:text-white">
                 <ExternalLink className="h-5 w-5" />
               </a>
             </div>
@@ -870,9 +870,9 @@ export default function Home() {
 }
 
 function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: string }) {
-  return <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/40"><Icon className="h-3.5 w-3.5 text-orange-300" /> {text}</p>;
+  return <h2 className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/60"><Icon className="h-3.5 w-3.5 text-orange-300" aria-hidden="true" /> {text}</h2>;
 }
 
 function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
-  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.06] p-6"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/45">{text}</p></article>;
+  return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.06] p-6"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/60">{text}</p></article>;
 }
