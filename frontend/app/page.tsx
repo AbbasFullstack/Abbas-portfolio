@@ -342,6 +342,7 @@ type Experience = {
   period: string;
   achievements: string[];
   tech: string[];
+  repo?: string;
 };
 
 const EXPERIENCES: Experience[] = [
@@ -354,6 +355,7 @@ const EXPERIENCES: Experience[] = [
       '146 automated tests, 100% passing.',
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'Multer', 'Nodemailer'],
+    repo: 'https://github.com/AbbasFullstack/internify-backend-tasks',
   },
   {
     company: 'CodeAlpha',
@@ -364,6 +366,7 @@ const EXPERIENCES: Experience[] = [
       'Integrated GitHub Actions CI/CD pipelines across both apps.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
+    repo: 'https://github.com/AbbasFullstack/CodeAlpha_ProjectManagementTool',
   },
   {
     company: 'Oasis Infobyte',
@@ -374,6 +377,7 @@ const EXPERIENCES: Experience[] = [
       '30 API tests + 4 socket tests passing.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Razorpay', 'Socket.io'],
+    repo: 'https://github.com/AbbasFullstack/OIBsIP',
   },
   {
     company: 'ArithMatrix',
@@ -383,6 +387,7 @@ const EXPERIENCES: Experience[] = [
       'Built an Employee Management System with JWT auth and a "God Mode" Audit Log — an un-editable audit trail.',
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
+    repo: 'https://github.com/AbbasFullstack/FSD_2_EmployeeManagementSystem_BYTE',
   },
   {
     company: 'Barakah TechLabs',
@@ -392,6 +397,7 @@ const EXPERIENCES: Experience[] = [
       'Built 2 production apps: a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
     ],
     tech: ['JavaScript', 'HTML', 'CSS', 'REST APIs', 'LocalStorage'],
+    repo: 'https://github.com/AbbasFullstack/Barakah_TechLabs_Internship',
   },
 ];
 
@@ -701,6 +707,17 @@ export default function Home() {
                   <span key={t} className="rounded-md border border-white/[0.08] bg-black/20 px-2 py-1 text-[10px] font-semibold text-white/55">{t}</span>
                 ))}
               </div>
+              {job.repo && (
+                <a
+                  href={job.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`View ${job.company} source code on GitHub`}
+                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-bold text-orange-300 transition hover:text-orange-200"
+                >
+                  <GithubIcon className="h-3.5 w-3.5" /> View source code
+                </a>
+              )}
             </article>
           ))}
         </div>
