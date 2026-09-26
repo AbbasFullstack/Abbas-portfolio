@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,7 +23,7 @@ const OG_IMAGE = {
   url: "/og-image.png",
   width: 1200,
   height: 630,
-  alt: "Abbas Hussain — Full-Stack Developer, AI & Web3",
+  alt: "Abbas Hussain â Full-Stack Developer, AI & Web3",
 };
 
 export const metadata: Metadata = {
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
         />
+        <Analytics />
       </body>
     </html>
   );
