@@ -23,7 +23,7 @@ const OG_IMAGE = {
   url: "/og-image.png",
   width: 1200,
   height: 630,
-  alt: "Abbas Hussain â Full-Stack Developer, AI & Web3",
+  alt: "Abbas Hussain — Full-Stack Developer, AI & Web3",
 };
 
 export const metadata: Metadata = {
