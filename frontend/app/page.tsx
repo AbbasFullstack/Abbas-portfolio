@@ -102,7 +102,7 @@ const PUBLIC_PROJECTS: Project[] = [
     name: 'PulseBoard AI',
     tag: 'Workspace CRM',
     category: 'Full-Stack Product',
-    icon: '📊',
+    icon: 'â',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Workspace-scoped customer CRM and pipeline app with Supabase Auth, RLS-protected data, server-side AI boundaries, and manual integration foundations.',
