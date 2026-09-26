@@ -673,8 +673,8 @@ export default function Home() {
           </div>
           <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7">
             <Smartphone className="mb-5 h-6 w-6 text-orange-300" />
-            <p className="text-sm font-bold text-orange-200">Mobile-first builder</p>
-            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was developed through a mobile-first workflow with GitHub, Codespaces and Termux.</p>
+            <p className="text-sm font-bold text-orange-200">Ships from anywhere</p>
+            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was built with a fully cloud-based workflow — GitHub Codespaces, remote CI, and browser-based VS Code — so work continues from any device, anywhere.</p>
           </div>
         </div>
       </section>
