@@ -725,7 +725,7 @@ export default function Home() {
 
       <section id="skills" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Layers3} text="Capabilities" />
-        <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Proficiency legend">
+        <div role="group" aria-label="Proficiency legend" className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
           {(Object.keys(SKILL_LEVELS) as SkillLevel[]).map((level) => (
             <span key={level} className="flex items-center gap-2 text-[11px] font-semibold text-white/60">
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${SKILL_LEVELS[level].dot}`} />
