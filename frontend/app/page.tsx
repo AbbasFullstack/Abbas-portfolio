@@ -45,9 +45,8 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 // ---------------------------------------------------------------------------
-// Flagship project (Vercel Android Companion) — shown above all other projects.
-// TODO: Set the real repo URL once public; point VERCEL_APK_URL at the
-// actual GitHub release asset (e.g. .../releases/download/v1.0.0/app-release.apk).
+// Flagship project: Vercel Android Companion (native Android app).
+// Shown in its own section above all other projects.
 // ---------------------------------------------------------------------------
 type FeaturedProject = {
   title: string;
@@ -60,18 +59,20 @@ type FeaturedProject = {
   imageAlt?: string;
 };
 
-const VERCEL_APK_URL = 'https://github.com/AbbasFullstack/vercel-android-companion/releases/tag/v1.0.0';
+const VERCEL_APK_URL =
+  'https://github.com/AbbasFullstack/vercel-android-companion/releases/tag/v1.0.0';
 
 const FLAGSHIP: FeaturedProject = {
   title: 'Vercel Android Companion',
-  tag: '⭐ Flagship',
+  tag: '\u2B50 Flagship',
   desc: 'Unofficial native Android client for monitoring Vercel deployments. Built with Jetpack Compose, Room DB, and Vercel REST API. Features authentic Geist UI, live build logs, and 1-tap redeployments.',
   tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Vercel API', 'OAuth2'],
   repo: 'https://github.com/AbbasFullstack/vercel-android-companion',
   apk: VERCEL_APK_URL,
   // TODO: Add the real screenshot/demo GIF later at
-  // /projects/vercel-companion.webp (1400x900 recommended) and set it here.
-  imageAlt: 'Vercel Android Companion — deployment list with live build logs in authentic Geist UI',
+  // /public/projects/vercel-companion.webp (1400x900 recommended), then set
+  // image: '/projects/vercel-companion.webp' here.
+  imageAlt: 'Vercel Android Companion \u2014 deployment list with live build logs in authentic Geist UI',
 };
 
 // Open source contributions shown in the "Open Source Impact" section.
@@ -91,7 +92,7 @@ const OPEN_SOURCE: OpenSourceContribution[] = [
     pr: 'PR #51226',
     prUrl: 'https://github.com/supabase/supabase/pull/51226',
     summary: 'Fixed Firebase Auth docs',
-    detail: 'Corrected .id → .uid field reference.',
+    detail: 'Corrected .id \u2192 .uid field reference.',
   },
   {
     project: 'localbiz-site',
@@ -126,22 +127,22 @@ const PUBLIC_PROJECTS: Project[] = [
     name: 'OpenAPI Forge',
     tag: 'Developer Tool',
     category: 'API Platform',
-    icon: 'ð§©',
+    icon: '\u{1F9E9}',
     color: 'from-cyan-500 to-blue-600',
     accent: 'text-cyan-300',
     desc: 'Contract-first API workspace for OpenAPI validation, documentation preview, schema-derived mocks, versioned specifications and TypeScript SDK generation.',
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
-    status: 'Live demo offline â run from source',
+    status: 'Live demo offline \u2014 run from source',
     image: '/projects/openapi-forge.webp',
-    imageAlt: 'OpenAPI Forge workspace â a specification editor with contract validation, saved versions and generated TypeScript SDKs',
+    imageAlt: 'OpenAPI Forge workspace \u2014 a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
   },
   {
     name: 'DevDesk AI',
     tag: 'AI Developer Tool',
     category: 'Code Intelligence',
-    icon: 'ð¤',
+    icon: '\u{1F916}',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Authenticated developer workspace for importing GitHub repositories or ZIP projects, creating safe source manifests, and asking source-backed code questions with cited file paths.',
@@ -154,14 +155,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL', 'GitHub OAuth', 'Server-side AI'],
     live: 'https://dev-desk-ai-phi.vercel.app',
     image: '/projects/devdesk-ai.webp',
-    imageAlt: 'DevDesk AI landing page â an authenticated workspace for asking source-backed questions about an imported codebase',
+    imageAlt: 'DevDesk AI landing page \u2014 an authenticated workspace for asking source-backed questions about an imported codebase',
     repo: 'https://github.com/AbbasFullstack/DevDesk-AI-',
   },
   {
     name: 'PulseBoard AI',
     tag: 'Workspace CRM',
     category: 'Full-Stack Product',
-    icon: 'ð',
+    icon: '\u{1F4CA}',
     color: 'from-cyan-500 to-violet-600',
     accent: 'text-cyan-300',
     desc: 'Workspace-scoped customer CRM and pipeline app with Supabase Auth, RLS-protected data, server-side AI boundaries, and manual integration foundations.',
@@ -174,14 +175,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Tailwind CSS'],
     live: 'https://pulseboard-ai.vercel.app',
     image: '/projects/pulseboard-ai.webp',
-    imageAlt: 'PulseBoard AI landing page â a workspace-scoped CRM with customers, contacts and pipeline views',
+    imageAlt: 'PulseBoard AI landing page \u2014 a workspace-scoped CRM with customers, contacts and pipeline views',
     repo: 'https://github.com/AbbasFullstack/PulseBoard-AI',
   },
   {
     name: 'VaultX',
     tag: 'Web3 Wallet',
     category: 'Self-Custody',
-    icon: 'ð',
+    icon: '\u{1F510}',
     color: 'from-violet-500 to-indigo-600',
     accent: 'text-violet-300',
     desc: 'Multi-chain testnet wallet with encrypted keystore flow, account import, live balances, activity history and documented provider proxy routes.',
@@ -194,14 +195,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'ethers.js', 'Infura', 'OpenAPI', 'TypeScript'],
     live: 'https://vaultx-mu.vercel.app',
     image: '/projects/vaultx.webp',
-    imageAlt: 'VaultX landing page â a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
+    imageAlt: 'VaultX landing page \u2014 a multi-chain testnet wallet with encrypted keystore and a vault-like asset flow',
     repo: 'https://github.com/AbbasFullstack/vaultx',
   },
   {
     name: 'Abbas AI',
     tag: 'AI SaaS',
     category: 'Full Stack',
-    icon: 'ð¬',
+    icon: '\u{1F4AC}',
     color: 'from-fuchsia-500 to-rose-600',
     accent: 'text-fuchsia-300',
     desc: 'Authenticated AI chat product with streaming responses, multi-conversation history, code rendering, account flows and a production database layer.',
@@ -209,14 +210,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'NextAuth', 'OpenRouter'],
     live: 'https://abbas-ai-eta.vercel.app',
     image: '/projects/abbas-ai.webp',
-    imageAlt: 'Abbas AI landing page â a multi-language AI chat platform with a live demo entry point',
+    imageAlt: 'Abbas AI landing page \u2014 a multi-language AI chat platform with a live demo entry point',
     repo: 'https://github.com/AbbasFullstack/abbas-ai',
   },
   {
     name: 'OmniX',
     tag: 'AI Workspace',
     category: 'AI Engineering',
-    icon: 'â¡',
+    icon: '\u26A1',
     color: 'from-orange-500 to-red-600',
     accent: 'text-orange-300',
     desc: 'A multi-modal AI workspace with server routes for chat, audio, image, model and slides experiences, backed by Supabase user data.',
@@ -224,14 +225,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'OpenRouter', 'Hugging Face', 'Tailwind'],
     live: 'https://omnix-pi.vercel.app',
     image: '/projects/omnix.webp',
-    imageAlt: 'OmniX landing page â an all-in-one personal AI covering chat, voice calls, image generation and slides',
+    imageAlt: 'OmniX landing page \u2014 an all-in-one personal AI covering chat, voice calls, image generation and slides',
     repo: 'https://github.com/AbbasFullstack/omnix',
   },
   {
     name: 'CryptoWatch',
     tag: 'Real-Time Finance',
     category: 'Data Product',
-    icon: 'ð',
+    icon: '\u{1F4C8}',
     color: 'from-emerald-500 to-teal-600',
     accent: 'text-emerald-300',
     desc: 'Personal crypto watchlist with Supabase authentication, PostgreSQL row-level security, Binance WebSocket prices and interactive coin charts.',
@@ -244,14 +245,14 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'WebSocket', 'Recharts'],
     live: 'https://cryptowatch-rust.vercel.app',
     image: '/projects/cryptowatch.webp',
-    imageAlt: 'CryptoWatch landing page â a personal crypto watchlist with a live price ticker and realtime market charts',
+    imageAlt: 'CryptoWatch landing page \u2014 a personal crypto watchlist with a live price ticker and realtime market charts',
     repo: 'https://github.com/AbbasFullstack/cryptowatch',
   },
   {
     name: 'FaucetX',
     tag: 'Testnet Faucet',
     category: 'Web3 Backend',
-    icon: 'ðª',
+    icon: '\u{1FA99}',
     color: 'from-sky-500 to-cyan-600',
     accent: 'text-sky-300',
     desc: 'Testnet faucet workflow with claim and withdrawal API routes, account data, server-side transaction handling and testnet-only payout logic.',
@@ -259,17 +260,17 @@ const PUBLIC_PROJECTS: Project[] = [
     tech: ['Next.js', 'Supabase', 'ethers.js', 'Infura', 'API Routes'],
     live: 'https://faucetx-theta.vercel.app',
     image: '/projects/faucetx.webp',
-    imageAlt: 'FaucetX landing page â a crypto rewards platform with a timed claim flow and step-by-step onboarding',
+    imageAlt: 'FaucetX landing page \u2014 a crypto rewards platform with a timed claim flow and step-by-step onboarding',
     repo: 'https://github.com/AbbasFullstack/faucetx',
   },
 ];
 
 const MORE_PROJECTS: Project[] = [
   {
-    name: 'DevCV AI â Private Beta',
+    name: 'DevCV AI \u2014 Private Beta',
     tag: 'Private Beta',
     category: 'AI + Privacy',
-    icon: 'ð',
+    icon: '\u{1F4C4}',
     color: 'from-fuchsia-500 to-violet-600',
     accent: 'text-fuchsia-300',
     desc: 'Privacy-first resume workspace with protected authentication, owner-scoped data controls, and explicit resume version save, load, and delete actions.',
@@ -277,14 +278,14 @@ const MORE_PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Supabase Auth', 'PostgreSQL/RLS', 'Zod', 'Vercel AI Gateway'],
     live: 'https://devcv-ai-blue.vercel.app',
     image: '/projects/devcv-ai.webp',
-    imageAlt: 'DevCV AI landing page â AI-assisted resume intelligence with analysis and targeting tools',
-    status: 'Private Beta Â· live AI verification-gated',
+    imageAlt: 'DevCV AI landing page \u2014 AI-assisted resume intelligence with analysis and targeting tools',
+    status: 'Private Beta \u00B7 live AI verification-gated',
   },
   {
     name: 'Real-Time Crypto Tracker',
     tag: 'Market Dashboard',
     category: 'Realtime Data',
-    icon: 'âï¸',
+    icon: '\u2699\uFE0F',
     color: 'from-amber-500 to-orange-600',
     accent: 'text-amber-300',
     desc: 'Live cryptocurrency dashboard with Binance WebSocket streams, market-data API routes, interactive charts, search and coin detail pages.',
@@ -292,14 +293,14 @@ const MORE_PROJECTS: Project[] = [
     tech: ['Next.js', 'WebSocket', 'Binance API', 'Recharts', 'TypeScript'],
     live: 'https://realtime-crypto-tracker.vercel.app',
     image: '/projects/realtime-crypto-tracker.webp',
-    imageAlt: 'Real-Time Crypto Tracker dashboard â live market cap and volume KPIs above a streaming price table',
+    imageAlt: 'Real-Time Crypto Tracker dashboard \u2014 live market cap and volume KPIs above a streaming price table',
     repo: 'https://github.com/AbbasFullstack/realtime-crypto-tracker',
   },
   {
     name: 'CryptoAI',
     tag: 'AI Assistant',
     category: 'AI + Data',
-    icon: 'ð§ ',
+    icon: '\u{1F9E0}',
     color: 'from-blue-500 to-violet-600',
     accent: 'text-blue-300',
     desc: 'AI crypto assistant that enriches answers with live market context from Binance streams and market-data APIs through a server-side chat route.',
@@ -307,74 +308,74 @@ const MORE_PROJECTS: Project[] = [
     tech: ['Next.js', 'Groq', 'Binance API', 'WebSocket', 'Tailwind'],
     live: 'https://cryptoai-two.vercel.app',
     image: '/projects/cryptoai.webp',
-    imageAlt: 'CryptoAI chat interface â a personal crypto assistant for live prices and plain-language explanations',
+    imageAlt: 'CryptoAI chat interface \u2014 a personal crypto assistant for live prices and plain-language explanations',
     repo: 'https://github.com/AbbasFullstack/cryptoai',
   },
 ];
 
 const CERTS = [
-  { 
-    title: 'Introduction to Gemini for Education', 
-    issuer: 'Google for Education', 
-    year: '2026', 
+  {
+    title: 'Introduction to Gemini for Education',
+    issuer: 'Google for Education',
+    year: '2026',
     url: 'https://edu.google.accredible.com/6d568000-d78b-4a1b-927f-053dbad905cd',
   },
-  { 
-    title: 'Claude Code 101', 
-    issuer: 'Anthropic', 
-    year: '2026', 
+  {
+    title: 'Claude Code 101',
+    issuer: 'Anthropic',
+    year: '2026',
     url: 'https://academy.claude.com/verify/b6cfbbb775198861154a6bbfbf675ef7',
   },
-  { 
-    title: 'CS50x: Introduction to Computer Science', 
-    issuer: 'Harvard University', 
-    year: '2026', 
+  {
+    title: 'CS50x: Introduction to Computer Science',
+    issuer: 'Harvard University',
+    year: '2026',
     url: 'https://cs50.harvard.edu/certificates/2ce15d90-7211-4f96-9d8f-804e8691cd01',
   },
-  { 
-    title: 'Collaborate with pull requests in Azure Repos', 
-    issuer: 'Microsoft', 
-    year: '2026', 
+  {
+    title: 'Collaborate with pull requests in Azure Repos',
+    issuer: 'Microsoft',
+    year: '2026',
     url: 'https://learn.microsoft.com/api/achievements/share/en-us/AbbasHussain-7685/FEGSEF4X?sharingId=442DF289D55DDE82',
   },
-  { 
-    title: 'Build student inquiry skills', 
-    issuer: 'Google for Education', 
-    year: '2026', 
+  {
+    title: 'Build student inquiry skills',
+    issuer: 'Google for Education',
+    year: '2026',
     url: 'https://edu.google.accredible.com/5c5697a1-aa37-49a2-aba2-42dc376b3be9',
   },
-  { 
-    title: 'Claude 101', 
-    issuer: 'Anthropic', 
-    year: '2026', 
+  {
+    title: 'Claude 101',
+    issuer: 'Anthropic',
+    year: '2026',
     url: 'https://academy.claude.com/verify/4a3418aee0fff1da35e4042c31b63a52',
   },
-  { 
-    title: 'Model Context Protocol: Advanced Topics', 
-    issuer: 'Anthropic', 
-    year: '2026', 
+  {
+    title: 'Model Context Protocol: Advanced Topics',
+    issuer: 'Anthropic',
+    year: '2026',
     url: 'https://academy.claude.com/verify/d784dfe2f1fa6d0b9fa5616632f7f157',
   },
-  { 
-    title: 'AI Fluency for Creative Work', 
-    issuer: 'Anthropic', 
-    year: '2026', 
+  {
+    title: 'AI Fluency for Creative Work',
+    issuer: 'Anthropic',
+    year: '2026',
     url: 'https://academy.claude.com/verify/55aed71ad35c72ed27913b720a019ab0',
   },
-  { 
-    title: 'Back-End Development and APIs', 
-    issuer: 'freeCodeCamp', 
-    year: '2026', 
+  {
+    title: 'Back-End Development and APIs',
+    issuer: 'freeCodeCamp',
+    year: '2026',
     url: 'https://www.freecodecamp.org/certification/abbasweb/back-end-development-and-apis-v9',
   },
-  { 
-    title: 'Python', 
-    issuer: 'Kaggle', 
-    year: '2026', 
+  {
+    title: 'Python',
+    issuer: 'Kaggle',
+    year: '2026',
     url: 'https://www.kaggle.com/learn/certification/abbashussaindev/python',
   },
   {
-    title: 'AWS Certified Developer â Associate (Exam Prep Plan Completed)',
+    title: 'AWS Certified Developer \u2013 Associate (Exam Prep Plan Completed)',
     issuer: 'AWS Skill Builder',
     year: '2026',
     url: 'https://aws.amazon.com/certification/certified-developer-associate/',
@@ -398,6 +399,7 @@ const SKILLS = [
 
 type Experience = {
   company: string;
+  role: string;
   period: string;
   achievements: string[];
   tech: string[];
@@ -408,7 +410,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'Internify',
     role: 'Backend Development Intern',
-    period: 'Sep 2026 â Oct 2026',
+    period: 'Sep 2026 \u2013 Oct 2026',
     achievements: [
       'Built 4 production-ready backend systems: RESTful Books API, JWT + bcrypt auth, RBAC, and a Blog System with Multer & Nodemailer.',
       '146 automated tests, 100% passing.',
@@ -419,9 +421,9 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'CodeAlpha',
     role: 'Full Stack Development Intern',
-    period: 'Sep 2026 â Oct 2026',
+    period: 'Sep 2026 \u2013 Oct 2026',
     achievements: [
-      'Built an e-commerce platform and FlowBoard â a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
+      'Built an e-commerce platform and FlowBoard \u2014 a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
       'Integrated GitHub Actions CI/CD pipelines across both apps.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
@@ -430,7 +432,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'Oasis Infobyte',
     role: 'Web Development & Designing Intern',
-    period: 'Sep 2026 â Oct 2026',
+    period: 'Sep 2026 \u2013 Oct 2026',
     achievements: [
       'Built a full-stack Pizza Delivery App with Razorpay payments and Socket.io real-time tracking.',
       '30 API tests + 4 socket tests passing.',
@@ -441,9 +443,9 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'ArithMatrix',
     role: 'Full Stack Development Intern',
-    period: 'Sep 2026 â Oct 2026',
+    period: 'Sep 2026 \u2013 Oct 2026',
     achievements: [
-      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log â an un-editable audit trail.',
+      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log \u2014 an un-editable audit trail.',
     ],
     tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
     repo: 'https://github.com/AbbasFullstack/FSD_2_EmployeeManagementSystem_BYTE',
@@ -451,7 +453,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: 'Barakah TechLabs',
     role: 'Frontend Web Developer Intern',
-    period: 'Sep 2026 â Oct 2026',
+    period: 'Sep 2026 \u2013 Oct 2026',
     achievements: [
       'Built 2 production apps: a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
     ],
@@ -481,7 +483,7 @@ function skillLevel(item: string): SkillLevel | null {
 }
 
 const LEARNING = [
-  { title: 'AWS Certified Developer', note: 'Associate exam scheduled for 2026 â core services, IAM and deployment.', status: 'In progress' },
+  { title: 'AWS Certified Developer', note: 'Associate exam scheduled for 2026 \u2014 core services, IAM and deployment.', status: 'In progress' },
   { title: 'Advanced System Design', note: 'Scalability, caching, queues, and the trade-offs behind real architecture decisions.', status: 'In progress' },
   { title: 'MCP + Agentic AI', note: 'Model Context Protocol servers, tool-using agents, and safe AI boundaries.', status: 'In progress' },
 ];
@@ -492,7 +494,6 @@ function CurrentlyLearning() {
       <SectionLabel icon={BookOpen} text="Currently learning" />
       <div className="grid gap-4 sm:grid-cols-3">
         {LEARNING.map((item) => (
-
           <article key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-5 transition hover:border-orange-500/25 hover:bg-white/[0.06]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-orange-300">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-orange-400" />
@@ -655,7 +656,7 @@ export default function Home() {
       <section id="top" className="relative mx-auto max-w-6xl px-4 pb-16 pt-12 text-center sm:pt-16">
         <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold text-emerald-400">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Open to internships & junior roles
+          Open to internships &amp; junior roles
         </div>
 
         <div className="relative mb-8 flex justify-center">
@@ -674,8 +675,8 @@ export default function Home() {
 
         <div className="mt-4 flex justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-[11px] font-semibold text-white/65">
-            <span aria-hidden="true">ð</span>
-            Pakistan Â· Remote-friendly
+            <span aria-hidden="true">{'\u{1F4CD}'}</span>
+            Pakistan &middot; Remote-friendly
           </span>
         </div>
 
@@ -683,13 +684,11 @@ export default function Home() {
           Full-Stack Developer Building Native Mobile &amp; AI Solutions
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          Creator of Vercel Android Companion · Open Source Contributor (Supabase, localbiz-site)
+          Creator of Vercel Android Companion &middot; Open Source Contributor (Supabase, localbiz-site)
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a href="#work" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-3 text-sm font-bold shadow-xl shadow-orange-500/20 transition duration-200 hover:scale-[1.02]"><Rocket className="h-4 w-4" /> View Projects</a>
-          {/* TODO: Point VERCEL_APK_URL (defined near FLAGSHIP above) at the
-              real GitHub release asset before sharing the APK publicly. */}
           <a href={VERCEL_APK_URL} target="_blank" rel="noreferrer" aria-label="Download Vercel Android Companion APK" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
             <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/20 transition-transform duration-700 group-hover:translate-x-[420%]" aria-hidden="true" />
             <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
@@ -778,7 +777,7 @@ export default function Home() {
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
             <p className="leading-relaxed text-white/68">
-              I am a Full-Stack Developer focused on building complete, usable productsânot just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
+              I am a Full-Stack Developer focused on building complete, usable products&mdash;not just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
             </p>
             <p className="mt-4 leading-relaxed text-white/48">
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
@@ -787,7 +786,7 @@ export default function Home() {
           <div className="rounded-3xl border border-orange-500/20 bg-orange-500/[0.07] p-7">
             <Smartphone className="mb-5 h-6 w-6 text-orange-300" />
             <p className="text-sm font-bold text-orange-200">Ships from anywhere</p>
-            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was built with a fully cloud-based workflow â GitHub Codespaces, remote CI, and browser-based VS Code â so work continues from any device, anywhere.</p>
+            <p className="mt-2 text-sm leading-relaxed text-orange-100/60">Every project in this portfolio was built with a fully cloud-based workflow &mdash; GitHub Codespaces, remote CI, and browser-based VS Code &mdash; so work continues from any device, anywhere.</p>
           </div>
         </div>
       </section>
@@ -795,9 +794,10 @@ export default function Home() {
       <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Briefcase} text="Experience" />
         <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/60">
-          Project-based virtual internship programs, completed in parallel as structured, mentor-reviewed builds â each with a public GitHub repository.
+          Project-based virtual internship programs, completed in parallel as structured, mentor-reviewed builds &mdash; each with a public GitHub repository.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {EXPERIENCES.map((job) => (
             <article key={job.company} className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.05] p-6 transition hover:border-orange-500/25 hover:bg-white/[0.07]">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -866,7 +866,7 @@ export default function Home() {
                       >
                         {style && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />}
                         {item}
-                        {level && <span className="sr-only"> â {level} proficiency</span>}
+                        {level && <span className="sr-only"> &mdash; {level} proficiency</span>}
                       </span>
                     );
                   })}
@@ -900,7 +900,7 @@ export default function Home() {
         <SectionLabel icon={GitBranch} text="Open Source Impact" />
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Contributions to projects I use.</h2>
         <p className="mb-6 mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
-          Real merged pull requests — documentation fixes and tested feature work.
+          Real merged pull requests &mdash; documentation fixes and tested feature work.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {OPEN_SOURCE.map((c) => (
@@ -946,7 +946,7 @@ export default function Home() {
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Verify ${cert.title} â ${cert.issuer}`}
+                  aria-label={`Verify ${cert.title} \u2014 ${cert.issuer}`}
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-xs font-bold text-orange-300 transition hover:bg-orange-500/20"
                 >
                   Verify <ArrowRight className="h-3.5 w-3.5" />
@@ -980,7 +980,7 @@ export default function Home() {
             </a>
           </div>
 
-          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/55"><MapPin className="h-3 w-3" /> Pakistan Â· Remote-friendly</p>
+          <p className="mt-7 flex items-center justify-center gap-1.5 text-[11px] text-white/55"><MapPin className="h-3 w-3" /> Pakistan &middot; Remote-friendly</p>
         </div>
       </section>
 
@@ -990,7 +990,7 @@ export default function Home() {
             <div className="text-center sm:text-left">
               <p className="text-xs text-white/60">Built with Next.js, Tailwind CSS, and Vercel</p>
               <p className="mt-1 text-xs font-semibold text-white/60">Designed &amp; developed by Abbas Hussain</p>
-              <p className="mt-2 text-xs font-semibold text-orange-300/90">Open to remote internships &amp; junior full-stack/mobile roles · Immediate availability</p>
+              <p className="mt-2 text-xs font-semibold text-orange-300/90">Open to remote internships &amp; junior full-stack/mobile roles &middot; Immediate availability</p>
             </div>
             <div className="flex items-center gap-4">
               <a href="https://github.com/AbbasFullstack" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-lg p-2 text-white/60 transition hover:bg-white/[0.08] hover:text-white">
@@ -1014,4 +1014,3 @@ function SectionLabel({ icon: Icon, text }: { icon: typeof Sparkles; text: strin
 function ProofCard({ icon: Icon, title, text }: { icon: typeof Sparkles; title: string; text: string }) {
   return <article className="rounded-2xl border border-white/[0.07] bg-white/[0.06] p-6"><Icon className="h-5 w-5 text-orange-300" /><h3 className="mt-5 font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-white/60">{text}</p></article>;
 }
-
