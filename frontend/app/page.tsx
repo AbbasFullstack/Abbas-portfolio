@@ -679,7 +679,7 @@ export default function Home() {
         </div>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg font-bold leading-snug tracking-tight text-white sm:text-2xl">
-          Full-Stack Developer Building Native Mobile &amp; AI Solutions
+          Full-Stack Developer | Web, Native Mobile &amp; AI Integrations
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
           Creator of Vercel Android Companion &middot; Open Source Contributor (Supabase, localbiz-site)
