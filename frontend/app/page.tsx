@@ -69,10 +69,8 @@ const FLAGSHIP: FeaturedProject = {
   tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Vercel API', 'OAuth2'],
   repo: 'https://github.com/AbbasFullstack/vercel-android-companion',
   apk: VERCEL_APK_URL,
-  // TODO: Add the real screenshot/demo GIF later at
-  // /public/projects/vercel-companion.webp (1400x900 recommended), then set
-  // image: '/projects/vercel-companion.webp' here.
-  imageAlt: 'Vercel Android Companion \u2014 deployment list with live build logs in authentic Geist UI',
+  image: '/projects/vercel-companion.png',
+  imageAlt: 'Vercel Android Companion \u2014 Projects screen showing 28 projects with 100 builds, live statuses and the app\u2019s Geist-style dark UI',
 };
 
 // Open source contributions shown in the "Open Source Impact" section.
@@ -755,20 +753,20 @@ export default function Home() {
               )}
             </div>
           </div>
-          {/* TODO: Replace this placeholder with the real app screenshot or demo
-              GIF. Save it at /public/projects/vercel-companion.webp (~1400x900)
-              and swap this div for:
-              <Image src="/projects/vercel-companion.webp" alt={FLAGSHIP.imageAlt}
-                     width={560} height={360}
-                     className="rounded-2xl border border-white/10 object-cover" /> */}
-          <div className="w-full shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-black/40 lg:w-[46%]" aria-hidden="true">
-            <div className="flex aspect-[14/9] items-center justify-center bg-[repeating-linear-gradient(45deg,transparent,transparent_12px,rgba(255,255,255,0.02)_12px,rgba(255,255,255,0.02)_24px)]">
-              <div className="text-center">
-                <Smartphone className="mx-auto h-10 w-10 text-orange-300/60" />
-                <p className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-white/40">App screenshot / demo GIF</p>
+          {FLAGSHIP.image && (
+            <div className="w-full shrink-0 lg:w-[46%]">
+              <div className="relative mx-auto max-w-[19rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/60 p-1.5 shadow-2xl shadow-orange-500/10">
+                <Image
+                  src={FLAGSHIP.image}
+                  alt={FLAGSHIP.imageAlt ?? `${FLAGSHIP.title} app screenshot`}
+                  width={560}
+                  height={1180}
+                  priority
+                  className="h-auto w-full rounded-[1.3rem] object-cover"
+                />
               </div>
             </div>
-          </div>
+          )}
         </article>
       </section>
 
