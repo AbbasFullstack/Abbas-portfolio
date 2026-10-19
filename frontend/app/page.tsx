@@ -85,20 +85,28 @@ type OpenSourceContribution = {
 
 const OPEN_SOURCE: OpenSourceContribution[] = [
   {
+    project: 'Gemini CLI',
+    projectUrl: 'https://github.com/google-gemini/gemini-cli',
+    pr: 'PR #29718',
+    prUrl: 'https://github.com/google-gemini/gemini-cli/pull/29718',
+    summary: 'Rootless Podman sandbox fix',
+    detail: 'Detect rootless Podman, append --userns=keep-id, and add a 5s probe timeout so EACCES no longer breaks the sandbox.',
+  },
+  {
     project: 'Supabase',
     projectUrl: 'https://github.com/supabase/supabase',
     pr: 'PR #51226',
     prUrl: 'https://github.com/supabase/supabase/pull/51226',
     summary: 'Fixed Firebase Auth docs',
-    detail: 'Corrected .id \u2192 .uid field reference.',
+    detail: 'Corrected .id \u2192 .uid field reference in official docs.',
   },
   {
     project: 'localbiz-site',
-    projectUrl: 'https://github.com/AbbasFullstack/localbiz-site',
+    projectUrl: 'https://github.com/Ricky1800/localbiz-site',
     pr: 'PR #9',
-    prUrl: 'https://github.com/AbbasFullstack/localbiz-site/pull/9',
+    prUrl: 'https://github.com/Ricky1800/localbiz-site/pull/9',
     summary: 'Staging vs production robots.txt toggle',
-    detail: 'Extracted logic to lib/ with Vitest tests.',
+    detail: 'Extracted logic to lib/ with Vitest unit tests and README update.',
   },
 ];
 
@@ -131,7 +139,7 @@ const PUBLIC_PROJECTS: Project[] = [
     desc: 'Contract-first API workspace for OpenAPI validation, documentation preview, schema-derived mocks, versioned specifications and TypeScript SDK generation.',
     outcome: 'Turns a raw API specification into a developer-ready workflow.',
     tech: ['React 19', 'tRPC', 'Express', 'Drizzle', 'OpenAPI'],
-    status: 'Live demo offline \u2014 run from source',
+    status: 'Source available \u2014 run locally',
     image: '/projects/openapi-forge.webp',
     imageAlt: 'OpenAPI Forge workspace \u2014 a specification editor with contract validation, saved versions and generated TypeScript SDKs',
     repo: 'https://github.com/AbbasFullstack/openapi-forge',
@@ -406,57 +414,27 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
-    company: 'Internify',
-    role: 'Backend Development Intern',
-    period: 'Sep 2026 \u2013 Oct 2026',
+    company: 'Independent product work',
+    role: 'Full-Stack & Native Mobile Builder',
+    period: '2026',
     achievements: [
-      'Built 4 production-ready backend systems: RESTful Books API, JWT + bcrypt auth, RBAC, and a Blog System with Multer & Nodemailer.',
-      '146 automated tests, 100% passing.',
+      'Shipped Vercel Android Companion — unofficial native client for deployment monitoring (Kotlin, Jetpack Compose, Room, Vercel REST API, OAuth2).',
+      'Built multi-tenant SaaS products with auth, PostgreSQL RLS, and server-side AI boundaries: DevDesk AI, PulseBoard AI, CryptoWatch.',
+      'Designed secure Web3 testnet flows (VaultX, FaucetX) with server-side RPC proxies and no client-exposed provider keys.',
     ],
-    tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'Multer', 'Nodemailer'],
-    repo: 'https://github.com/AbbasFullstack/internify-backend-tasks',
+    tech: ['Kotlin', 'Next.js', 'TypeScript', 'Supabase', 'Vercel'],
+    repo: 'https://github.com/AbbasFullstack/vercel-android-companion',
   },
   {
-    company: 'CodeAlpha',
-    role: 'Full Stack Development Intern',
-    period: 'Sep 2026 \u2013 Oct 2026',
+    company: 'Open source',
+    role: 'Contributor — Google Gemini CLI & Supabase',
+    period: '2026',
     achievements: [
-      'Built an e-commerce platform and FlowBoard \u2014 a real-time project management tool with Socket.io and drag-and-drop Kanban boards.',
-      'Integrated GitHub Actions CI/CD pipelines across both apps.',
+      'google-gemini/gemini-cli PR #29718: fixed rootless Podman EACCES by detecting rootless mode, appending --userns=keep-id, and adding a 5s probe timeout.',
+      'supabase/supabase PR #51226: corrected Firebase Auth docs field reference (.id → .uid) against UserRecord types.',
     ],
-    tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'GitHub Actions'],
-    repo: 'https://github.com/AbbasFullstack/CodeAlpha_ProjectManagementTool',
-  },
-  {
-    company: 'Oasis Infobyte',
-    role: 'Web Development & Designing Intern',
-    period: 'Sep 2026 \u2013 Oct 2026',
-    achievements: [
-      'Built a full-stack Pizza Delivery App with Razorpay payments and Socket.io real-time tracking.',
-      '30 API tests + 4 socket tests passing.',
-    ],
-    tech: ['React', 'Node.js', 'MongoDB', 'Razorpay', 'Socket.io'],
-    repo: 'https://github.com/AbbasFullstack/OIBsIP',
-  },
-  {
-    company: 'ArithMatrix',
-    role: 'Full Stack Development Intern',
-    period: 'Sep 2026 \u2013 Oct 2026',
-    achievements: [
-      'Built an Employee Management System with JWT auth and a "God Mode" Audit Log \u2014 an un-editable audit trail.',
-    ],
-    tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
-    repo: 'https://github.com/AbbasFullstack/FSD_2_EmployeeManagementSystem_BYTE',
-  },
-  {
-    company: 'Barakah TechLabs',
-    role: 'Frontend Web Developer Intern',
-    period: 'Sep 2026 \u2013 Oct 2026',
-    achievements: [
-      'Built 2 production apps: a Dynamic Movie Search App (OMDb API) and an E-commerce Product Catalog with LocalStorage.',
-    ],
-    tech: ['JavaScript', 'HTML', 'CSS', 'REST APIs', 'LocalStorage'],
-    repo: 'https://github.com/AbbasFullstack/Barakah_TechLabs_Internship',
+    tech: ['TypeScript', 'Podman', 'Node.js', 'Docs'],
+    repo: 'https://github.com/google-gemini/gemini-cli/pull/29718',
   },
 ];
 
@@ -682,7 +660,7 @@ export default function Home() {
           Full-Stack Developer | Web, Native Mobile &amp; AI Integrations
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          Creator of Vercel Android Companion &middot; Open Source Contributor (Supabase, localbiz-site)
+          Creator of Vercel Android Companion &middot; Contributor to Google Gemini CLI &amp; Supabase
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -702,9 +680,9 @@ export default function Home() {
 
         <div className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-3">
           {[
-            { label: '4 verified featured projects' },
-            { label: 'Live demos and public source' },
-            { label: 'Auth, data and API boundaries' },
+            { label: 'Flagship: Vercel Android Companion' },
+            { label: 'OSS: Gemini CLI + Supabase' },
+            { label: 'Auth, RLS & server-side AI' },
           ].map((stat) => (
             <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-4">
               <p className="text-xs font-bold uppercase tracking-wide text-orange-200/90">{stat.label}</p>
@@ -775,7 +753,7 @@ export default function Home() {
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
             <p className="leading-relaxed text-white/68">
-              I am a Full-Stack Developer focused on building complete, usable products&mdash;not just landing pages. My projects cover authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows.
+              I build complete products end-to-end: when Vercel had no official Android app, I shipped an unofficial native companion. I contribute upstream (Google Gemini CLI, Supabase) and ship multi-tenant SaaS with auth, RLS, realtime streams, and server-side AI — not landing-page demos.
             </p>
             <p className="mt-4 leading-relaxed text-white/48">
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
@@ -792,7 +770,7 @@ export default function Home() {
       <section id="experience" className="relative mx-auto max-w-6xl px-4 py-12">
         <SectionLabel icon={Briefcase} text="Experience" />
         <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/60">
-          Project-based virtual internship programs, completed in parallel as structured, mentor-reviewed builds &mdash; each with a public GitHub repository.
+          Independent product shipping and open-source contributions to tools I use daily &mdash; not certificate mills. Public source on every build.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {EXPERIENCES.map((job) => (
