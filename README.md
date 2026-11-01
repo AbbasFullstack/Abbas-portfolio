@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=Abbas%20Hussain&fontSize=72&fontColor=ffffff&animation=twinkling&desc=Full-Stack%20%E2%80%A2%20AI%20Products%20%E2%80%A2%20Web3&descAlignY=68&color=gradient&customColorList=24" width="100%" alt="Abbas Hussain — Full-Stack Developer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=Abbas%20Hussain&fontSize=72&fontColor=ffffff&animation=twinkling&desc=Full-Stack%20AI%20Engineer%20%E2%80%A2%20AI%20Products%20%E2%80%A2%20Web3&descAlignY=68&color=gradient&customColorList=24" width="100%" alt="Abbas Hussain — Full-Stack AI Engineer" />
 
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Code&weight=700&size=26&pause=1200&color=F97316&center=true&vCenter=true&width=720&lines=Full-Stack+Developer;AI+Product+Builder;Web3+%2F+ethers.js+Developer;Shipping+from+Pakistan+%F0%9F%87%B5%F0%9F%87%B0" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Code&weight=700&size=26&pause=1200&color=F97316&center=true&vCenter=true&width=720&lines=Full-Stack+AI+Engineer;AI+Product+Builder;Web3+%2F+ethers.js+Developer;Shipping+from+Pakistan+%F0%9F%87%B5%F0%9F%87%B0" alt="Typing SVG" />
 
 [![Live Portfolio](https://img.shields.io/badge/🚀_Live_Portfolio-abbas--portfolio--beta.vercel.app-FF7A00?style=for-the-badge&logo=vercel&logoColor=white)](https://abbas-portfolio-beta.vercel.app)
 
@@ -20,7 +20,7 @@
 
 ## 👨‍💻 About Me
 
-I am a **Full-Stack Developer** focused on building complete, usable products — not just landing pages. My projects cover **authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows**.
+I am a **Full-Stack AI Engineer** focused on building complete, usable products — not just landing pages. My projects cover **authenticated SaaS patterns, database design, typed API contracts, real-time market streams, AI integrations, and Web3 testnet workflows** — plus upstream open-source contributions to **Vercel AI**, **Google Gemini CLI**, and **Wireit**.
 
 > I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
 
@@ -103,6 +103,18 @@ Workspace-scoped customer CRM and pipeline app with RLS-protected data, server-s
 | **[CryptoAI](https://cryptoai-two.vercel.app)** · [src](https://github.com/AbbasFullstack/cryptoai) | AI crypto assistant with live market context | Next.js, Groq, Binance API |
 
 </details>
+
+---
+
+## 🌱 Open Source Contributions
+
+✅ **Contributor — [vercel/ai](https://github.com/vercel/ai)**
+
+| Repo | Contribution | Status |
+|---|---|---|
+| **[vercel/ai](https://github.com/vercel/ai/pull/24198)** | Docs fix: consume the stream in the token-usage callback cookbook (#24198) · data URL decoding fix ([#23944](https://github.com/vercel/ai/pull/23944)) | **Merged** · in review |
+| **[google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/pull/29718)** | Rootless Podman `--userns=keep-id` (#29718) · TortoiseGitPlink detection (#29921) · cancel history rollback fix (#30017) · orphan PTY test fix (#30008, verified by issue author) | In review |
+| **[google/wireit](https://github.com/google/wireit/pull/1545)** | UTF-8 characters split across output chunks in `readyWhen` matching (#1545, verified by reviewer) | In review |
 
 ---
 
