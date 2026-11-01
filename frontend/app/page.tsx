@@ -85,6 +85,14 @@ type OpenSourceContribution = {
 
 const OPEN_SOURCE: OpenSourceContribution[] = [
   {
+    project: 'Vercel AI',
+    projectUrl: 'https://github.com/vercel/ai',
+    pr: 'PR #24198 · merged',
+    prUrl: 'https://github.com/vercel/ai/pull/24198',
+    summary: 'Docs fix in the AI SDK cookbook',
+    detail: 'Fixed the token-usage onEnd example so the stream is consumed and the usage callback actually fires. Data URL decoding fix (#23944) in review.',
+  },
+  {
     project: 'Gemini CLI',
     projectUrl: 'https://github.com/google-gemini/gemini-cli',
     pr: 'PR #29718',
@@ -415,7 +423,7 @@ type Experience = {
 const EXPERIENCES: Experience[] = [
   {
     company: 'Independent product work',
-    role: 'Full-Stack & Native Mobile Builder',
+    role: 'Full-Stack AI & Native Mobile Builder',
     period: '2026',
     achievements: [
       'Shipped Vercel Android Companion — unofficial native client for deployment monitoring (Kotlin, Jetpack Compose, Room, Vercel REST API, OAuth2).',
@@ -427,10 +435,13 @@ const EXPERIENCES: Experience[] = [
   },
   {
     company: 'Open source',
-    role: 'Contributor — Google Gemini CLI & Supabase',
+    role: 'Contributor — Vercel AI, Google Gemini CLI & Supabase',
     period: '2026',
     achievements: [
+      'vercel/ai PR #24198 (merged): fixed the token-usage cookbook example so onEnd records usage after the stream is consumed.',
       'google-gemini/gemini-cli PR #29718: fixed rootless Podman EACCES by detecting rootless mode, appending --userns=keep-id, and adding a 5s probe timeout.',
+      'google-gemini/gemini-cli: TortoiseGitPlink SSH detection (#29921), cancellation history-rollback fix (#30017), and an orphan-PTY test fix verified by the issue author (#30008) — in review.',
+      'google/wireit PR #1545: fixed UTF-8 characters split across output chunks in readyWhen matching (verified by reviewer) — in review.',
       'supabase/supabase PR #51226: corrected Firebase Auth docs field reference (.id → .uid) against UserRecord types.',
     ],
     tech: ['TypeScript', 'Podman', 'Node.js', 'Docs'],
@@ -657,10 +668,10 @@ export default function Home() {
         </div>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg font-bold leading-snug tracking-tight text-white sm:text-2xl">
-          Full-Stack Developer | Web, Native Mobile &amp; AI Integrations
+          Full-Stack AI Engineer | Web, Native Mobile &amp; AI Integrations
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          Creator of Vercel Android Companion &middot; Contributor to Google Gemini CLI &amp; Supabase
+          Creator of Vercel Android Companion &middot; Contributor to Vercel AI, Google Gemini CLI &amp; Supabase
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -681,7 +692,7 @@ export default function Home() {
         <div className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-3">
           {[
             { label: 'Flagship: Vercel Android Companion' },
-            { label: 'OSS: Gemini CLI + Supabase' },
+            { label: 'OSS: Vercel AI (merged PR) + Gemini CLI' },
             { label: 'Auth, RLS & server-side AI' },
           ].map((stat) => (
             <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-4">
@@ -753,7 +764,7 @@ export default function Home() {
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
             <p className="leading-relaxed text-white/68">
-              I build complete products end-to-end: when Vercel had no official Android app, I shipped an unofficial native companion. I contribute upstream (Google Gemini CLI, Supabase) and ship multi-tenant SaaS with auth, RLS, realtime streams, and server-side AI — not landing-page demos.
+              I build complete products end-to-end: when Vercel had no official Android app, I shipped an unofficial native companion. I contribute upstream (Vercel AI, Google Gemini CLI, Supabase) — including a merged pull request in the Vercel AI SDK — and ship multi-tenant SaaS with auth, RLS, realtime streams, and server-side AI — not landing-page demos.
             </p>
             <p className="mt-4 leading-relaxed text-white/48">
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
@@ -876,7 +887,7 @@ export default function Home() {
         <SectionLabel icon={GitBranch} text="Open Source Impact" />
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Contributions to projects I use.</h2>
         <p className="mb-6 mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
-          Real merged pull requests &mdash; documentation fixes and tested feature work.
+          Merged documentation fixes plus reviewed, tested feature work across the tools I build with.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {OPEN_SOURCE.map((c) => (
