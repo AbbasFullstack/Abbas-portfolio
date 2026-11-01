@@ -681,7 +681,7 @@ export default function Home() {
             <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span className="relative">Download Vercel APK</span>
           </a>
-          <a href="/Abbas-Hussain-Full-Stack-AI-Engineer-CV.html" target="_blank" rel="noreferrer" aria-label="View Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
+          <a href="/Abbas_Hussain_FullStack_AI_Engineer_CV.pdf" target="_blank" rel="noreferrer" aria-label="View Abbas Hussain's CV" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-orange-300/30 bg-orange-500/[0.12] px-6 py-3 text-sm font-bold text-orange-100 shadow-lg shadow-orange-500/10 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200/60 hover:bg-orange-400/20 focus:outline-none focus:ring-2 focus:ring-orange-300/70 focus:ring-offset-2 focus:ring-offset-[#050505]">
             <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/20 transition-transform duration-700 group-hover:translate-x-[420%]" aria-hidden="true" />
             <Download className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span className="relative">View CV</span>
