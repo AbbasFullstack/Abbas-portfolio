@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abbas Hussain — Full-Stack AI Engineer — CV</title>
+<style>
+  :root { --ink:#111827; --muted:#4b5563; --line:#d1d5db; --accent:#c2410c; --chip:#f3f4f6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { font-family:'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif; color:var(--ink); background:#e5e7eb; line-height:1.45; font-size:13px; }
+  .page { max-width:800px; margin:0 auto; background:#fff; padding:36px 44px; }
+  @page { size:A4; margin:0; }
+  @media print { body { background:#fff; } .page { padding:24px 28px; max-width:100%; } }
+
+  header { border-bottom:3px solid var(--ink); padding-bottom:14px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; }
+  h1 { font-size:28px; letter-spacing:-0.5px; }
+  .title { color:var(--accent); font-weight:700; font-size:14px; margin-top:2px; }
+  .contact { text-align:right; font-size:11.5px; color:var(--muted); line-height:1.6; }
+  .contact a { color:var(--muted); text-decoration:none; }
+
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:2px; border-bottom:1px solid var(--line); padding-bottom:4px; margin:18px 0 10px; color:var(--ink); }
+  .item { margin-bottom:11px; }
+  .item-head { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .item-title { font-weight:700; font-size:13.5px; }
+  .item-sub { color:var(--accent); font-weight:600; font-size:12px; }
+  .item-date { color:var(--muted); font-size:11px; white-space:nowrap; }
+  ul { margin:4px 0 0 18px; }
+  li { margin-bottom:2.5px; }
+  .chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:6px; }
+  .chip { background:var(--chip); border:1px solid var(--line); border-radius:4px; padding:2px 7px; font-size:10.5px; font-weight:600; color:#374151; }
+  .summary { color:#1f2937; }
+  .merged { color:#15803d; font-weight:700; }
+  a.link { color:var(--accent); text-decoration:none; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; }
+  @media print { .two-col { grid-template-columns:1fr 1fr; } }
+  .meta { color:var(--muted); font-size:11.5px; margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Abbas Hussain</h1>
+      <div class="title">Full-Stack AI Engineer</div>
+      <div class="meta">Pakistan · Remote-friendly · Open to internships &amp; junior roles</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:abbaswebdevelopers@gmail.com">abbaswebdevelopers@gmail.com</a><br>
+      WhatsApp: +92 308 8361404<br>
+      <a href="https://github.com/AbbasFullstack">github.com/AbbasFullstack</a><br>
+      <a href="https://www.linkedin.com/in/abbas-hussain-56a61338b/">LinkedIn</a> ·
+      <a href="https://abbas-portfolio-beta.vercel.app">Portfolio</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="summary">Full-Stack AI Engineer building complete products end-to-end: web platforms, native Android apps, and server-side AI integrations. Contributor to the Vercel AI SDK (merged pull request), Google Gemini CLI and Supabase. Focused on authenticated multi-tenant SaaS, PostgreSQL row-level security, realtime streams, typed API contracts and secure Web3 testnet flows.</p>
+  </section>
+
+  <section>
+    <h2>Open Source</h2>
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title"><a class="link" href="https://github.com/vercel/ai">vercel/ai</a></span> <span class="merged">— Contributor (merged PR)</span></div>
+        <span class="item-date">2026</span>
+      </div>
+      <ul>
+        <li><a class="link" href="https://github.com/vercel/ai/pull/24198">PR #24198 (merged)</a>: fixed the token-usage cookbook example so <code>onEnd</code> records usage after the stream is consumed.</li>
+        <li><a class="link" href="https://github.com/vercel/ai/pull/23944">PR #23944 (in review)</a>: byte-wise decoding of non-base64 data URLs in file parts, image and video inputs.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title"><a class="link" href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></span></div>
+        <span class="item-date">2026</span>
+      </div>
+      <ul>
+        <li><a class="link" href="https://github.com/google-gemini/gemini-cli/pull/29718">PR #29718</a>: fixed rootless Podman sandbox EACCES — rootless detection, <code>--userns=keep-id</code>, 5s probe timeout; independently verified by a reviewer on WSL2.</li>
+        <li><a class="link" href="https://github.com/google-gemini/gemini-cli/pull/29921">PR #29921</a>: recognize TortoiseGitPlink as a PuTTY-family SSH client. <a class="link" href="https://github.com/google-gemini/gemini-cli/pull/30017">PR #30017</a>: keep committed history when cancelling a tool-result continuation. Orphan-PTY test fix (#30008) verified by the issue author on real hardware.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title"><a class="link" href="https://github.com/google/wireit">google/wireit</a> · <a class="link" href="https://github.com/supabase/supabase">supabase/supabase</a></span></div>
+        <span class="item-date">2026</span>
+      </div>
+      <ul>
+        <li><a class="link" href="https://github.com/google/wireit/pull/1545">wireit PR #1545</a>: fixed UTF-8 characters split across output chunks in <code>readyWhen</code> matching — verified by a reviewer against the original reproduction.</li>
+        <li><a class="link" href="https://github.com/supabase/supabase/pull/51226">Supabase PR #51226</a>: corrected Firebase Auth docs field reference (.id → .uid).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="item-head">
+        <div><span class="item-title">Independent Product Work</span> <span class="item-sub">— Full-Stack AI &amp; Native Mobile Builder</span></div>
+        <span class="item-date">2026</span>
+      </div>
+      <ul>
+        <li>Shipped <a class="link" href="https://github.com/AbbasFullstack/vercel-android-companion">Vercel Android Companion</a> — unofficial native Android client for monitoring Vercel deployments (Kotlin, Jetpack Compose, Room, Vercel REST API, OAuth2) with live build logs and 1-tap redeployments.</li>
+        <li>Built multi-tenant SaaS products with Supabase Auth, PostgreSQL RLS and server-side AI boundaries: DevDesk AI (source-backed code Q&amp;A with cited file paths), PulseBoard AI (workspace CRM), CryptoWatch (realtime Binance WebSocket watchlist).</li>
+        <li>Designed secure Web3 testnet flows (VaultX wallet, FaucetX) with server-side RPC proxies — provider keys never exposed to the browser.</li>
+        <li>Entire workflow cloud-based: GitHub Codespaces, remote CI, browser VS Code — ships from any device.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">DevDesk AI — <a class="link" href="https://dev-desk-ai-phi.vercel.app">live</a> · <a class="link" href="https://github.com/AbbasFullstack/DevDesk-AI-">code</a></span>
+      </div>
+      <ul><li>Authenticated developer workspace: GitHub/ZIP ingestion, safe source manifests, server-side AI routing, cited code answers — no hallucinated file paths.</li></ul>
+      <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase Auth</span><span class="chip">PostgreSQL</span><span class="chip">GitHub OAuth</span></div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">OpenAPI Forge — <a class="link" href="https://github.com/AbbasFullstack/openapi-forge">code</a></span>
+      </div>
+      <ul><li>Contract-first API workspace: OpenAPI validation, documentation previews, schema-derived mocks, versioned specs, TypeScript SDK generation.</li></ul>
+      <div class="chips"><span class="chip">React 19</span><span class="chip">tRPC</span><span class="chip">Express</span><span class="chip">Drizzle</span><span class="chip">OpenAPI</span></div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">CryptoWatch — <a class="link" href="https://cryptowatch-rust.vercel.app">live</a> · <a class="link" href="https://github.com/AbbasFullstack/cryptowatch">code</a></span>
+      </div>
+      <ul><li>Personal crypto watchlist: per-user data protected by PostgreSQL RLS, Binance WebSocket price streams, interactive charts.</li></ul>
+      <div class="chips"><span class="chip">Next.js</span><span class="chip">Supabase RLS</span><span class="chip">WebSocket</span><span class="chip">Recharts</span></div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">VaultX — <a class="link" href="https://vaultx-mu.vercel.app">live</a> · <a class="link" href="https://github.com/AbbasFullstack/vaultx">code</a></span>
+      </div>
+      <ul><li>Multi-chain testnet wallet: encrypted keystore flow, account import, live balances, activity history, documented provider proxy routes.</li></ul>
+      <div class="chips"><span class="chip">Next.js</span><span class="chip">ethers.js</span><span class="chip">Infura</span><span class="chip">OpenAPI</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="item">
+      <ul>
+        <li><strong>Frontend:</strong> React 19, Next.js 16, TypeScript, Tailwind CSS 4, Vite, responsive UI</li>
+        <li><strong>Mobile:</strong> Kotlin, Jetpack Compose, Room DB, Android OAuth2</li>
+        <li><strong>Backend &amp; APIs:</strong> API Routes, Express, tRPC, REST + JSON-RPC, OpenAPI, TypeScript SDKs, WebSockets</li>
+        <li><strong>Data &amp; Auth:</strong> PostgreSQL, MySQL/TiDB, Supabase Auth + RLS, Prisma, Drizzle ORM, OAuth/NextAuth</li>
+        <li><strong>AI &amp; Web3:</strong> streaming AI, server-side AI routing, Model Context Protocol (MCP), ethers.js, Infura, Vitest</li>
+        <li><strong>Delivery:</strong> Git, GitHub Actions, Vercel, API documentation, code review workflow</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>CS50x: Introduction to Computer Science — <strong>Harvard University</strong> (2026)</li>
+        <li>Claude Code 101 · Claude 101 · MCP Advanced Topics — <strong>Anthropic Academy</strong> (2026)</li>
+        <li>Back-End Development and APIs — <strong>freeCodeCamp</strong> (2026)</li>
+        <li>Python — <strong>Kaggle</strong> (2026)</li>
+        <li>Collaborate with pull requests in Azure Repos — <strong>Microsoft</strong> (2026)</li>
+        <li>Intro to Gemini for Education — <strong>Google for Education</strong> (2026)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Education &amp; Languages</h2>
+      <ul>
+        <li><strong>Higher Education (First Year)</strong> — Islamabad, Pakistan</li>
+        <li>English (professional), Urdu (native), German (learning, A1 → B2 target)</li>
+        <li>Currently learning: AWS Certified Developer — Associate, advanced system design, MCP &amp; agentic AI</li>
+      </ul>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>
