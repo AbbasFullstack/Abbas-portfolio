@@ -16,14 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL = "https://abbas-portfolio-beta.vercel.app";
-const SITE_TITLE = "Abbas Hussain | Full-Stack Developer | Mobile, AI & Web3";
+const SITE_TITLE = "Abbas Hussain | Full-Stack AI Engineer | Mobile, AI & Web3";
 const SITE_DESCRIPTION =
-  "Full-Stack Developer from Pakistan building native Android apps (Kotlin, Jetpack Compose), AI-powered products, and secure Web3 tools.";
+  "Full-Stack AI Engineer from Pakistan building AI-powered products, native Android apps (Kotlin, Jetpack Compose), and secure Web3 tools. Contributor to vercel/ai.";
 const OG_IMAGE = {
   url: "/og-image.png",
   width: 1200,
   height: 630,
-  alt: "Abbas Hussain — Full-Stack Developer, Mobile, AI & Web3",
+  alt: "Abbas Hussain — Full-Stack AI Engineer, Mobile, AI & Web3",
 };
 
 export const metadata: Metadata = {
@@ -98,10 +98,10 @@ const PERSON_JSON_LD = {
   "@type": "Person",
   name: "Abbas Hussain",
   url: SITE_URL,
-  jobTitle: "Full-Stack Developer",
+  jobTitle: "Full-Stack AI Engineer",
   description: SITE_DESCRIPTION,
   image: `${SITE_URL}/Abbasdev.png`,
-  knowsAbout: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Web3", "AI", "Kotlin", "Jetpack Compose", "Android"],
+  knowsAbout: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "AI", "AI agents", "OpenRouter", "Web3", "Kotlin", "Jetpack Compose", "Android"],
   sameAs: [
     "https://github.com/AbbasFullstack",
     "https://www.linkedin.com/in/abbas-hussain-56a61338b/",
