@@ -95,10 +95,10 @@ const OPEN_SOURCE: OpenSourceContribution[] = [
   {
     project: 'Gemini CLI',
     projectUrl: 'https://github.com/google-gemini/gemini-cli',
-    pr: 'PR #29718',
+    pr: 'PR #29718 · closed',
     prUrl: 'https://github.com/google-gemini/gemini-cli/pull/29718',
-    summary: 'Rootless Podman sandbox fix',
-    detail: 'Detect rootless Podman, append --userns=keep-id, and add a 5s probe timeout so EACCES no longer breaks the sandbox.',
+    summary: 'Rootless Podman sandbox investigation',
+    detail: 'Opened a fix for rootless Podman EACCES (userns=keep-id + probe timeout). Upstream closed without merge; related work continued in later PRs.',
   },
   {
     project: 'Supabase',
@@ -281,6 +281,19 @@ const PUBLIC_PROJECTS: Project[] = [
 
 const MORE_PROJECTS: Project[] = [
   {
+    name: 'OpenClaw — Telegram AI Agent',
+    tag: 'Shipped Experiment',
+    category: 'AI Engineering',
+    icon: '\u{1F4F1}',
+    color: 'from-emerald-500 to-teal-600',
+    accent: 'text-emerald-300',
+    desc: 'Personal Telegram AI assistant using OpenRouter with model fallback, Dockerized and hosted 24/7 from a phone-first workflow (Termux → GitHub → cloud).',
+    outcome: 'A live agent you can message — not a demo UI. Secrets via env, controlled tooling, production constraints under limited hardware.',
+    tech: ['Python', 'OpenRouter', 'Telegram Bot API', 'Docker'],
+    repo: 'https://github.com/AbbasFullstack/kingff-bot',
+    status: 'Live 24/7',
+  },
+  {
     name: 'DevCV AI \u2014 Private Beta',
     tag: 'Private Beta',
     category: 'AI + Privacy',
@@ -435,17 +448,16 @@ const EXPERIENCES: Experience[] = [
   },
   {
     company: 'Open source',
-    role: 'Contributor — Vercel AI, Google Gemini CLI & Supabase',
+    role: 'Contributor — Vercel AI, Wireit & Gemini CLI',
     period: '2026',
     achievements: [
       'vercel/ai PR #24198 (merged): fixed the token-usage cookbook example so onEnd records usage after the stream is consumed.',
-      'google-gemini/gemini-cli PR #29718: fixed rootless Podman EACCES by detecting rootless mode, appending --userns=keep-id, and adding a 5s probe timeout.',
-      'google-gemini/gemini-cli: TortoiseGitPlink SSH detection (#29921), cancellation history-rollback fix (#30017), and an orphan-PTY test fix verified by the issue author (#30008) — in review.',
-      'google/wireit PR #1545: fixed UTF-8 characters split across output chunks in readyWhen matching (verified by reviewer) — in review.',
+      'google/wireit PR #1545: UTF-8 chunk-boundary fix for service readyWhen matching (maintainer-verified; in review).',
+      'google-gemini/gemini-cli: opened PRs for rootless Podman, TortoiseGitPlink SSH detection, and cancellation history (in review / closed).',
       'supabase/supabase PR #51226: corrected Firebase Auth docs field reference (.id → .uid) against UserRecord types.',
     ],
-    tech: ['TypeScript', 'Podman', 'Node.js', 'Docs'],
-    repo: 'https://github.com/google-gemini/gemini-cli/pull/29718',
+    tech: ['TypeScript', 'Node.js', 'Docs', 'AI SDK'],
+    repo: 'https://github.com/vercel/ai/pull/24198',
   },
 ];
 
@@ -692,7 +704,7 @@ export default function Home() {
         <div className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-3">
           {[
             { label: 'Flagship: Vercel Android Companion' },
-            { label: 'OSS: Vercel AI (merged PR) + Gemini CLI' },
+            { label: 'OSS: Vercel AI (merged) · AI agents' },
             { label: 'Auth, RLS & server-side AI' },
           ].map((stat) => (
             <div key={stat.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.05] p-4">
@@ -764,7 +776,7 @@ export default function Home() {
         <div className="grid gap-4 lg:grid-cols-[1.5fr_0.7fr]">
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.05] p-7 sm:p-8">
             <p className="leading-relaxed text-white/68">
-              I build complete products end-to-end: when Vercel had no official Android app, I shipped an unofficial native companion. I contribute upstream (Vercel AI, Google Gemini CLI, Supabase) — including a merged pull request in the Vercel AI SDK — and ship multi-tenant SaaS with auth, RLS, realtime streams, and server-side AI — not landing-page demos.
+              I build complete products end-to-end: when Vercel had no official Android app, I shipped an unofficial native companion. I contribute upstream — including a merged pull request in the Vercel AI SDK — and ship multi-tenant SaaS plus live AI agents (OpenClaw on Telegram) with auth, RLS, realtime streams, and server-side AI — not landing-page demos.
             </p>
             <p className="mt-4 leading-relaxed text-white/48">
               I care about clear product boundaries: secure credentials stay server-side, API contracts stay documented, and financial/testnet projects are presented responsibly.
